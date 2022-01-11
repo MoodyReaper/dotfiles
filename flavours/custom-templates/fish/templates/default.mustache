@@ -1,0 +1,45 @@
+        ## Base16 {{scheme-name}}
+        # Author: {{scheme-author}}
+
+        # Reference: https://github.com/FabioAntunes/base16-fish-shell/blob/main/templates/default.mustache
+
+        # Fish syntax highlighting
+        # https://fishshell.com/docs/current/interactive.html#syntax-highlighting
+
+        set -U fish_color_autosuggestion '{{base03-hex}}' brblack
+        set -U fish_color_cancel -r
+        set -U fish_color_command '{{base0D-hex}}' blue --bold
+        set -U fish_color_comment '{{base03-hex}}' brblack
+        set -U fish_color_cwd '{{base0B-hex}}' green
+        # "fish_color_cwd_root" - did not find in doc for some reason
+        set -U fish_color_cwd_root '{{base08-hex}}' red
+        set -U fish_color_end '{{base0C-hex}}' cyan
+        set -U fish_color_error '{{base08-hex}}' red --bold
+        set -U fish_color_escape '{{base0C-hex}}' cyan
+        # "fish_color_history_current" - did not find in doc for some reason
+        set -U fish_color_history_current --bold
+        set -U fish_color_host normal
+        set -U fish_color_host_remote yellow
+        # "fish_color_keyword" - keywords like if - this falls back on the command color if unset
+        # set -U fish_color_keyword ??
+        # "fish_color_match" - did not find in doc for some reason
+        set -U fish_color_match --background=brblue
+        set -U fish_color_normal normal
+        set -U fish_color_operator '{{base0C-hex}}' cyan
+        set -U fish_color_param '{{base06-hex}}' cyan
+        set -U fish_color_quote '{{base0B-hex}}' green
+        set -U fish_color_redirection '{{base0A-hex}}' yellow
+        set -U fish_color_search_match '{{base0A-hex}}' bryellow --background=brblack
+        set -U fish_color_selection '{{base05-hex}}' white --bold --background=brblack
+        # "fish_color_status" - did not find in doc for some reason
+        set -U fish_color_status '{{base08-hex}}' red
+        set -U fish_color_user '{{base0B-hex}}' brgreen
+        # "fish_color_valid_path" - did not find in doc for some reason
+        set -U fish_color_valid_path --underline
+
+        set -U fish_pager_color_completion normal
+        set -U fish_pager_color_description '{{base0A-hex}}' yellow
+        set -U fish_pager_color_prefix '{{base05-hex}}' white --bold --underline
+        set -U fish_pager_color_progress '{{base07-hex}}' brwhite --background=cyan
+
+        set -U base16_fish_theme {{scheme-slug}}

@@ -26,6 +26,9 @@
     ~/.config/dunst/dunstrc: dunst/dunstrc
     # Fish
     ~/.config/fish: fish
+    # Flavours
+    ~/.config/flavours: flavours
+    ~/.local/share/flavours/base16/templates/fish: flavours/custom-templates/fish
 
 - shell:
   - [git submodule update --init --recursive, Installing submodules]

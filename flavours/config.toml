@@ -1,0 +1,92 @@
+# Configuration for flavours
+# https://github.com/Misterio77/flavours
+#
+# This file should contain a [[items]] section for each application you want themed
+# You can also set a shell (outside items) on which to run hooks
+# Check flavours repository for more information and examples
+
+
+# Explanation and default values for keys:
+
+# # Through which shell command hooks will run. The command will be replaced in '{}'
+# shell = "sh -c '{}'"
+#
+# [[items]]
+# # File to inject to, supports tilde and env var expansion. required
+# file = "~/.config/example"
+# # Template to use. required
+# template = "example"
+#
+# # Subtemplate to use
+# subtemplate = "default"
+# # If not rewriting, on which line (usually a comment) to start replacing
+# start = "# Start flavours"
+# # If not rewriting, on which line (usually a comment) to stop replacing
+# end = "# End flavours"
+# # Should we rewrite the entire file, instead of using the above delimiters?
+# rewrite = false
+# # Command to execute after injecting (goes through shell)
+# hook = ""
+# # Whether this hook should be executed when flavours is ran with lightweight flag
+# light = true
+
+# I use Fish shell (check also Fish item below)
+shell = "fish -c '{}'"
+
+# Sway supports the default '#' comments, so it can be ommited
+# 'rewrite' is also ommited, as it defaults to false
+[[items]]
+file = "~/.config/sway/config"
+template = "sway"
+subtemplate = "colors"
+hook = "sh ~/.config/sway/scripts/flavours-sway-alpha-colors.sh;swaymsg reload;sh ~/.config/swaylock/scripts/flavours-swaylock-alpha-colors.sh"
+# Swaymsg reload temporarily freezes input, so it's marked as not-light
+light = false
+
+# This one uses waybar 'default' subtemplate, so it can be ommited
+[[items]]
+file = "~/.config/waybar/colors.css"
+template = "waybar"
+# Waybar uses a separate color file, so we can safely rewrite the whole file
+rewrite = true
+hook = "pkill -SIGRTMIN+7 waybar"
+
+[[item]]
+file = "~/.config/alacritty/alacritty.yml"
+template = "alacritty"
+subtemplate = "default-256"
+
+# Custom Fish template
+[[items]]
+file = "~/.config/fish/functions/base16-fish.fish"
+template = "fish"
+# Works only with Fish shell set as default shell
+hook = "base16-fish"
+
+[[item]]
+file = "~/.config/dunst/dunstrc"
+template = "dunst"
+hook = 'killall dunst;notify-send "Theme was applied"'
+
+[[item]]
+file = "~/.themes/FlatColor/colors3"
+template = "gtk-flatcolor"
+subtemplate = "gtk-3"
+rewrite = true
+hook = "gsettings set org.gnome.desktop.interface gtk-theme dummy && gsettings set org.gnome.desktop.interface gtk-theme FlatColor"
+
+[[item]]
+file = "~/.themes/FlatColor/colors2"
+template = "gtk-flatcolor"
+subtemplate = "gtk-2"
+rewrite = true
+# Changing Paper icons globally for GTK3 and GTK2
+hook = "flavours-theme-darkmode-seticons (flavours-theme-darkmode-switch query)"
+
+#[[items]]
+#file = "~/.config/beautifuldiscord/style.css"
+#template = "styles"
+#subtemplate = "css-variables"
+# What if the configuration doesn't support '#' comments? Just change them!
+#start= "/* Start flavours */"
+#end = "/* End flavours */"
