@@ -40,6 +40,8 @@
     ~/.config/chrome-flags.conf: chrome/chrome-flags.conf
     # Electron
     ~/.config/electron-flags.conf: electron/electron-flags.conf
+    # Starship
+    ~/.config/starship.toml: starship/starship.toml
 
 - shell:
   - [git submodule update --init --recursive, Installing submodules]

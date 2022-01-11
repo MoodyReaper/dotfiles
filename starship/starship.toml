@@ -1,0 +1,361 @@
+# Prompt
+# https://starship.rs/config/#prompt
+# List of prompt-wide configuration options:
+# Configure the format of the prompt
+# format = "$all"
+# Right Prompt
+# right_format = "$all"
+# Timeout for starship to scan files (in milliseconds)
+scan_timeout = 30
+# Timeout for commands executed by starship (in milliseconds)
+command_timeout = 500
+# Inserts blank line between shell prompts
+add_newline = false
+
+[aws]
+disabled = true
+symbol = "  "
+
+[battery]
+disabled = true
+
+[character]
+disabled = false
+format = "$symbol "
+success_symbol = "[❯](bold green)"
+error_symbol = "[✖](bold red)"
+vicmd_symbol = "[V](bold green)"
+
+[cmake]
+disabled = true
+#format = "via [$symbol($version )]($style)"
+#version_format = "v${raw}"
+#symbol = "△ "
+#detect_extensions = []
+#detect_files = ["CMakeLists.txt", "CMakeCache.txt"]
+#detect_folders = []
+#style = "bold blue"
+
+[cobol]
+disabled = true
+
+[cmd_duration]
+disabled = false
+min_time = 1_000
+show_milliseconds = true
+format = "took [$duration]($style) "
+style = "bold yellow"
+# show_notifications = false
+# min_time_to_notify = 45_000
+
+[conda]
+disabled = true
+symbol = " "
+
+[crystal]
+disabled = true
+
+[dart]
+disabled = true
+symbol = " "
+
+[deno]
+disabled = true
+
+[directory]
+disabled = false
+truncation_length = 8
+truncate_to_repo = true
+format = "[$path]($style)[$read_only]($read_only_style) "
+style = "bold cyan"
+#read_only = "🔒"
+read_only = " "
+read_only_style = "red"
+truncation_symbol = "…/"
+# repo_root_style = None
+home_symbol = "~"
+
+[docker_context]
+disabled = false
+format = "via [$symbol$context]($style) "
+#symbol = "🐳 "
+symbol = " "
+only_with_files = true
+detect_extensions = []
+detect_files = ["docker-compose.yml", "docker-compose.yaml", "Dockerfile"]
+detect_folders = []
+style = "blue bold"
+
+[dotnet]
+disabled = true
+
+[elixir]
+disabled = true
+symbol = " "
+
+[elm]
+disabled = true
+symbol = " "
+
+[env_var]
+disabled = true
+
+[erlang]
+disabled = true
+
+# https://starship.rs/config/#fill
+[fill]
+disabled = true
+#symbol = "-"
+#style = "bold green"
+
+[gcloud]
+disabled = true
+
+[git_branch]
+disabled = false
+always_show_remote = false
+format = "on [$symbol$branch]($style) "
+#symbol = " "
+symbol = " "
+style = "bold purple"
+truncation_length = 13
+truncation_symbol = "…"
+only_attached = false
+
+[git_commit]
+disabled = false
+commit_hash_length = 7
+format = "[\\($hash$tag\\)]($style) "
+style = "bold green"
+only_detached = true
+tag_disabled = false
+tag_symbol = " 🏷 "
+
+[git_state]
+disabled = false
+rebase = "REBASING"
+merge = "MERGING"
+revert = "REVERTING"
+cherry_pick = "CHERRY-PICKING"
+bisect = "BISECTING"
+am = "AM"
+am_or_rebase = "AM/REBASE"
+style = "bold yellow"
+format = '\([$state( $progress_current/$progress_total)]($style)\) '
+
+[git_metrics]
+disabled = false
+added_style = "bold green"
+deleted_style = "bold red"
+only_nonzero_diffs = true
+format = '([+$added]($added_style) )([-$deleted]($deleted_style) )'
+
+[git_status]
+disabled = false
+format = '([\[$all_status$ahead_behind\]]($style) )'
+conflicted = "="
+ahead = "⇡"
+behind = "⇣"
+diverged = "⇕"
+up_to_date = ""
+untracked = "?"
+stashed = "$"
+modified = "!"
+staged = "+"
+renamed = "»"
+deleted = "✘"
+style = "bold red"
+
+[golang]
+disabled = true
+symbol = " "
+
+[helm]
+disabled = true
+
+[hostname]
+disabled = false
+ssh_only = true
+trim_at = ""
+# trim_at = ".companyname.com"
+format = "[$hostname]($style) in "
+style = "bold dimmed green"
+
+[java]
+disabled = true
+symbol = " "
+
+[jobs]
+disabled = true
+
+[julia]
+disabled = true
+symbol = " "
+
+[kotlin]
+disabled = true
+
+[kubernetes]
+disabled = true
+
+[line_break]
+disabled = false
+
+[lua]
+disabled = true
+
+[memory_usage]
+disabled = true
+symbol = " "
+
+[hg_branch]
+disabled = true
+symbol = " "
+
+[nim]
+disabled = true
+symbol = " "
+
+[nix_shell]
+disabled = true
+symbol = " "
+
+[nodejs]
+disabled = false
+format = "via [$symbol($version )]($style)"
+version_format = "v${raw}"
+symbol = " "
+detect_extensions = ["js", "mjs", "cjs", "ts"]
+detect_files = ["package.json", ".node-version"]
+detect_folders = ["node_modules"]
+style = "bold green"
+not_capable_style = "bold red"
+
+[ocaml]
+disabled = true
+
+[openstack]
+disabled = true
+
+[package]
+disabled = false
+format = "is [$symbol$version]($style) "
+#symbol = "📦 "
+symbol = " "
+version_format = "v${raw}"
+style = "bold 208"
+display_private = false
+
+[perl]
+disabled = true
+symbol = " "
+
+[php]
+disabled = true
+symbol = " "
+
+[pulumi]
+disabled = true
+
+[purescript]
+disabled = true
+
+[python]
+disabled = false
+format = 'via [${symbol}${pyenv_prefix}(${version} )(\($virtualenv\) )]($style)'
+version_format = "v${raw}"
+#symbol = "🐍 "
+symbol = " "
+style = "green bold"
+#pyenv_version_name = false
+pyenv_version_name = true
+pyenv_prefix = "pyenv "
+python_binary = ["python", "python3", "python2"]
+detect_extensions = ["py"]
+detect_files = [".python-version", "Pipfile", "__init__.py", "pyproject.toml", "requirements.txt", "setup.py", "tox.ini"]
+detect_folders = []
+
+[rlang]
+disabled = true
+
+[red]
+disabled = true
+
+[ruby]
+disabled = true
+symbol = " "
+
+[rust]
+disabled = true
+symbol = " "
+
+[scala]
+disabled = true
+symbol = " "
+
+[shell]
+disabled = true
+
+# https://starship.rs/config/#shlvl
+[shlvl]
+disabled = true
+symbol = " "
+
+[singularity]
+disabled = true
+
+# https://starship.rs/config/#status
+#[status]
+#disabled = false
+#format = "[$symbol $status]($style) "
+#symbol = "✖"
+#success_symbol = "✔️"
+#not_executable_symbol = "🚫"
+#not_found_symbol = "🔍"
+#sigint_symbol = "🧱"
+#signal_symbol = "⚡"
+#style = "bold red"
+#recognize_signal_code = true
+#map_symbol = false
+#pipestatus = false
+#pipestatus_separator = "|"
+#pipestatus_format = "\\[$pipestatus\\] => [$symbol$common_meaning$signal_name$maybe_int]($style)"
+
+[swift]
+disabled = true
+symbol = "ﯣ "
+
+[terraform]
+disabled = true
+
+[time]
+disabled = false
+format = "[$time]($style) "
+use_12hr = false
+time_format = "%H:%M:%S:%3f"
+style = "bold yellow"
+utc_time_offset = "local"
+
+[username]
+disabled = false
+style_root = "bold red"
+style_user = "bold yellow"
+format = "[$user]($style) in "
+show_always = true
+
+[vagrant]
+disabled = true
+
+[vlang]
+disabled = true
+
+# https://starship.rs/config/#vcsh
+[vcsh]
+disabled = true
+
+[zig]
+disabled = true
+
+[custom]
+disabled = true
