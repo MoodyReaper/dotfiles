@@ -36,6 +36,10 @@
     ~/.config/swaylock: swaylock
     # Waybar
     ~/.config/waybar: waybar
+    # Google Chrome
+    ~/.config/chrome-flags.conf: chrome/chrome-flags.conf
+    # Electron
+    ~/.config/electron-flags.conf: electron/electron-flags.conf
 
 - shell:
   - [git submodule update --init --recursive, Installing submodules]
