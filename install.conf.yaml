@@ -22,6 +22,8 @@
     ~/.local/bin/flavours-theme-select: bin/flavours-theme-select
     # Alacritty
     ~/.config/alacritty/alacritty.yml: alacritty/alacritty.yml
+    # Dunst
+    ~/.config/dunst/dunstrc: dunst/dunstrc
 
 - shell:
   - [git submodule update --init --recursive, Installing submodules]
