@@ -31,6 +31,7 @@
     ~/.local/share/flavours/base16/templates/fish: flavours/custom-templates/fish
     # PulseAudio
     ~/.config/pulse/daemon.conf: pulseaudio/daemon.conf
+    ~/.config/sway: sway
 
 - shell:
   - [git submodule update --init --recursive, Installing submodules]

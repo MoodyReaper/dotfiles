@@ -1,0 +1,537 @@
+# Config for sway
+# Read `man 5 sway` for a complete reference.
+
+### Variables
+#
+# Modifier keys
+set $mod Mod4
+set $alt Mod1
+# Additional keys
+set $print Meta_L
+set $screens XF86LaunchA
+set $themes XF86LaunchB
+# Home row direction keys, like vim
+set $left h
+set $down j
+set $up k
+set $right l
+# Your preferred terminal emulator
+set $term alacritty
+# Your preferred application launcher
+# Note: pass the final command to swaymsg so that the resulting window can be opened
+# on the original workspace that the command was run on.
+# set $menu dmenu_path | dmenu | xargs swaymsg exec --
+for_window [app_id="^launcher$"] floating enable, sticky enable, resize set 30 ppt 60 ppt, border pixel 5
+set $menu exec $term --class=launcher -e sway-launcher-desktop
+# Wallpaper path
+set $wallpaper-laptop-path ~/Pictures/Wallpapers/ArchLinux.png
+set $wallpaper-monitor-path ~/Pictures/Wallpapers/WideResolution/FateRuptured.png
+
+# Colors definition
+
+# Opacity HEX value (alpha transparency)
+# CC (HEX) = 204 (DEC) (204 ~ 80% out of 255)
+set $opacity CC
+
+# Start flavours
+## Base16 Dracula
+# Author: Mike Barkmin (http://github.com/mikebarkmin) based on Dracula Theme (http://github.com/dracula)
+
+set $base00 #282936
+set $base00-alpha #282936CC
+set $base01 #3a3c4e
+set $base01-alpha #3a3c4eCC
+set $base02 #4d4f68
+set $base02-alpha #4d4f68CC
+set $base03 #626483
+set $base03-alpha #626483CC
+set $base04 #62d6e8
+set $base04-alpha #62d6e8CC
+set $base05 #e9e9f4
+set $base05-alpha #e9e9f4CC
+set $base06 #f1f2f8
+set $base06-alpha #f1f2f8CC
+set $base07 #f7f7fb
+set $base07-alpha #f7f7fbCC
+set $base08 #ea51b2
+set $base08-alpha #ea51b2CC
+set $base09 #b45bcf
+set $base09-alpha #b45bcfCC
+set $base0A #00f769
+set $base0A-alpha #00f769CC
+set $base0B #ebff87
+set $base0B-alpha #ebff87CC
+set $base0C #a1efe4
+set $base0C-alpha #a1efe4CC
+set $base0D #62d6e8
+set $base0D-alpha #62d6e8CC
+set $base0E #b45bcf
+set $base0E-alpha #b45bcfCC
+set $base0F #00f769
+set $base0F-alpha #00f769CC
+# End flavours
+
+# Cursor
+set $cursor-size 24
+set $cursor-theme Adwaita
+
+# Monitors
+set $screen-edp eDP-1
+set $screen-hdmi HDMI-A-1
+
+### Output configuration
+#
+# Default wallpaper (more resolutions are available in /usr/share/backgrounds/sway/)
+#output * bg /usr/share/backgrounds/sway/Sway_Wallpaper_Blue_1920x1080.png fill
+output $screen-edp bg $wallpaper-laptop-path fill
+output $screen-hdmi bg $wallpaper-monitor-path fill
+
+#
+# Example configuration:
+#
+#   output HDMI-A-1 resolution 1920x1080 position 1920,0
+#
+# You can get the names of your outputs by running: swaymsg -t get_outputs
+output $screen-edp disable
+
+### Idle configuration
+#
+# Example configuration:
+#
+exec swayidle -w \
+        timeout 300 'swaylock --daemonize' \
+        timeout 600 'swaymsg "output * dpms off"' resume 'swaymsg "output * dpms on"' \
+        before-sleep 'swaylock --daemonize'
+#
+# This will lock your screen after 300 seconds of inactivity, then turn off
+# your displays after another 300 seconds, and turn your screens back on when
+# resumed. It will also lock your screen before your computer goes to sleep.
+
+### Input configuration
+#
+# Example configuration:
+#
+#   input "2:14:SynPS/2_Synaptics_TouchPad" {
+#       dwt enabled
+#       tap enabled
+#       natural_scroll enabled
+#       middle_emulation enabled
+#   }
+#
+# You can get the names of your inputs by running: swaymsg -t get_inputs
+# Read `man 5 sway-input` for more information about this section.
+input * {
+    xkb_layout "us,ru"
+    xkb_options "grp:caps_toggle"
+}
+
+### Key bindings
+#
+# https://wiki.archlinux.org/title/Sway#Keybindings_and_keyboard_layouts
+    set $mybind bindsym --to-code
+#
+# Basics:
+#
+    # Start a terminal
+    $mybind $mod+Return exec $term
+    # Floating terminal
+    $mybind $mod+Shift+Return exec $term --class AlacrittyFloating
+
+    # Kill focused window
+    $mybind $mod+Shift+q kill
+
+    # Start your launcher
+    $mybind $mod+d exec $menu
+
+    # Drag floating windows by holding down $mod and left mouse button.
+    # Resize them with right mouse button + $mod.
+    # Despite the name, also works for non-floating windows.
+    # Change normal to inverse to use left mouse button for resizing and right
+    # mouse button for dragging.
+    floating_modifier $mod normal
+
+    # Reload the configuration file
+    $mybind $mod+Shift+c reload
+
+    # Exit sway (logs you out of your Wayland session)
+    $mybind $mod+Shift+e exec swaynag -t warning -m 'You pressed the exit shortcut. Do you really want to exit sway? This will end your Wayland session.' -b 'Yes, exit sway' 'swaymsg exit'
+
+    # Locking session
+    $mybind $mod+Shift+x exec swaylock
+#
+# Moving around:
+#
+    # Move your focus around
+    $mybind $mod+$left focus left
+    $mybind $mod+$down focus down
+    $mybind $mod+$up focus up
+    $mybind $mod+$right focus right
+    # Or use $mod+[up|down|left|right]
+    $mybind $mod+Left focus left
+    $mybind $mod+Down focus down
+    $mybind $mod+Up focus up
+    $mybind $mod+Right focus right
+
+    # Move the focused window with the same, but add Shift
+    $mybind $mod+Shift+$left move left
+    $mybind $mod+Shift+$down move down
+    $mybind $mod+Shift+$up move up
+    $mybind $mod+Shift+$right move right
+    # Ditto, with arrow keys
+    $mybind $mod+Shift+Left move left
+    $mybind $mod+Shift+Down move down
+    $mybind $mod+Shift+Up move up
+    $mybind $mod+Shift+Right move right
+
+    # Move entire workspace to another monitor
+    $mybind $mod+$alt+$left move workspace to output left
+    $mybind $mod+$alt+left move workspace to output left
+    $mybind $mod+$alt+$right move workspace to output right
+    $mybind $mod+$alt+right move workspace to output right
+#
+# Workspaces:
+#
+    # Workspace names
+    set $workspace1 "1: Web "
+    set $workspace2 "2: Console ﲵ"
+    set $workspace3 "3: Dev "
+    set $workspace4 "4: Files "
+    set $workspace5 "5: Different "
+    set $workspace6 "6: Games "
+    set $workspace7 "7: Media "
+    set $workspace8 "8: Messengers "
+    set $workspace9 "9: Additional "
+    set $workspace10 "10: Additional "
+
+    # Switch to workspace
+    $mybind $mod+1 workspace number $workspace1
+    $mybind $mod+2 workspace number $workspace2
+    $mybind $mod+3 workspace number $workspace3
+    $mybind $mod+4 workspace number $workspace4
+    $mybind $mod+5 workspace number $workspace5
+    $mybind $mod+6 workspace number $workspace6
+    $mybind $mod+7 workspace number $workspace7
+    $mybind $mod+8 workspace number $workspace8
+    $mybind $mod+9 workspace number $workspace9
+    $mybind $mod+0 workspace number $workspace10
+    # Move focused container to workspace
+    $mybind $mod+Shift+1 move container to workspace number $workspace1
+    $mybind $mod+Shift+2 move container to workspace number $workspace2
+    $mybind $mod+Shift+3 move container to workspace number $workspace3
+    $mybind $mod+Shift+4 move container to workspace number $workspace4
+    $mybind $mod+Shift+5 move container to workspace number $workspace5
+    $mybind $mod+Shift+6 move container to workspace number $workspace6
+    $mybind $mod+Shift+7 move container to workspace number $workspace7
+    $mybind $mod+Shift+8 move container to workspace number $workspace8
+    $mybind $mod+Shift+9 move container to workspace number $workspace9
+    $mybind $mod+Shift+0 move container to workspace number $workspace10
+    # Note: workspaces can have any name you want, not just numbers.
+    # We just use 1-10 as the default.
+
+    # assigning apps with workspaces
+    # swaymsg -t get_tree | grep "class\|app_id\|window_role"
+    assign [class="Google-chrome"]              $workspace1
+    assign [app_id="firefox"]                   $workspace1
+    assign [app_id="Alacritty"]                 $workspace2
+    assign [class="Code"] 		                $workspace3
+    assign [app_id="thunar"] 			        $workspace4
+    assign [app_id="filezilla"] 			    $workspace4
+    assign [app_id="deluge"] 			        $workspace5
+    assign [app_id="libreoffice-startcenter"] 	$workspace5
+    assign [app_id="libreoffice-writer"]		$workspace5
+    assign [class="Steam"]                      $workspace6
+    assign [app_id="blueman-manager"] 		    $workspace7
+    assign [class="Spotify"] 		            $workspace7
+    assign [app_id="telegramdesktop"]           $workspace8
+    assign [class="Skype"] 				        $workspace8
+    assign [class="Slack"] 				        $workspace8
+    assign [class="discord"] 				    $workspace8
+#
+# Volume:
+#
+    $mybind XF86AudioRaiseVolume exec pactl set-sink-volume @DEFAULT_SINK@ +5%
+    $mybind XF86AudioLowerVolume exec pactl set-sink-volume @DEFAULT_SINK@ -5%
+    $mybind XF86AudioMute exec pactl set-sink-mute @DEFAULT_SINK@ toggle
+    $mybind XF86AudioMicMute exec pactl set-source-mute @DEFAULT_SOURCE@ toggle
+#
+# Media:
+#
+    $mybind XF86AudioPlay exec playerctl play-pause
+    $mybind XF86AudioNext exec playerctl next
+    $mybind XF86AudioPrev exec playerctl previous
+#
+# Monitor:
+#
+    $mybind XF86MonBrightnessDown exec brightnessctl set 5%-
+    $mybind XF86MonBrightnessUp exec brightnessctl set +5%
+#
+# Launch:
+#
+    $mybind $mod+t exec thunar
+    $mybind $mod+g exec TZ=UTC firefox
+    $mybind $mod+Shift+g exec google-chrome-stable
+    $mybind $mod+Shift+m exec gnome-system-monitor
+    # $mybind $mod+m exec alacritty -e alsamixer
+    $mybind $mod+m exec pavucontrol
+    $mybind $mod+Shift+s exec spotify
+    $mybind $mod+Shift+t exec telegram-desktop
+    $mybind $mod+Shift+b exec blueman-manager
+    $mybind $mod+c exec speedcrunch
+    #$mybind $mod+Shift+v exec kooha
+
+#
+# Flavours theme selection
+# https://github.com/Misterio77/dotfiles/blob/sway/home/.config/sway/config
+    $mybind $themes exec flavours-theme-select
+    # DarkMode toggle
+    $mybind $themes+Shift exec flavours-theme-darkmode-switch
+#
+# Rules for executing apps
+# swaymsg -t get_tree | grep "class\|app_id\|window_role"
+    for_window [class="Lxappearance"] floating enable
+    for_window [app_id="gnome-system-monitor"] floating enable
+    for_window [app_id="file-roller"] floating enable
+    for_window [app_id="telegramdesktop"] floating enable
+    for_window [app_id="catfish"] floating enable
+    for_window [app_id="grsync"] floating enable
+    for_window [app_id="mpv"] floating enable
+    for_window [app_id="io.github.celluloid_player.Celluloid"] floating enable
+    for_window [app_id="pavucontrol"] floating enable
+    for_window [class="Keybase"] floating enable
+    for_window [app_id="org.speedcrunch.speedcrunch"] floating enable
+    for_window [app_id="qjackctl"] floating enable
+    for_window [app_id="blueman-manager"] floating enable
+    for_window [app_id="zoom"] floating enable
+    for_window [app_id="eog"] floating enable
+    for_window [class="com-xk72-charles-gui-MainWithClassLoad"] floating enable
+    for_window [class="VirtualBox Manager"] floating enable
+    for_window [class="Joplin"] floating enable # TO CHECK
+    for_window [class="ToneLib GFX"] floating enable
+    for_window [class="ToneLib-Jam"] floating enable
+    for_window [class="Steam"] floating enable
+    for_window [class="Cypress"] floating enable # TO CHECK
+    # For Cadence
+    for_window [app_id="python3"] floating enable
+    # Graphical dialog boxes from shell scripts
+    for_window [app_id="zenity"] floating enable
+    # PlayOnLinux
+    for_window [class="Mainwindow.py"] floating enable
+    # https://github.com/swaywm/sway/issues/6177
+    for_window [class="discord"] floating enable
+    for_window [title="^Discord$"] floating enable
+
+    # Alacritty floating
+    for_window [app_id="AlacrittyFloating*"] floating enable
+    for_window [app_id="AlacrittyFloatingSelector"] [floating] resize set 600 700
+
+    # https://wiki.archlinux.org/title/I3#Correct_handling_of_floating_dialogs
+    for_window [window_role="pop-up"] floating enable
+    for_window [window_role="task_dialog"] floating enable
+    # https://github.com/201dreamers/sway-config/blob/master/.config/sway/config
+    for_window [window_role="bubble"] floating enable
+    for_window [window_role="dialog"] floating enable
+    for_window [window_type="dialog"] floating enable
+
+    # "move" method is used instead when workspace assigning doesn't work
+    for_window [class="Spotify"] move to workspace $workspace7
+    for_window [class="Slack"] move to workspace $workspace8
+    for_window [class="discord"] move to workspace $workspace8
+    for_window [app_id="telegramdesktop"] move to workspace $workspace8
+#
+# Layout stuff:
+#
+    # You can "split" the current object of your focus with
+    # $mod+b or $mod+v, for horizontal and vertical splits
+    # respectively.
+    $mybind $mod+b splith
+    $mybind $mod+v splitv
+
+    # Switch the current container between different layout styles
+    $mybind $mod+s layout stacking
+    $mybind $mod+w layout tabbed
+    $mybind $mod+e layout toggle split
+
+    # Make the current focus fullscreen
+    $mybind $mod+f fullscreen
+
+    # Toggle the current focus between tiling and floating mode
+    $mybind $mod+Shift+space floating toggle
+
+    # Swap focus between the tiling area and the floating area
+    $mybind $mod+space focus mode_toggle
+
+    # Move focus to the parent container
+    $mybind $mod+a focus parent
+#
+# Scratchpad:
+#
+    # Sway has a "scratchpad", which is a bag of holding for windows.
+    # You can send windows there and get them back later.
+
+    # Move the currently focused window to the scratchpad
+    $mybind $mod+Shift+minus move scratchpad
+
+    # Show the next scratchpad window or hide the focused scratchpad window.
+    # If there are multiple scratchpad windows, this command cycles through them.
+    $mybind $mod+minus scratchpad show
+#
+# Resizing containers:
+#
+mode "resize" {
+    # left will shrink the containers width
+    # right will grow the containers width
+    # up will shrink the containers height
+    # down will grow the containers height
+    $mybind $left resize shrink width 10px
+    $mybind $down resize grow height 10px
+    $mybind $up resize shrink height 10px
+    $mybind $right resize grow width 10px
+
+    # Ditto, with arrow keys
+    $mybind Left resize shrink width 10px
+    $mybind Down resize grow height 10px
+    $mybind Up resize shrink height 10px
+    $mybind Right resize grow width 10px
+
+    # Return to default mode
+    $mybind Return mode "default"
+    $mybind Escape mode "default"
+}
+$mybind $mod+r mode "resize"
+
+#
+# When using multiple monitors, the floating scratchpad window can get too large, covering more than one monitor.
+# This command centers and resizes the floating window to 80% of the current monitor's size: 
+#
+    $mybind $mod+Shift+r exec swaymsg move position center & swaymsg resize set 40ppt 80ppt
+#
+# Additional stuff
+#
+# Screenshots:
+# https://github.com/jtheoof/swappy
+# https://www.reddit.com/r/swaywm/comments/hczg3k/swappy_100_released/
+
+    set $mode_screenshot Screenshot: c - clipboard, f - file, s - sector, w - window, m - monitor, p - pick a color
+    mode "$mode_screenshot" {
+        $mybind c exec grim -cg "$(slurp; sleep 2)" - | wl-copy; mode "default"
+        $mybind f exec grim -cg "$(slurp; sleep 2)" "Screenshot_$(date +%F_%H-%M-%S).png"; mode "default"
+        $mybind s exec grim -cg "$(slurp; sleep 2)" - | swappy -f -; mode "default"
+        $mybind w exec swaymsg -t get_tree | jq -r '.. | (.nodes? // empty)[] | select(.focused) | "\(.rect.x),\(.rect.y) \(.rect.width)x\(.rect.height)"' | grim -cg - - | swappy -f -; mode "default"
+        #TODO: find out why it does not call swappy window
+        # Fix iit for "mode_screenrecord" also
+        #$mybind w exec grim -g "$(swaymsg -t get_tree | jq -r '.. | select(.pid? and .visible?) | .rect | "\(.x),\(.y) \(.width)x\(.height)"' | slurp)" - | swappy -f -
+        $mybind m exec grim -co "$(swaymsg -t get_outputs | jq -r '.[] | select(.focused) | .name')" - | swappy -f -; mode "default"
+        $mybind p exec grim -g "$(slurp -p)" -t ppm - | convert - -format '%[pixel:p{0,0}]' txt:- | wl-copy; mode "default"
+        $mybind Escape mode "default"
+    }
+    $mybind $print mode "$mode_screenshot"
+
+# Screenrecords:
+# https://github.com/ammen99/wf-recorder
+# Waybar alternative: https://www.reddit.com/r/swaywm/comments/kc8jbw/wfrecorder_indicator_for_swaywm_waybar/
+
+    set $mode_screenrecord Screenrecord: s - sector, m - monitor, x - stop and save
+    mode "$mode_screenrecord" {
+        $mybind s exec wf-recorder -g "$(slurp; sleep 2)" -f ~/Screenrecord_$(date +%F_%H-%M-%S).mp4
+        $mybind m exec wf-recorder -f ~/Screenrecord_$(date +%F_%H-%M-%S).mp4
+        $mybind x exec killall -s SIGINT wf-recorder; mode "default"
+        $mybind Escape mode "default"
+    }
+    # TODO: handle combination with $print
+    $mybind $mod+Shift+v mode "$mode_screenrecord"
+
+# Manual management of external displays
+# Reference: https://bbs.archlinux.org/viewtopic.php?id=245038
+    set $mode_display Ext Screen (h) HDMI ON, (e) eDP ON <> (mod+h) HDMI OFF, (mod+e) eDP OFF
+    mode "$mode_display" {
+        $mybind h output $screen-hdmi enable, mode "default"
+        $mybind e output $screen-edp enable, mode "default"
+
+        $mybind $mod+h output $screen-hdmi disable, mode "default"
+        $mybind $mod+e output $screen-edp disable, mode "default"
+
+        $mybind Return mode "default"
+        $mybind Escape mode "default"
+    }
+    $mybind $screens mode "$mode_display"
+
+#
+# Theming:
+#
+
+# Borders / Title bars
+default_border pixel 5
+default_floating_border pixel 5
+
+# Gaps
+gaps inner 10
+
+# https://github.com/swaywm/sway/wiki#is-an-application-using-xwayland
+#for_window [shell=".*"] title_format "%title :: %shell"
+
+# Font config
+#font pango:Fira Sans Regular 11
+font pango:FiraCode Nerd Font 11
+
+# Window color configuration using the Base16 variables for windows and borders
+#   Property Name              Border           BG               Text       Indicator  Child Border
+    client.focused             $base02-alpha    $base02-alpha    $base05    $base02    $base02-alpha
+    client.focused_inactive    $base01-alpha    $base01-alpha    $base05    $base01    $base01-alpha
+    client.unfocused           $base00-alpha    $base00-alpha    $base03    $base00    $base00-alpha
+    client.urgent              $base08-alpha    $base08-alpha    $base05    $base08    $base08-alpha
+    client.placeholder         $base00-alpha    $base00-alpha    $base05    $base00    $base00-alpha
+    client.background          $base00-alpha
+
+# Cursor
+# https://wiki.archlinux.org/title/Sway#Change_cursor_theme_and_size
+# Themes: default, Adwaita or Simple-and-Soft, etc.
+# You need to restart the application to see the changes. 
+# Wayland uses client-side cursors. It is possible that applications do not evaluate the values of $XCURSOR_SIZE and $XCURSOR_THEME.
+seat seat0 xcursor_theme $cursor-theme $cursor-size
+
+#
+# Status Bar:
+#
+# Read `man 5 sway-bar` for more information about this section.
+bar {
+    # position bottom
+
+    # When the status_command prints a new line to stdout, swaybar updates.
+    # The default just shows the current date and time.
+    #status_command while date +'%Y-%m-%d %l:%M:%S %p'; do sleep 1; done
+    #status_command i3blocks -c ~/.config/i3blocks/i3blocks.conf
+
+    swaybar_command waybar
+
+    #colors {
+    #    background            $base00
+    #    separator             $base01
+    #    statusline            $base04
+
+    #    State                 Border     BG         Text
+    #    focused_workspace     $base05    $base0D    $base00
+    #    active_workspace      $base05    $base03    $base00
+    #    inactive_workspace    $base03    $base01    $base05
+    #    urgent_workspace      $base08    $base08    $base00
+    #    binding_mode          $base00    $base0A    $base00
+    #}
+}
+
+#
+# Autostart:
+#
+    # https://github.com/swaywm/sway/wiki/GTK-3-settings-on-Wayland
+    exec_always $HOME/.config/sway/scripts/import-gsettings.sh
+    # NetworkManager is the most popular way to manage wireless networks on Linux,
+    # and nm-applet is a desktop environment-independent system tray GUI for it.
+    exec nm-applet --indicator
+    # starting Discord
+    #exec discord
+    # starting Telegram
+    exec telegram-desktop
+    # starting Gnome-Polkit
+    # https://wiki.archlinux.org/title/Polkit
+    # https://www.fosskers.ca/en/blog/wayland#orgb4cc3c
+    exec /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
+    # Disctro-related stuff bundled with package
+    include /etc/sway/config.d/*
