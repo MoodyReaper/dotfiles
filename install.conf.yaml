@@ -19,6 +19,8 @@
     ~/.local/bin/flavours-theme-darkmode-seticons: bin/flavours-theme-darkmode-seticons
     ~/.local/bin/flavours-theme-darkmode-switch: bin/flavours-theme-darkmode-switch
     ~/.local/bin/flavours-theme-select: bin/flavours-theme-select
+    # Alacritty
+    ~/.config/alacritty/alacritty.yml: alacritty/alacritty.yml
 
 - shell:
   - [git submodule update --init --recursive, Installing submodules]
