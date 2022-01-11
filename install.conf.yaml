@@ -24,6 +24,8 @@
     ~/.config/alacritty/alacritty.yml: alacritty/alacritty.yml
     # Dunst
     ~/.config/dunst/dunstrc: dunst/dunstrc
+    # Fish
+    ~/.config/fish: fish
 
 - shell:
   - [git submodule update --init --recursive, Installing submodules]

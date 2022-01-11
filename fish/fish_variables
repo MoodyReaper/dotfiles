@@ -1,0 +1,35 @@
+# This file contains fish universal variable definitions.
+# VERSION: 3.0
+SETUVAR --export PYENV_ROOT:/home/reaper/\x2epyenv
+SETUVAR __fish_initialized:3100
+SETUVAR base16_fish_theme:dracula
+SETUVAR fish_color_autosuggestion:626483\x1ebrblack
+SETUVAR fish_color_cancel:\x2dr
+SETUVAR fish_color_command:62d6e8\x1eblue\x1e\x2d\x2dbold
+SETUVAR fish_color_comment:626483\x1ebrblack
+SETUVAR fish_color_cwd:ebff87\x1egreen
+SETUVAR fish_color_cwd_root:ea51b2\x1ered
+SETUVAR fish_color_end:a1efe4\x1ecyan
+SETUVAR fish_color_error:ea51b2\x1ered\x1e\x2d\x2dbold
+SETUVAR fish_color_escape:a1efe4\x1ecyan
+SETUVAR fish_color_history_current:\x2d\x2dbold
+SETUVAR fish_color_host:normal
+SETUVAR fish_color_host_remote:yellow
+SETUVAR fish_color_match:\x2d\x2dbackground\x3dbrblue
+SETUVAR fish_color_normal:normal
+SETUVAR fish_color_operator:a1efe4\x1ecyan
+SETUVAR fish_color_param:f1f2f8\x1ecyan
+SETUVAR fish_color_quote:ebff87\x1egreen
+SETUVAR fish_color_redirection:00f769\x1eyellow
+SETUVAR fish_color_search_match:00f769\x1ebryellow\x1e\x2d\x2dbackground\x3dbrblack
+SETUVAR fish_color_selection:e9e9f4\x1ewhite\x1e\x2d\x2dbold\x1e\x2d\x2dbackground\x3dbrblack
+SETUVAR fish_color_status:ea51b2\x1ered
+SETUVAR fish_color_user:ebff87\x1ebrgreen
+SETUVAR fish_color_valid_path:\x2d\x2dunderline
+SETUVAR fish_greeting:\x1d
+SETUVAR fish_key_bindings:fish_default_key_bindings
+SETUVAR fish_pager_color_completion:normal
+SETUVAR fish_pager_color_description:00f769\x1eyellow
+SETUVAR fish_pager_color_prefix:e9e9f4\x1ewhite\x1e\x2d\x2dbold\x1e\x2d\x2dunderline
+SETUVAR fish_pager_color_progress:f7f7fb\x1ebrwhite\x1e\x2d\x2dbackground\x3dcyan
+SETUVAR fish_user_paths:/home/reaper/\x2elocal/bin\x1e/home/reaper/\x2epyenv/bin
