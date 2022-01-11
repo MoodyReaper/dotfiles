@@ -1,0 +1,5 @@
+border="-show_region 1"
+encopts="-vcodec libx264 -x264opts opencl -pix_fmt yuv420p -s $res -acodec libmp3lame"
+rect_encopts="-c:v libx264 -x264opts opencl -preset fast -crf 21 -c:a libvorbis"
+ext="mp4"
+ffaudio=""

@@ -1,0 +1,10 @@
+# https://www.freedesktop.org/wiki/Software/PulseAudio/Documentation/User/PerfectSetup/
+# https://forum.level1techs.com/t/improving-linux-audio-updated/134511
+# https://medium.com/@gamunu/enable-high-quality-audio-on-linux-6f16f3fe7e1f
+# https://www.opennet.ru/openforum/vsluhforumID3/120239.html#8
+
+# Use PulseAudio plugin hw
+#pcm.!default {
+#   type plug
+#   slave.pcm hw
+#}
