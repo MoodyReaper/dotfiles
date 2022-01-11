@@ -32,6 +32,7 @@
     # PulseAudio
     ~/.config/pulse/daemon.conf: pulseaudio/daemon.conf
     ~/.config/sway: sway
+    ~/.config/swaylock: swaylock
 
 - shell:
   - [git submodule update --init --recursive, Installing submodules]
