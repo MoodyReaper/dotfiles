@@ -6,7 +6,7 @@
     // Choose the order of the modules
     "modules-left": ["sway/workspaces", "custom/media", "sway/mode"],
     "modules-center": ["sway/window"],
-    "modules-right": ["custom/dunst", "idle_inhibitor", "network", "pulseaudio", "custom/ddcutil", "disk#root", "disk#home", "memory", "cpu", "temperature#CPU", "temperature#GPU", "sway/language", "battery", "clock", "tray"],
+    "modules-right": ["custom/dunst", "idle_inhibitor", "network", "pulseaudio", "custom/ddcutil", "disk#root", "disk#home", "memory", "cpu", "custom/gpu-usage", "temperature#CPU", "temperature#GPU", "sway/language", "battery", "clock", "tray"],
     // Modules configuration
     "sway/workspaces": {
         "enable-bar-scroll": true
@@ -98,6 +98,7 @@
     "network": {
         "interval": 5,
         // "interface": "wlp2*", // (Optional) To force the use of this interface
+        "interface": "wlan*",
         "format-wifi": "{essid} ({signalStrength}%)      {bandwidthDownBits}  {bandwidthUpBits}",
         "format-ethernet": "{ifname}: {ipaddr}/{cidr}      {bandwidthDownBits}  {bandwidthUpBits}",
         "format-linked": "{ifname} (No IP)      {bandwidthDownBits}  {bandwidthUpBits}",
@@ -169,9 +170,9 @@
         // "signal": 7
     //},
     // https://www.reddit.com/r/swaywm/comments/ncjpfz/how_to_add_gpu_usage_to_waybar/
-    //"custom/gpu-usage": {
-    //    "interval": 5,
-    //    "exec": "cat /sys/class/hwmon/hwmon2/device/gpu_busy_percent",
-    //    "format": "GPU: {}%"
-    //  }
+    "custom/gpu-usage": {
+        "interval": 5,
+        "exec": "cat /sys/class/drm/card0/device/gpu_busy_percent",
+        "format": "GPU: {}% ﯅"
+      }
 }
