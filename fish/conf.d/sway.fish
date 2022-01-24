@@ -42,6 +42,9 @@ if status --is-login
         # TOREAD
         # https://github.com/swaywm/wlroots/issues/1923
 
+        # https://wiki.archlinux.org/title/PipeWire#xdg-desktop-portal-wlr
+        set -gx XDG_CURRENT_DESKTOP sway
+
         # Sway start
         # https://github.com/swaywm/sway/wiki#login-managers
         exec sway
