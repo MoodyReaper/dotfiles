@@ -317,16 +317,18 @@ input * {
     for_window [class="ToneLib-Jam"] floating enable
     for_window [class="Steam"] floating enable
     for_window [class="Cypress"] floating enable # TO CHECK
-    # For Cadence
+    # Cadence
     for_window [app_id="python3"] floating enable
     # Graphical dialog boxes from shell scripts
     for_window [app_id="zenity"] floating enable
     # PlayOnLinux
     for_window [class="Mainwindow.py"] floating enable
-    # https://github.com/swaywm/sway/issues/6177
+    # Discord - https://github.com/swaywm/sway/issues/6177
     for_window [class="discord"] floating enable
     for_window [title="^Discord$"] floating enable
-
+    # Wurm Online
+    for_window [class="com.wurmonline.client.launcherfx.WurmMain"] floating enable
+    
     # Alacritty floating
     for_window [app_id="AlacrittyFloating*"] floating enable
     for_window [app_id="AlacrittyFloatingSelector"] [floating] resize set 600 700
