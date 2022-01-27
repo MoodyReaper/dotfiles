@@ -7,9 +7,11 @@
 set $mod Mod4
 set $alt Mod1
 # Additional keys
-set $print Meta_L
-set $screens XF86LaunchA
-set $themes XF86LaunchB
+set $print Print
+set $screens $mod+F3
+set $themes $mod+F4
+# Additional bind for my keyboard button
+set $mic Mod4+c
 # Home row direction keys, like vim
 set $left h
 set $down j
@@ -259,6 +261,8 @@ input * {
     $mybind XF86AudioLowerVolume exec pactl set-sink-volume @DEFAULT_SINK@ -5%
     $mybind XF86AudioMute exec pactl set-sink-mute @DEFAULT_SINK@ toggle
     $mybind XF86AudioMicMute exec pactl set-source-mute @DEFAULT_SOURCE@ toggle
+    # Additional bind for my keyboard button
+    $mybind $mic exec pactl set-source-mute @DEFAULT_SOURCE@ toggle
 #
 # Media:
 #
@@ -282,7 +286,7 @@ input * {
     $mybind $mod+Shift+s exec spotify
     $mybind $mod+Shift+t exec telegram-desktop
     $mybind $mod+Shift+b exec blueman-manager
-    $mybind $mod+c exec speedcrunch
+    #$mybind $mod+c exec speedcrunch
     #$mybind $mod+Shift+v exec kooha
 
 #
@@ -446,8 +450,7 @@ $mybind $mod+r mode "resize"
         $mybind x exec killall -s SIGINT wf-recorder; mode "default"
         $mybind Escape mode "default"
     }
-    # TODO: handle combination with $print
-    $mybind $mod+Shift+v mode "$mode_screenrecord"
+    $mybind $print+Shift mode "$mode_screenrecord"
 
 # Manual management of external displays
 # Reference: https://bbs.archlinux.org/viewtopic.php?id=245038
