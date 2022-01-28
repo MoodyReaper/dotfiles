@@ -33,8 +33,6 @@
     ~/.config/gtk-3.0/settings.ini: gtk/gtk-3.0/settings.ini
     ~/.themes/FlatColor: gtk/FlatColor
     ~/.themes/dummy: gtk/FlatColor
-    # PulseAudio
-    ~/.config/pulse/daemon.conf: pulseaudio/daemon.conf
     # Starship
     ~/.config/starship.toml: starship/starship.toml
     # Sway
