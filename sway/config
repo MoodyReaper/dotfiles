@@ -536,7 +536,7 @@ bar {
     exec_always $HOME/.config/sway/scripts/import-gsettings.sh
     # NetworkManager is the most popular way to manage wireless networks on Linux,
     # and nm-applet is a desktop environment-independent system tray GUI for it.
-    exec nm-applet --indicator
+    #exec nm-applet --indicator
     # starting Discord
     #exec discord
     # starting Telegram
@@ -544,7 +544,7 @@ bar {
     # starting Gnome-Polkit
     # https://wiki.archlinux.org/title/Polkit
     # https://www.fosskers.ca/en/blog/wayland#orgb4cc3c
-    # exec /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
+    exec /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
     # https://wiki.archlinux.org/title/PipeWire#xdg-desktop-portal-wlr
     exec systemctl --user import-environment WAYLAND_DISPLAY XDG_CURRENT_DESKTOP
     # Disctro-related stuff bundled with package
