@@ -6,13 +6,8 @@
 - clean: ['~']
 
 - link:
-    # Git
-    ~/.gitconfig: git/gitconfig
-    # GTK
-    ~/.gtkrc-2.0: gtk/gtkrc-2.0
-    ~/.config/gtk-3.0/settings.ini: gtk/gtk-3.0/settings.ini
-    ~/.themes/FlatColor: gtk/FlatColor
-    ~/.themes/dummy: gtk/FlatColor
+    # Alacritty
+    ~/.config/alacritty/alacritty.yml: alacritty/alacritty.yml
     # Bin
     ~/.local/bin/alacritty-fzf: bin/alacritty-fzf
     ~/.local/bin/colors_ghosts: bin/colors_ghosts
@@ -20,28 +15,34 @@
     ~/.local/bin/flavours-theme-darkmode-seticons: bin/flavours-theme-darkmode-seticons
     ~/.local/bin/flavours-theme-darkmode-switch: bin/flavours-theme-darkmode-switch
     ~/.local/bin/flavours-theme-select: bin/flavours-theme-select
-    # Alacritty
-    ~/.config/alacritty/alacritty.yml: alacritty/alacritty.yml
+    # Chrome
+    ~/.config/chrome-flags.conf: chrome/chrome-flags.conf
     # Dunst
     ~/.config/dunst/dunstrc: dunst/dunstrc
+    # Electron
+    ~/.config/electron-flags.conf: electron/electron-flags.conf
     # Fish
     ~/.config/fish: fish
     # Flavours
     ~/.config/flavours: flavours
     ~/.local/share/flavours/base16/templates/fish: flavours/custom-templates/fish
+    # Git
+    ~/.gitconfig: git/gitconfig
+    # GTK
+    ~/.gtkrc-2.0: gtk/gtkrc-2.0
+    ~/.config/gtk-3.0/settings.ini: gtk/gtk-3.0/settings.ini
+    ~/.themes/FlatColor: gtk/FlatColor
+    ~/.themes/dummy: gtk/FlatColor
     # PulseAudio
     ~/.config/pulse/daemon.conf: pulseaudio/daemon.conf
+    # Starship
+    ~/.config/starship.toml: starship/starship.toml
     # Sway
     ~/.config/sway: sway
+    # Swaylock
     ~/.config/swaylock: swaylock
     # Waybar
     ~/.config/waybar: waybar
-    # Google Chrome
-    ~/.config/chrome-flags.conf: chrome/chrome-flags.conf
-    # Electron
-    ~/.config/electron-flags.conf: electron/electron-flags.conf
-    # Starship
-    ~/.config/starship.toml: starship/starship.toml
 
 - shell:
   - [git submodule update --init --recursive, Installing submodules]
