@@ -33,6 +33,8 @@
     ~/.config/gtk-3.0/settings.ini: gtk/gtk-3.0/settings.ini
     ~/.themes/FlatColor: gtk/FlatColor
     ~/.themes/dummy: gtk/FlatColor
+    # Pipewire
+    ~/.config/pipewire: pipewire
     # Starship
     ~/.config/starship.toml: starship/starship.toml
     # Sway
