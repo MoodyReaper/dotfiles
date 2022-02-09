@@ -26,9 +26,9 @@ set $term alacritty
 for_window [app_id="^launcher$"] floating enable, sticky enable, resize set 30 ppt 60 ppt, border pixel 5
 set $menu exec $term --class=launcher -e sway-launcher-desktop
 # Wallpaper path
-#set $wallpaper-laptop-path ~/Pictures/Wallpapers/OrdinaryResolution/ArchLinux.png
-#set $wallpaper-monitor-path ~/Pictures/Wallpapers/WideResolution/FateRuptured.png
-set $wallpaper ~/Pictures/Wallpapers/WideResolution/FateRuptured.png
+#set $wallpaper-laptop-path ~/.bg-fhd
+#set $wallpaper-monitor-path ~/.bg-uwqhd
+set $wallpaper ~/.bg-uwqhd
 
 # Colors definition
 
