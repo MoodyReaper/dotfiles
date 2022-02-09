@@ -39,6 +39,9 @@
     ~/.config/sway: sway
     # Swaylock
     ~/.config/swaylock: swaylock
+    # Wallpapers
+    ~/.bg-uwqhd: wallpaper/UW-QHD.png
+    ~/.bg-fhd: wallpaper/FHD.png
     # Waybar
     ~/.config/waybar: waybar
 
