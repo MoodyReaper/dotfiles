@@ -183,48 +183,48 @@ font:
 #draw_bold_text_with_bright_colors: false
 
 # Start flavours
-# Base16 Dracula 256 - alacritty color config
-# Mike Barkmin (http://github.com/mikebarkmin) based on Dracula Theme (http://github.com/dracula)
+# Base16 tender 256 - alacritty color config
+# Jacobo Tabernero (https://github/com/jacoborus/tender.vim)
 colors:
   # Default colors
   primary:
-    background: '0x282936'
-    foreground: '0xe9e9f4'
+    background: '0x282828'
+    foreground: '0xeeeeee'
 
   # Colors the cursor will use if `custom_cursor_colors` is true
   cursor:
-    text: '0x282936'
-    cursor: '0xe9e9f4'
+    text: '0x282828'
+    cursor: '0xeeeeee'
 
   # Normal colors
   normal:
-    black:   '0x282936'
-    red:     '0xea51b2'
-    green:   '0xebff87'
-    yellow:  '0x00f769'
-    blue:    '0x62d6e8'
-    magenta: '0xb45bcf'
-    cyan:    '0xa1efe4'
-    white:   '0xe9e9f4'
+    black:   '0x282828'
+    red:     '0xf43753'
+    green:   '0xc9d05c'
+    yellow:  '0xffc24b'
+    blue:    '0xb3deef'
+    magenta: '0xd3b987'
+    cyan:    '0x73cef4'
+    white:   '0xeeeeee'
 
   # Bright colors
   bright:
-    black:   '0x626483'
-    red:     '0xea51b2'
-    green:   '0xebff87'
-    yellow:  '0x00f769'
-    blue:    '0x62d6e8'
-    magenta: '0xb45bcf'
-    cyan:    '0xa1efe4'
-    white:   '0xf7f7fb'
+    black:   '0x4c4c4c'
+    red:     '0xf43753'
+    green:   '0xc9d05c'
+    yellow:  '0xffc24b'
+    blue:    '0xb3deef'
+    magenta: '0xd3b987'
+    cyan:    '0x73cef4'
+    white:   '0xfeffff'
 
   indexed_colors:
-    - { index: 16, color: '0xb45bcf' }
-    - { index: 17, color: '0x00f769' }
-    - { index: 18, color: '0x3a3c4e' }
-    - { index: 19, color: '0x4d4f68' }
-    - { index: 20, color: '0x62d6e8' }
-    - { index: 21, color: '0xf1f2f8' }
+    - { index: 16, color: '0xdc9656' }
+    - { index: 17, color: '0xa16946' }
+    - { index: 18, color: '0x383838' }
+    - { index: 19, color: '0x484848' }
+    - { index: 20, color: '0xb8b8b8' }
+    - { index: 21, color: '0xe8e8e8' }
 # End flavours
 
 # Colors (Tomorrow Night)

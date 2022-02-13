@@ -1,23 +1,23 @@
 function base16-fish --description 'Applies base16 colors for Fish shell'
     # Start flavours
-        ## Base16 Dracula
-        # Author: Mike Barkmin (http://github.com/mikebarkmin) based on Dracula Theme (http://github.com/dracula)
+        ## Base16 tender
+        # Author: Jacobo Tabernero (https://github/com/jacoborus/tender.vim)
 
         # Reference: https://github.com/FabioAntunes/base16-fish-shell/blob/main/templates/default.mustache
 
         # Fish syntax highlighting
         # https://fishshell.com/docs/current/interactive.html#syntax-highlighting
 
-        set -U fish_color_autosuggestion '626483' brblack
+        set -U fish_color_autosuggestion '4c4c4c' brblack
         set -U fish_color_cancel -r
-        set -U fish_color_command '62d6e8' blue --bold
-        set -U fish_color_comment '626483' brblack
-        set -U fish_color_cwd 'ebff87' green
+        set -U fish_color_command 'b3deef' blue --bold
+        set -U fish_color_comment '4c4c4c' brblack
+        set -U fish_color_cwd 'c9d05c' green
         # "fish_color_cwd_root" - did not find in doc for some reason
-        set -U fish_color_cwd_root 'ea51b2' red
-        set -U fish_color_end 'a1efe4' cyan
-        set -U fish_color_error 'ea51b2' red --bold
-        set -U fish_color_escape 'a1efe4' cyan
+        set -U fish_color_cwd_root 'f43753' red
+        set -U fish_color_end '73cef4' cyan
+        set -U fish_color_error 'f43753' red --bold
+        set -U fish_color_escape '73cef4' cyan
         # "fish_color_history_current" - did not find in doc for some reason
         set -U fish_color_history_current --bold
         set -U fish_color_host normal
@@ -27,23 +27,23 @@ function base16-fish --description 'Applies base16 colors for Fish shell'
         # "fish_color_match" - did not find in doc for some reason
         set -U fish_color_match --background=brblue
         set -U fish_color_normal normal
-        set -U fish_color_operator 'a1efe4' cyan
-        set -U fish_color_param 'f1f2f8' cyan
-        set -U fish_color_quote 'ebff87' green
-        set -U fish_color_redirection '00f769' yellow
-        set -U fish_color_search_match '00f769' bryellow --background=brblack
-        set -U fish_color_selection 'e9e9f4' white --bold --background=brblack
+        set -U fish_color_operator '73cef4' cyan
+        set -U fish_color_param 'e8e8e8' cyan
+        set -U fish_color_quote 'c9d05c' green
+        set -U fish_color_redirection 'ffc24b' yellow
+        set -U fish_color_search_match 'ffc24b' bryellow --background=brblack
+        set -U fish_color_selection 'eeeeee' white --bold --background=brblack
         # "fish_color_status" - did not find in doc for some reason
-        set -U fish_color_status 'ea51b2' red
-        set -U fish_color_user 'ebff87' brgreen
+        set -U fish_color_status 'f43753' red
+        set -U fish_color_user 'c9d05c' brgreen
         # "fish_color_valid_path" - did not find in doc for some reason
         set -U fish_color_valid_path --underline
 
         set -U fish_pager_color_completion normal
-        set -U fish_pager_color_description '00f769' yellow
-        set -U fish_pager_color_prefix 'e9e9f4' white --bold --underline
-        set -U fish_pager_color_progress 'f7f7fb' brwhite --background=cyan
+        set -U fish_pager_color_description 'ffc24b' yellow
+        set -U fish_pager_color_prefix 'eeeeee' white --bold --underline
+        set -U fish_pager_color_progress 'feffff' brwhite --background=cyan
 
-        set -U base16_fish_theme dracula
+        set -U base16_fish_theme tender
     # End flavours
 end

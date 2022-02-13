@@ -316,23 +316,23 @@
 
 # https://github.com/khamer/base16-dunst
 # Start flavours
-frame_color = "#e9e9f4"
-separator_color = "#e9e9f4"
+frame_color = "#eeeeee"
+separator_color = "#eeeeee"
 
 [base16_low]
     msg_urgency = low
-    background = "#3a3c4e"
-    foreground = "#626483"
+    background = "#383838"
+    foreground = "#4c4c4c"
 
 [base16_normal]
     msg_urgency = normal
-    background = "#4d4f68"
-    foreground = "#e9e9f4"
+    background = "#484848"
+    foreground = "#eeeeee"
 
 [base16_critical]
     msg_urgency = critical
-    background = "#ea51b2"
-    foreground = "#f1f2f8"
+    background = "#f43753"
+    foreground = "#e8e8e8"
 # End flavours
 
 # Every section that isn't one of the above is interpreted as a rules to

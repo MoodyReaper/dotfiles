@@ -37,41 +37,41 @@ set $wallpaper ~/.bg-uwqhd
 set $opacity CC
 
 # Start flavours
-## Base16 Dracula
-# Author: Mike Barkmin (http://github.com/mikebarkmin) based on Dracula Theme (http://github.com/dracula)
+## Base16 tender
+# Author: Jacobo Tabernero (https://github/com/jacoborus/tender.vim)
 
-set $base00 #282936
-set $base00-alpha #282936CC
-set $base01 #3a3c4e
-set $base01-alpha #3a3c4eCC
-set $base02 #4d4f68
-set $base02-alpha #4d4f68CC
-set $base03 #626483
-set $base03-alpha #626483CC
-set $base04 #62d6e8
-set $base04-alpha #62d6e8CC
-set $base05 #e9e9f4
-set $base05-alpha #e9e9f4CC
-set $base06 #f1f2f8
-set $base06-alpha #f1f2f8CC
-set $base07 #f7f7fb
-set $base07-alpha #f7f7fbCC
-set $base08 #ea51b2
-set $base08-alpha #ea51b2CC
-set $base09 #b45bcf
-set $base09-alpha #b45bcfCC
-set $base0A #00f769
-set $base0A-alpha #00f769CC
-set $base0B #ebff87
-set $base0B-alpha #ebff87CC
-set $base0C #a1efe4
-set $base0C-alpha #a1efe4CC
-set $base0D #62d6e8
-set $base0D-alpha #62d6e8CC
-set $base0E #b45bcf
-set $base0E-alpha #b45bcfCC
-set $base0F #00f769
-set $base0F-alpha #00f769CC
+set $base00 #282828
+set $base00-alpha #282828CC
+set $base01 #383838
+set $base01-alpha #383838CC
+set $base02 #484848
+set $base02-alpha #484848CC
+set $base03 #4c4c4c
+set $base03-alpha #4c4c4cCC
+set $base04 #b8b8b8
+set $base04-alpha #b8b8b8CC
+set $base05 #eeeeee
+set $base05-alpha #eeeeeeCC
+set $base06 #e8e8e8
+set $base06-alpha #e8e8e8CC
+set $base07 #feffff
+set $base07-alpha #feffffCC
+set $base08 #f43753
+set $base08-alpha #f43753CC
+set $base09 #dc9656
+set $base09-alpha #dc9656CC
+set $base0A #ffc24b
+set $base0A-alpha #ffc24bCC
+set $base0B #c9d05c
+set $base0B-alpha #c9d05cCC
+set $base0C #73cef4
+set $base0C-alpha #73cef4CC
+set $base0D #b3deef
+set $base0D-alpha #b3deefCC
+set $base0E #d3b987
+set $base0E-alpha #d3b987CC
+set $base0F #a16946
+set $base0F-alpha #a16946CC
 # End flavours
 
 # Cursor
