@@ -6,7 +6,7 @@
     // Choose the order of the modules
     "modules-left": ["sway/workspaces", "custom/media", "sway/mode"],
     "modules-center": ["sway/window"],
-    "modules-right": ["custom/dunst", "idle_inhibitor", "network", "pulseaudio", "custom/ddcutil", "disk#root", "disk#home", "memory", "cpu", "custom/gpu-usage", "temperature#CPU", "temperature#GPU", "sway/language", "clock", "tray"],
+    "modules-right": ["custom/dunst", "idle_inhibitor", "network", "pulseaudio", "custom/ddcutil", "disk#root", "disk#home", "memory", "cpu", "temperature#CPU", "custom/gpu-usage", "temperature#GPU", "sway/language", "clock", "tray"],
     // Modules configuration
     "sway/workspaces": {
         "enable-bar-scroll": true
@@ -63,17 +63,19 @@
     },
     // https://joonas.fi/2021/07/stable-device-path-for-linux-hwmon-interfaces/
     "temperature#CPU": {
-        "format": "CPU: {temperatureC}°C {icon}",
+        "format": "{temperatureC}°C {icon}",
         "format-icons": ["", "", "", "", ""],
+        "tooltip-format": "CPU",
         "interval": 5,
-        "critical-threshold": 90,
+        "critical-threshold": 80,
         "hwmon-path": "/dev/cpu_temp"
     },
     "temperature#GPU": {
-        "format": "GPU: {temperatureC}°C {icon}",
+        "format": "{temperatureC}°C {icon}",
         "format-icons": ["", "", "", "", ""],
+        "tooltip-format": "GPU",
         "interval": 5,
-        "critical-threshold": 90,
+        "critical-threshold": 80,
         "hwmon-path": "/dev/gpu_temp"
     },
     "backlight": {
@@ -155,6 +157,12 @@
         "on-click": "dunstctl set-paused toggle",
         "restart-interval": 30
     },
+    // https://www.reddit.com/r/swaywm/comments/ncjpfz/how_to_add_gpu_usage_to_waybar/
+    "custom/gpu-usage": {
+        "interval": 5,
+        "exec": "cat /sys/class/drm/card0/device/gpu_busy_percent",
+        "format": "GPU: {}% ﯅ "
+      }
     // https://gist.github.com/nicodebo/297c1e134256ea24abf02a485ce41420
     //"custom/ddcutil": {
     //    "format": "{percentage}% {icon}",
@@ -175,11 +183,5 @@
     //    "on-click": "flavours-theme-select",
     //    "on-click-right": "flavours-theme-darkmode-switch",
         // "signal": 7
-    //},
-    // https://www.reddit.com/r/swaywm/comments/ncjpfz/how_to_add_gpu_usage_to_waybar/
-    "custom/gpu-usage": {
-        "interval": 5,
-        "exec": "cat /sys/class/drm/card0/device/gpu_busy_percent",
-        "format": "GPU: {}% ﯅"
-      }
+    //}
 }
