@@ -16,7 +16,13 @@ add_newline = false
 disabled = true
 symbol = "  "
 
+[azure]
+disabled = true
+
 [battery]
+disabled = true
+
+[buf]
 disabled = true
 
 [character]
@@ -51,6 +57,12 @@ style = "bold yellow"
 [conda]
 disabled = true
 symbol = " "
+
+[container]
+disabled = false
+symbol = "⬢"
+style = "bold red dimmed"
+format = "[$symbol \\[$name\\]]($style) "
 
 [crystal]
 disabled = true
@@ -171,6 +183,9 @@ style = "bold red"
 disabled = true
 symbol = " "
 
+[haskell]
+disabled = true
+
 [helm]
 disabled = true
 
@@ -201,6 +216,12 @@ disabled = true
 
 [line_break]
 disabled = false
+
+[localip]
+disabled = false
+ssh_only = true
+format = "[$localipv4]($style) "
+style = "bold yellow"
 
 [lua]
 disabled = true
@@ -321,6 +342,13 @@ disabled = true
 #pipestatus = false
 #pipestatus_separator = "|"
 #pipestatus_format = "\\[$pipestatus\\] => [$symbol$common_meaning$signal_name$maybe_int]($style)"
+
+[sudo]
+disabled = false
+format = "[as $symbol]($style)"
+symbol = "  "
+style = "bold blue"
+allow_windows = false
 
 [swift]
 disabled = true
