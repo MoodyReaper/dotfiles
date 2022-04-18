@@ -356,6 +356,3 @@ disabled = true
 
 [zig]
 disabled = true
-
-[custom]
-disabled = true
