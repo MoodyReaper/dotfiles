@@ -43,6 +43,8 @@
     ~/.config/sway: sway
     # Swaylock
     ~/.config/swaylock: swaylock
+    # systemd
+    ~/.config/systemd: systemd
     # Wallpapers
     ~/.bg-uwqhd: wallpaper/UW-QHD.png
     ~/.bg-fhd: wallpaper/FHD.png
