@@ -43,6 +43,7 @@ function base16-fish --description 'Applies base16 colors for Fish shell'
         set -U fish_pager_color_description 'ffc24b' yellow
         set -U fish_pager_color_prefix 'eeeeee' white --bold --underline
         set -U fish_pager_color_progress 'feffff' brwhite --background=cyan
+        set -U fish_pager_color_selected_background -r
 
         set -U base16_fish_theme tender
     # End flavours
