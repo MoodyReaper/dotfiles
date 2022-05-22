@@ -21,6 +21,7 @@
     ~/.config/dunst/dunstrc: dunst/dunstrc
     # Electron
     ~/.config/electron-flags.conf: electron/electron-flags.conf
+    ~/.config/electron17-flags.conf: electron/electron17-flags.conf
     # Fish
     ~/.config/fish: fish
     # Flavours
