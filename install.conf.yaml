@@ -3,7 +3,7 @@
       relink: true
       create: true
 
-- clean: ['~']
+- clean: ["~"]
 
 - link:
     # Alacritty
@@ -21,7 +21,7 @@
     ~/.config/dunst/dunstrc: dunst/dunstrc
     # Electron
     ~/.config/electron-flags.conf: electron/electron-flags.conf
-    ~/.config/electron17-flags.conf: electron/electron17-flags.conf
+    ~/.config/electron18-flags.conf: electron/electron18-flags.conf
     # Fish
     ~/.config/fish: fish
     # Flavours
@@ -53,4 +53,4 @@
     ~/.config/waybar: waybar
 
 - shell:
-  - [git submodule update --init --recursive, Installing submodules]
+    - [git submodule update --init --recursive, Installing submodules]
