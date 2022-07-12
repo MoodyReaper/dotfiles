@@ -6,7 +6,7 @@
     // Choose the order of the modules
     "modules-left": ["sway/workspaces", "custom/media", "sway/mode"],
     "modules-center": ["sway/window"],
-    "modules-right": ["custom/dunst", "idle_inhibitor", "network", "pulseaudio", "custom/ddcutil", "disk#root", "disk#home", "memory", "cpu", "temperature#CPU", "custom/gpu-usage", "temperature#GPU", "sway/language", "clock", "tray"],
+    "modules-right": ["idle_inhibitor", "custom/dunst", "network", "pulseaudio", "custom/ddcutil", "disk#root", "disk#home", "memory", "cpu", "temperature#CPU", "custom/gpu-usage", "temperature#GPU", "sway/language", "clock", "tray"],
     // Modules configuration
     "sway/workspaces": {
         "enable-bar-scroll": true
