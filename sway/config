@@ -298,7 +298,6 @@ input * {
 #
 # Rules for executing apps
 # swaymsg -t get_tree | grep "class\|app_id\|window_role"
-    for_window [class="Lxappearance"] floating enable
     for_window [app_id="gnome-system-monitor"] floating enable
     for_window [app_id="file-roller"] floating enable
     for_window [app_id="telegramdesktop"] floating enable
@@ -307,20 +306,21 @@ input * {
     for_window [app_id="mpv"] floating enable
     for_window [app_id="io.github.celluloid_player.Celluloid"] floating enable
     for_window [app_id="pavucontrol"] floating enable
-    for_window [class="Keybase"] floating enable
     for_window [app_id="org.speedcrunch.speedcrunch"] floating enable
     for_window [app_id="qjackctl"] floating enable
     for_window [app_id="blueman-manager"] floating enable
     for_window [app_id="zoom"] floating enable
     for_window [app_id="eog"] floating enable
     for_window [app_id="psensor"] floating enable
+    for_window [app_id="org.remmina.Remmina"] floating enable
+    for_window [class="Keybase"] floating enable
+    for_window [class="Lxappearance"] floating enable
     for_window [class="com-xk72-charles-gui-MainWithClassLoad"] floating enable
     for_window [class="VirtualBox Manager"] floating enable
     for_window [class="Joplin"] floating enable # TO CHECK
     for_window [class="ToneLib GFX"] floating enable
     for_window [class="ToneLib-Jam"] floating enable
     for_window [class="Steam"] floating enable
-    for_window [class="Cypress"] floating enable # TO CHECK
     # Cadence
     for_window [app_id="python3"] floating enable
     # Graphical dialog boxes from shell scripts
