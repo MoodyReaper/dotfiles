@@ -308,8 +308,14 @@ disabled = true
 symbol = " "
 
 [rust]
-disabled = true
+disabled = false
+format = "via [$symbol($version )]($style)"
+version_format = "v${raw}"
 symbol = " "
+detect_extensions = ["rs"]
+detect_files = ["Cargo.toml"]
+detect_folders = []
+style = "bold red"
 
 [scala]
 disabled = true
