@@ -36,6 +36,8 @@
     ~/.config/gtk-3.0/settings.ini: gtk/gtk-3.0/settings.ini
     ~/.themes/FlatColor: gtk/FlatColor
     ~/.themes/dummy: gtk/FlatColor
+    # Neovim
+    ~/.config/nvim: AstroNvim
     # Pipewire
     ~/.config/pipewire: pipewire
     # Starship
