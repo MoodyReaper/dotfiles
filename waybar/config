@@ -6,7 +6,7 @@
     // Choose the order of the modules
     "modules-left": ["sway/workspaces", "custom/media", "sway/mode"],
     "modules-center": ["sway/window"],
-    "modules-right": ["idle_inhibitor", "custom/dunst", "network", "pulseaudio", "custom/ddcutil", "disk#root", "disk#home", "memory", "cpu", "temperature#CPU", "custom/gpu-usage", "temperature#GPU", "sway/language", "clock", "tray"],
+    "modules-right": ["idle_inhibitor", "custom/dunst", "network", "pulseaudio", "disk#root", "disk#home", "memory", "cpu", "temperature#CPU", "custom/gpu-usage", "temperature#GPU", "sway/language", "clock", "tray"],
     // Modules configuration
     "sway/workspaces": {
         "enable-bar-scroll": true
@@ -164,24 +164,24 @@
         "format": "GPU: {}% ﯅ "
       }
     // https://gist.github.com/nicodebo/297c1e134256ea24abf02a485ce41420
-    //"custom/ddcutil": {
+    // "custom/ddcutil": {
     //    "format": "{percentage}% {icon}",
     //    "interval": 1,
     //    "format-icons": ["", "", ""],
     //    "exec": "$HOME/.config/waybar/scripts/waybar-ddcutil.py",
-    //    "return-type": "json"
-        // TODO: Finish it
-        // "on-click": "ddcutil setvcp 10 50",
-        // "on-click-right": "ddcutil setvcp 10 70"
-    //}
+    //    "return-type": "json",
+    //    // TODO: Finish it (it doesn't work)
+    //    "on-click": "ddcutil setvcp 10 50",
+    //    "on-click-right": "ddcutil setvcp 10 70"
+    // }
     // https://github.com/Misterio77/dotfiles/blob/sway/home/.config/waybar/config.json
-    //"custom/flavours": {
+    // "custom/flavours": {
     //    "format": "{}",
     //    "return-type": "json",
     //    "exec": "$HOME/.config/waybar/scripts/flavours-theme-current.sh",
     //    "interval": 1337,
     //    "on-click": "flavours-theme-select",
     //    "on-click-right": "flavours-theme-darkmode-switch",
-        // "signal": 7
-    //}
+    //    "signal": 7
+    // }
 }
