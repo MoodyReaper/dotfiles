@@ -58,6 +58,6 @@ Welcome to my dotfiles!
 
 ## P.S.
 
-If you found it useful, please, tell me about it!  
-I'd be very glad of any improvement or suggestion (:  
-Contacts: `moodyreaper.space`
+If you found it useful, please, let me know!  
+I'd be very grateful for any improvements or suggestions (:  
+Contacts: [moodyreaper.space](https://moodyreaper.space)
