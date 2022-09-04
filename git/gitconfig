@@ -1,5 +1,6 @@
-[user]
-	name = MoodyReaper
-	email = efrem.sarmazov@gmail.com
+[include]
+	path = .gitconfig-personal
 [credential]
 	helper = /usr/lib/git-core/git-credential-libsecret
+[core]
+	editor = nvim

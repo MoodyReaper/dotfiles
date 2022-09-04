@@ -29,6 +29,7 @@
     ~/.local/share/flavours/base16/templates/fish: flavours/custom-templates/fish
     # Git
     ~/.gitconfig: git/gitconfig
+    ~/.gitconfig-personal: git/gitconfig-personal
     # GnuPG
     ~/.gnupg/gpg-agent.conf: gnupg/gpg-agent.conf
     # GTK
