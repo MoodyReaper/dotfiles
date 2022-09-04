@@ -1,5 +1,6 @@
 #!/usr/bin/env bash
 
+# Credits:
 # https://github.com/Misterio77/dotfiles/blob/sway/home/bin/duck
 
 echo '             ,-.          '
