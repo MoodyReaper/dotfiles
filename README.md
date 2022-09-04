@@ -3,6 +3,8 @@
 Welcome to my dotfiles!  
 _Note: this repository contains only user files (system files are not presented)._
 
+![desktop-example-0](https://user-images.githubusercontent.com/16370497/188315613-907149c8-1397-4a80-880f-8ae73754b091.png)
+
 ## Software
 
 | Type                     | Name                                                                                      | Notes                                                  |
