@@ -1,6 +1,7 @@
 ## Intro
 
-Welcome to my dotfiles!
+Welcome to my dotfiles!  
+_Note: this repository contains only user files (system files are not presented)._
 
 ## Software
 
@@ -55,6 +56,8 @@ Welcome to my dotfiles!
 | Monitor    | `Mi Curved Gaming Monitor 34`    | Configs (ex. Waybar) are optimized for 3440x1440 resolution (UW-QHD)                |
 | Sound card | `Solid State Logic SSL 2+`       | Worked out of the box, other devices might require special configuration            |
 | Keyboard   | `Keychron K8`                    | MacOS mode is used. Some keybindings might not work due to different keyboard       |
+
+![neofetch](https://user-images.githubusercontent.com/16370497/188314845-544f3077-984f-4455-936c-c474eaacd11f.png)
 
 ## P.S.
 
