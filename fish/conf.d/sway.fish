@@ -1,7 +1,7 @@
 # Run only on login
 if status --is-login
 
-    ## If running from tty1 set Wayland environment variables and start Sway
+    # If running from tty1 set Wayland environment variables and start Sway
     #set TTY1 (tty)
     #if [ "$TTY1" = /dev/tty1 ]
     #    # Set Wayland/Sway ENV variables
