@@ -36,7 +36,7 @@ shell = "fish -c '{}'"
 # Sway supports the default '#' comments, so it can be ommited
 # 'rewrite' is also ommited, as it defaults to false
 [[items]]
-file = "~/.config/sway/config"
+file = "~/.config/sway/config.d/theme"
 template = "sway"
 subtemplate = "colors"
 hook = "sh ~/.config/sway/scripts/flavours-sway-alpha-colors.sh;swaymsg reload;sh ~/.config/swaylock/scripts/flavours-swaylock-alpha-colors.sh"

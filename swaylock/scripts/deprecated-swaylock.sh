@@ -6,7 +6,7 @@
 # Base16 colors: https://github.com/chriskempson/base16/blob/master/styling.md
 
 # Getting colors from Sway config
-file="$HOME/.config/sway/config"
+file="$HOME/.config/sway/config.d/theme"
 
 alphastring="set \$opacity"
 aphasearchresult=$(grep "$alphastring" $file)

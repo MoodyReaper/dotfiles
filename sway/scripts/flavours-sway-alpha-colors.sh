@@ -1,6 +1,6 @@
 #!/bin/bash
 
-file="$HOME/.config/sway/config"
+file="$HOME/.config/sway/config.d/theme"
 
 alphastring="set \$opacity"
 aphasearchresult=$(grep "$alphastring" $file)

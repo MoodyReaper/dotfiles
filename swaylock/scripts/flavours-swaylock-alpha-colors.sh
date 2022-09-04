@@ -7,7 +7,7 @@
 # Flavours: https://github.com/Misterio77/flavours
 
 # Getting colors from Sway config
-sway_config="$HOME/.config/sway/config"
+sway_config="$HOME/.config/sway/config.d/theme"
 # Setting colors in Swaylock config
 swaylock_config="$HOME/.config/swaylock/config"
 
