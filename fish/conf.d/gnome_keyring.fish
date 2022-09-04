@@ -6,6 +6,6 @@
 if status --is-login
     set ENV_VARIABLES (gnome-keyring-daemon --start | string split " ")
     for ENV_VARIABLE in $ENV_VARIABLES
-        set -x (echo $ENV_VARIABLE | string split "=")
+        set -gx (echo $ENV_VARIABLE | string split "=")
     end
 end
