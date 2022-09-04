@@ -1,7 +1,0 @@
-! Some applications like URxvt will ignore fontconfig settings. You can work around this by using ~/.Xresources, but it is as flexible as fontconfig
-Xft.autohint: 0
-Xft.lcdfilter: lcddefault
-Xft.hintstyle: hintslight
-Xft.hinting: 1
-Xft.antialias: 1
-Xft.rgba: rgb

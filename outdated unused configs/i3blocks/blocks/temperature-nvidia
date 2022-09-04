@@ -1,6 +1,0 @@
-#!/bin/bash
-
-temperature=$(nvidia-settings -q gpucoretemp -t | head -n 1)
-
-echo "${temperature}°C"
-echo "${temperature}°C"
