@@ -1,0 +1,66 @@
+### Workspaces
+#
+
+# Workspace names
+set $workspace1 "1: Web "
+set $workspace2 "2: Console ﲵ"
+set $workspace3 "3: Dev "
+set $workspace4 "4: Files "
+set $workspace5 "5: Different "
+set $workspace6 "6: Games "
+set $workspace7 "7: Media "
+set $workspace8 "8: Messengers "
+set $workspace9 "9: Additional "
+set $workspace10 "10: Additional "
+
+# Switch to workspace
+$mybind $mod+1 workspace number $workspace1
+$mybind $mod+2 workspace number $workspace2
+$mybind $mod+3 workspace number $workspace3
+$mybind $mod+4 workspace number $workspace4
+$mybind $mod+5 workspace number $workspace5
+$mybind $mod+6 workspace number $workspace6
+$mybind $mod+7 workspace number $workspace7
+$mybind $mod+8 workspace number $workspace8
+$mybind $mod+9 workspace number $workspace9
+$mybind $mod+0 workspace number $workspace10
+
+# Move focused container to workspace
+$mybind $mod+Shift+1 move container to workspace number $workspace1
+$mybind $mod+Shift+2 move container to workspace number $workspace2
+$mybind $mod+Shift+3 move container to workspace number $workspace3
+$mybind $mod+Shift+4 move container to workspace number $workspace4
+$mybind $mod+Shift+5 move container to workspace number $workspace5
+$mybind $mod+Shift+6 move container to workspace number $workspace6
+$mybind $mod+Shift+7 move container to workspace number $workspace7
+$mybind $mod+Shift+8 move container to workspace number $workspace8
+$mybind $mod+Shift+9 move container to workspace number $workspace9
+$mybind $mod+Shift+0 move container to workspace number $workspace10
+# Note: workspaces can have any name you want, not just numbers.
+# We just use 1-10 as the default.
+
+# Assigning apps with workspaces
+# Get class or app_id by the following command:
+# swaymsg -t get_tree | grep "class\|app_id\|window_role"
+assign [app_id="firefox"]                   $workspace1
+assign [app_id="google-chrome"]             $workspace1
+assign [app_id="Alacritty"]                 $workspace2
+assign [class="Code"] 		                $workspace3
+assign [app_id="filezilla"] 			    $workspace4
+assign [app_id="thunar"] 			        $workspace4
+assign [app_id="deluge"] 			        $workspace5
+assign [app_id="libreoffice-startcenter"] 	$workspace5
+assign [app_id="libreoffice-writer"]		$workspace5
+assign [class="Steam"]                      $workspace6
+assign [app_id="blueman-manager"] 		    $workspace7
+assign [class="Spotify"] 		            $workspace7
+assign [class="discord"] 				    $workspace8
+assign [class="Skype"] 				        $workspace8
+assign [class="Slack"] 				        $workspace8
+assign [app_id="telegramdesktop"]           $workspace8
+
+# "move" method is used instead when workspace assigning doesn't work
+for_window [class="Spotify"] move to workspace              $workspace7
+for_window [class="discord"] move to workspace              $workspace8
+for_window [class="Slack"] move to workspace                $workspace8
+for_window [app_id="telegramdesktop"] move to workspace     $workspace8

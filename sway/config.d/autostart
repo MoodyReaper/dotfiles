@@ -1,0 +1,36 @@
+### Autostart
+#
+
+# System / internal / general:
+
+    # Gnome-Polkit
+    # https://wiki.archlinux.org/title/Polkit
+    # https://www.fosskers.ca/en/blog/wayland#orgb4cc3c
+    exec /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
+
+    # GTK
+    # https://github.com/swaywm/sway/wiki/GTK-3-settings-on-Wayland
+    exec_always $HOME/.config/sway/scripts/import-gsettings.sh
+
+    # XDG
+    # https://wiki.archlinux.org/title/PipeWire#xdg-desktop-portal-wlr
+    #exec systemctl --user import-environment WAYLAND_DISPLAY XDG_CURRENT_DESKTOP
+    # ^ unneeded if /etc/sway/config.d/* is used (see below)
+    # Disctro-related stuff bundled with package (systemd integration at the moment)
+    include /etc/sway/config.d/*
+
+    # systemd
+    # https://wiki.archlinux.org/title/Sway#Manage_Sway-specific_daemons_with_systemd
+    exec_always "systemctl --user import-environment; systemctl --user start sway-session.target"
+
+# User apps:
+
+    # Discord
+    #exec discord
+
+    # NetworkManager is the most popular way to manage wireless networks on Linux,
+    # and nm-applet is a desktop environment-independent system tray GUI for it.
+    #exec nm-applet --indicator
+
+    # Telegram
+    exec telegram-desktop

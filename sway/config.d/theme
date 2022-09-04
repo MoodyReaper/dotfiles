@@ -1,0 +1,75 @@
+### Theme
+#
+
+# Font config
+#font pango:Fira Sans Regular 11
+font pango:FiraCode Nerd Font 11
+
+# Borders / Title bars
+default_border pixel 5
+default_floating_border pixel 5
+
+# Gaps
+gaps inner 10
+
+# Cursor
+set $cursor-size 24
+set $cursor-theme Adwaita
+# https://wiki.archlinux.org/title/Sway#Change_cursor_theme_and_size
+# Themes: default, Adwaita or Simple-and-Soft, etc.
+# You need to restart the application to see the changes. 
+# Wayland uses client-side cursors. It is possible that applications do not evaluate the values of $XCURSOR_SIZE and $XCURSOR_THEME.
+seat seat0 xcursor_theme $cursor-theme $cursor-size
+
+# Colors definition
+
+# Opacity HEX value (alpha transparency)
+# CC (HEX) = 204 (DEC) (204 ~ 80% out of 255)
+set $opacity CC
+
+# Start flavours
+## Base16 tender
+# Author: Jacobo Tabernero (https://github/com/jacoborus/tender.vim)
+
+set $base00 #282828
+set $base00-alpha #282828CC
+set $base01 #383838
+set $base01-alpha #383838CC
+set $base02 #484848
+set $base02-alpha #484848CC
+set $base03 #4c4c4c
+set $base03-alpha #4c4c4cCC
+set $base04 #b8b8b8
+set $base04-alpha #b8b8b8CC
+set $base05 #eeeeee
+set $base05-alpha #eeeeeeCC
+set $base06 #e8e8e8
+set $base06-alpha #e8e8e8CC
+set $base07 #feffff
+set $base07-alpha #feffffCC
+set $base08 #f43753
+set $base08-alpha #f43753CC
+set $base09 #dc9656
+set $base09-alpha #dc9656CC
+set $base0A #ffc24b
+set $base0A-alpha #ffc24bCC
+set $base0B #c9d05c
+set $base0B-alpha #c9d05cCC
+set $base0C #73cef4
+set $base0C-alpha #73cef4CC
+set $base0D #b3deef
+set $base0D-alpha #b3deefCC
+set $base0E #d3b987
+set $base0E-alpha #d3b987CC
+set $base0F #a16946
+set $base0F-alpha #a16946CC
+# End flavours
+
+# Window color configuration using the Base16 variables for windows and borders
+#   Property Name              Border           BG               Text       Indicator  Child Border
+    client.focused             $base02-alpha    $base02-alpha    $base05    $base02    $base02-alpha
+    client.focused_inactive    $base01-alpha    $base01-alpha    $base05    $base01    $base01-alpha
+    client.unfocused           $base00-alpha    $base00-alpha    $base03    $base00    $base00-alpha
+    client.urgent              $base08-alpha    $base08-alpha    $base05    $base08    $base08-alpha
+    client.placeholder         $base00-alpha    $base00-alpha    $base05    $base00    $base00-alpha
+    client.background          $base00-alpha

@@ -1,0 +1,212 @@
+### Key bindings
+#
+# Basics:
+#
+    # Start a terminal
+    $mybind $mod+Return exec $term
+    # Floating terminal
+    $mybind $mod+Shift+Return exec $term --class AlacrittyFloating
+
+    # Kill focused window
+    $mybind $mod+Shift+q kill
+
+    # Start your launcher
+    $mybind $mod+d exec $menu
+
+    # Drag floating windows by holding down $mod and left mouse button.
+    # Resize them with right mouse button + $mod.
+    # Despite the name, also works for non-floating windows.
+    # Change normal to inverse to use left mouse button for resizing and right
+    # mouse button for dragging.
+    floating_modifier $mod normal
+
+    # Reload the configuration file
+    $mybind $mod+Shift+c reload
+
+    # Exit sway (logs you out of your Wayland session)
+    $mybind $mod+Shift+e exec swaynag -t warning -m 'You pressed the exit shortcut. Do you really want to exit sway? This will end your Wayland session.' -b 'Yes, exit sway' 'swaymsg exit'
+
+    # Locking session
+    $mybind $mod+Shift+x exec swaylock
+#
+# Moving around:
+#
+    # Move your focus around
+    $mybind $mod+$left focus left
+    $mybind $mod+$down focus down
+    $mybind $mod+$up focus up
+    $mybind $mod+$right focus right
+    # Or use $mod+[up|down|left|right]
+    $mybind $mod+Left focus left
+    $mybind $mod+Down focus down
+    $mybind $mod+Up focus up
+    $mybind $mod+Right focus right
+
+    # Move the focused window with the same, but add Shift
+    $mybind $mod+Shift+$left move left
+    $mybind $mod+Shift+$down move down
+    $mybind $mod+Shift+$up move up
+    $mybind $mod+Shift+$right move right
+    # Ditto, with arrow keys
+    $mybind $mod+Shift+Left move left
+    $mybind $mod+Shift+Down move down
+    $mybind $mod+Shift+Up move up
+    $mybind $mod+Shift+Right move right
+
+    # Move entire workspace to another monitor
+    $mybind $mod+$alt+$left move workspace to output left
+    $mybind $mod+$alt+left move workspace to output left
+    $mybind $mod+$alt+$right move workspace to output right
+    $mybind $mod+$alt+right move workspace to output right
+#
+# Layout stuff:
+#
+    # You can "split" the current object of your focus with
+    # $mod+b or $mod+v, for horizontal and vertical splits
+    # respectively.
+    $mybind $mod+b splith
+    $mybind $mod+v splitv
+
+    # Switch the current container between different layout styles
+    $mybind $mod+s layout stacking
+    $mybind $mod+w layout tabbed
+    $mybind $mod+e layout toggle split
+
+    # Make the current focus fullscreen
+    $mybind $mod+f fullscreen
+
+    # Toggle the current focus between tiling and floating mode
+    $mybind $mod+Shift+space floating toggle
+
+    # Swap focus between the tiling area and the floating area
+    $mybind $mod+space focus mode_toggle
+
+    # Move focus to the parent container
+    $mybind $mod+a focus parent
+#
+# Scratchpad:
+#
+    # Sway has a "scratchpad", which is a bag of holding for windows.
+    # You can send windows there and get them back later.
+
+    # Move the currently focused window to the scratchpad
+    $mybind $mod+Shift+minus move scratchpad
+
+    # Show the next scratchpad window or hide the focused scratchpad window.
+    # If there are multiple scratchpad windows, this command cycles through them.
+    $mybind $mod+minus scratchpad show
+#
+# Resizing containers:
+#
+mode "resize" {
+    # left will shrink the containers width
+    # right will grow the containers width
+    # up will shrink the containers height
+    # down will grow the containers height
+    $mybind $left resize shrink width 10px
+    $mybind $down resize grow height 10px
+    $mybind $up resize shrink height 10px
+    $mybind $right resize grow width 10px
+
+    # Ditto, with arrow keys
+    $mybind Left resize shrink width 10px
+    $mybind Down resize grow height 10px
+    $mybind Up resize shrink height 10px
+    $mybind Right resize grow width 10px
+
+    # Return to default mode
+    $mybind Return mode "default"
+    $mybind Escape mode "default"
+}
+$mybind $mod+r mode "resize"
+#
+# When using multiple monitors, the floating scratchpad window can get too large, covering more than one monitor.
+# This command centers and resizes the floating window to 80% of the current monitor's size: 
+#
+    $mybind $mod+Shift+r exec swaymsg move position center & swaymsg resize set 40ppt 80ppt
+#
+# Volume:
+#
+    $mybind XF86AudioRaiseVolume exec pactl set-sink-volume @DEFAULT_SINK@ +5%
+    $mybind XF86AudioLowerVolume exec pactl set-sink-volume @DEFAULT_SINK@ -5%
+    $mybind XF86AudioMute exec pactl set-sink-mute @DEFAULT_SINK@ toggle
+    $mybind XF86AudioMicMute exec pactl set-source-mute @DEFAULT_SOURCE@ toggle
+    # Additional bind for my keyboard button
+    $mybind $mic exec pactl set-source-mute @DEFAULT_SOURCE@ toggle
+#
+# Media:
+#
+    $mybind XF86AudioPlay exec playerctl play-pause
+    $mybind XF86AudioNext exec playerctl next
+    $mybind XF86AudioPrev exec playerctl previous
+#
+# Monitor:
+#
+    $mybind XF86MonBrightnessDown exec brightnessctl set 5%-
+    $mybind XF86MonBrightnessUp exec brightnessctl set +5%
+#
+# Launch:
+#
+    # $mybind $mod+m exec alacritty -e alsamixer
+    $mybind $mod+Shift+b exec blueman-manager
+    $mybind $mod+g exec TZ=UTC firefox
+    $mybind $mod+Shift+m exec gnome-system-monitor
+    $mybind $mod+Shift+g exec google-chrome-stable
+    $mybind $mod+m exec pavucontrol
+    # $mybind $mod+c exec speedcrunch
+    $mybind $mod+Shift+s exec spotify
+    $mybind $mod+Shift+t exec telegram-desktop
+    $mybind $mod+t exec thunar
+#
+# Flavours theme selection
+# https://github.com/Misterio77/dotfiles/blob/sway/home/.config/sway/config
+    $mybind $themes exec flavours-theme-select
+    # DarkMode toggle
+    $mybind $themes+Shift exec flavours-theme-darkmode-switch
+
+#
+# Modes:
+#
+
+# Screenshots:
+# https://github.com/jtheoof/swappy
+# https://www.reddit.com/r/swaywm/comments/hczg3k/swappy_100_released/
+set $mode_screenshot Screenshot: c - clipboard, f - file, s - sector, w - window, m - monitor, p - pick a color
+mode "$mode_screenshot" {
+    $mybind c exec grim -cg "$(slurp; sleep 2)" - | wl-copy; mode "default"
+    $mybind f exec grim -cg "$(slurp; sleep 2)" "Screenshot_$(date +%F_%H-%M-%S).png"; mode "default"
+    $mybind s exec grim -cg "$(slurp; sleep 2)" - | swappy -f -; mode "default"
+    $mybind w exec swaymsg -t get_tree | jq -r '.. | (.nodes? // empty)[] | select(.focused) | "\(.rect.x),\(.rect.y) \(.rect.width)x\(.rect.height)"' | grim -cg - - | swappy -f -; mode "default"
+    # TODO: find out why it does not call swappy window
+    # Fix it for "mode_screenrecord" also
+    # $mybind w exec grim -g "$(swaymsg -t get_tree | jq -r '.. | select(.pid? and .visible?) | .rect | "\(.x),\(.y) \(.width)x\(.height)"' | slurp)" - | swappy -f -
+    $mybind m exec grim -co "$(swaymsg -t get_outputs | jq -r '.[] | select(.focused) | .name')" - | swappy -f -; mode "default"
+    $mybind p exec grim -g "$(slurp -p)" -t ppm - | convert - -format '%[pixel:p{0,0}]' txt:- | wl-copy; mode "default"
+    $mybind Escape mode "default"
+}
+$mybind $print mode "$mode_screenshot"
+
+# Screenrecords:
+# https://github.com/ammen99/wf-recorder
+# Waybar alternative: https://www.reddit.com/r/swaywm/comments/kc8jbw/wfrecorder_indicator_for_swaywm_waybar/
+set $mode_screenrecord Screenrecord: s - sector, m - monitor, x - stop and save
+mode "$mode_screenrecord" {
+    $mybind s exec wf-recorder -g "$(slurp; sleep 2)" -f ~/Screenrecord_$(date +%F_%H-%M-%S).mp4
+    $mybind m exec wf-recorder -f ~/Screenrecord_$(date +%F_%H-%M-%S).mp4
+    $mybind x exec killall -s SIGINT wf-recorder; mode "default"
+    $mybind Escape mode "default"
+}
+$mybind $print+Shift mode "$mode_screenrecord"
+
+# Manual management of external displays
+# Reference: https://bbs.archlinux.org/viewtopic.php?id=245038
+set $mode_display Ext Screen (h) HDMI ON, (e) eDP ON <> (mod+h) HDMI OFF, (mod+e) eDP OFF
+mode "$mode_display" {
+    $mybind h output $screen-hdmi enable, mode "default"
+    $mybind e output $screen-edp enable, mode "default"
+    $mybind $mod+h output $screen-hdmi disable, mode "default"
+    $mybind $mod+e output $screen-edp disable, mode "default"
+    $mybind Return mode "default"
+    $mybind Escape mode "default"
+}
+$mybind $screens mode "$mode_display"
