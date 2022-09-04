@@ -16,7 +16,7 @@
     # https://wiki.archlinux.org/title/PipeWire#xdg-desktop-portal-wlr
     #exec systemctl --user import-environment WAYLAND_DISPLAY XDG_CURRENT_DESKTOP
     # ^ unneeded if /etc/sway/config.d/* is used (see below)
-    # Disctro-related stuff bundled with package (systemd integration at the moment)
+    # Distro-related stuff bundled with package (systemd integration at the moment)
     include /etc/sway/config.d/*
 
     # systemd
