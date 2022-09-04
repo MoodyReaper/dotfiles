@@ -6,3 +6,7 @@
 	path = AstroNvim
 	url = https://github.com/AstroNvim/AstroNvim
 	ignore = dirty
+[submodule "gtk/FlatColor"]
+	path = gtk/FlatColor
+	url = https://github.com/MoodyReaper/FlatColor
+	ignore = dirty
