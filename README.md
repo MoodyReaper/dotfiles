@@ -1,9 +1,32 @@
-## Intro
+## Introduction
 
 Welcome to my dotfiles!  
-_Note: this repository contains only user files (system files are not presented)._
+_Note: this repository contains user files only (system files are not presented)._
 
 ![desktop-example-0](https://user-images.githubusercontent.com/16370497/188315613-907149c8-1397-4a80-880f-8ae73754b091.png)
+
+## Installation
+1. Clone repository, rename if you want to:
+    - _I use `.dotfiles` inside `~/`_ 
+2. `cd` into cloned repository
+3. Handle wallpapers:
+    - Make `wallpapers/` directory and copy wallpapers into it (filenames are hardcoded)
+    - _Currently, `FHD.png` and `UW-QHD.png` are set in `Dotbot` (`install.conf.yaml`), change configs if needed_
+4. Handle `git` settings:
+    - Create `gitconfig-personal` file, move personal global git settings into it (username and email, for example)
+    - Move `gitconfig-personal` into `git/` 
+    - _Check `git/gitconfig` as well_
+5. Handle `Sway` output settings (monitor, resolution, etc.):
+    - Edit `sway/config.d/output` if needed
+6. Handle shell settings:
+    - _I use `Fish` shell so everything is configured for it (default shell for user is `fish`)_
+7. Install dependencies (see sections below)
+8. Run `dotbot` script: `./install`
+    - _Read console output, some configs may not be applied_
+    - _By default, `GTK` theme `FlatColor` does not have color scheme defined so it's important to apply a theme (next step)_
+9. Apply any desired theme using `Flavours` base16 theme manager:
+    - _For example, `flavours apply tender`_
+10. Relogin
 
 ## Software
 
