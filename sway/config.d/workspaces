@@ -42,6 +42,7 @@ $mybind $mod+Shift+0 move container to workspace number $workspace10
 # Assigning apps with workspaces
 # Get class or app_id by the following command:
 # swaymsg -t get_tree | grep "class\|app_id\|window_role"
+assign [app_id="brave-browser"]             $workspace1
 assign [app_id="firefox"]                   $workspace1
 assign [app_id="google-chrome"]             $workspace1
 assign [app_id="Alacritty"]                 $workspace2

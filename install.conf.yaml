@@ -15,8 +15,9 @@
     ~/.local/bin/flavours-theme-darkmode-seticons: bin/flavours-theme-darkmode-seticons
     ~/.local/bin/flavours-theme-darkmode-switch: bin/flavours-theme-darkmode-switch
     ~/.local/bin/flavours-theme-select: bin/flavours-theme-select
-    # Chrome
-    ~/.config/chrome-flags.conf: chrome/chrome-flags.conf
+    # Chromium
+    ~/.config/brave-flags.conf: chromium/brave-flags.conf
+    ~/.config/chrome-flags.conf: chromium/chrome-flags.conf
     # Dunst
     ~/.config/dunst/dunstrc: dunst/dunstrc
     # Electron

@@ -147,13 +147,12 @@ $mybind $mod+r mode "resize"
 #
 # Launch:
 #
-    # $mybind $mod+m exec alacritty -e alsamixer
     $mybind $mod+Shift+b exec blueman-manager
-    $mybind $mod+g exec TZ=UTC firefox
-    $mybind $mod+Shift+m exec gnome-system-monitor
+    $mybind $mod+Shift+w exec brave
+    $mybind $mod+Shift+f exec firefox
     $mybind $mod+Shift+g exec google-chrome-stable
+    $mybind $mod+Shift+m exec gnome-system-monitor
     $mybind $mod+m exec pavucontrol
-    # $mybind $mod+c exec speedcrunch
     $mybind $mod+Shift+s exec spotify
     $mybind $mod+Shift+t exec telegram-desktop
     $mybind $mod+t exec thunar
