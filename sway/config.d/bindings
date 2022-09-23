@@ -168,19 +168,14 @@ $mybind $mod+r mode "resize"
 #
 
 # Screenshots:
+# https://github.com/swaywm/sway/blob/master/contrib/grimshot
 # https://github.com/jtheoof/swappy
-# https://www.reddit.com/r/swaywm/comments/hczg3k/swappy_100_released/
-set $mode_screenshot Screenshot: c - clipboard, f - file, s - sector, w - window, m - monitor, p - pick a color
+set $mode_screenshot Screenshot: a - area, w - window, s - screen, c - color picker
 mode "$mode_screenshot" {
-    $mybind c exec grim -cg "$(slurp; sleep 2)" - | wl-copy; mode "default"
-    $mybind f exec grim -cg "$(slurp; sleep 2)" "Screenshot_$(date +%F_%H-%M-%S).png"; mode "default"
-    $mybind s exec grim -cg "$(slurp; sleep 2)" - | swappy -f -; mode "default"
-    $mybind w exec swaymsg -t get_tree | jq -r '.. | (.nodes? // empty)[] | select(.focused) | "\(.rect.x),\(.rect.y) \(.rect.width)x\(.rect.height)"' | grim -cg - - | swappy -f -; mode "default"
-    # TODO: find out why it does not call swappy window
-    # Fix it for "mode_screenrecord" also
-    # $mybind w exec grim -g "$(swaymsg -t get_tree | jq -r '.. | select(.pid? and .visible?) | .rect | "\(.x),\(.y) \(.width)x\(.height)"' | slurp)" - | swappy -f -
-    $mybind m exec grim -co "$(swaymsg -t get_outputs | jq -r '.[] | select(.focused) | .name')" - | swappy -f -; mode "default"
-    $mybind p exec grim -g "$(slurp -p)" -t ppm - | convert - -format '%[pixel:p{0,0}]' txt:- | wl-copy; mode "default"
+    $mybind a exec grimshot save area - | swappy -f -; mode "default"
+    $mybind w exec grimshot save window - | swappy -f -; mode "default"
+    $mybind s exec grimshot save screen - | swappy -f -; mode "default"
+    $mybind c exec grim -g "$(slurp -p)" -t ppm - | convert - -format '%[pixel:p{0,0}]' txt:- | wl-copy; mode "default"
     $mybind Escape mode "default"
 }
 $mybind $print mode "$mode_screenshot"
@@ -188,10 +183,11 @@ $mybind $print mode "$mode_screenshot"
 # Screenrecords:
 # https://github.com/ammen99/wf-recorder
 # Waybar alternative: https://www.reddit.com/r/swaywm/comments/kc8jbw/wfrecorder_indicator_for_swaywm_waybar/
-set $mode_screenrecord Screenrecord: s - sector, m - monitor, x - stop and save
+set $mode_screenrecord Screenrecord: a - area, w - window, s - screen, x - stop and save
 mode "$mode_screenrecord" {
-    $mybind s exec wf-recorder -g "$(slurp; sleep 2)" -f ~/Screenrecord_$(date +%F_%H-%M-%S).mp4
-    $mybind m exec wf-recorder -f ~/Screenrecord_$(date +%F_%H-%M-%S).mp4
+    $mybind a exec wfrecord save area & mode "default"
+    $mybind w exec wfrecord save window & mode "default"
+    $mybind s exec wfrecord save screen & mode "default"
     $mybind x exec killall -s SIGINT wf-recorder; mode "default"
     $mybind Escape mode "default"
 }

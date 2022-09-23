@@ -9,52 +9,47 @@
     # Alacritty
     ~/.config/alacritty/alacritty.yml: alacritty/alacritty.yml
     # Bin
-    ~/.local/bin/alacritty-fzf: bin/alacritty-fzf
-    ~/.local/bin/colors-ghosts: bin/colors-ghosts
-    ~/.local/bin/duck: bin/duck
-    ~/.local/bin/flavours-theme-darkmode-seticons: bin/flavours-theme-darkmode-seticons
-    ~/.local/bin/flavours-theme-darkmode-switch: bin/flavours-theme-darkmode-switch
-    ~/.local/bin/flavours-theme-select: bin/flavours-theme-select
+    ~/.local/bin: bin/
     # Chromium
     ~/.config/brave-flags.conf: chromium/brave-flags.conf
     ~/.config/chrome-flags.conf: chromium/chrome-flags.conf
     # Dunst
-    ~/.config/dunst/dunstrc: dunst/dunstrc
+    ~/.config/dunst: dunst/
     # Electron
     ~/.config/electron-flags.conf: electron/electron-flags.conf
     ~/.config/electron18-flags.conf: electron/electron18-flags.conf
     # Fish
-    ~/.config/fish: fish
+    ~/.config/fish: fish/
     # Flavours
-    ~/.config/flavours: flavours
-    ~/.local/share/flavours/base16/templates/fish: flavours/custom-templates/fish
+    ~/.config/flavours: flavours/
+    ~/.local/share/flavours/base16/templates/fish: flavours/custom-templates/fish/
     # Git
     ~/.gitconfig: git/gitconfig
     ~/.gitconfig-personal: git/gitconfig-personal
     # GnuPG
-    ~/.gnupg/gpg-agent.conf: gnupg/gpg-agent.conf
+    ~/.gnupg: gnupg/
     # GTK
     ~/.config/gtk-3.0/settings.ini: gtk/gtk-3.0/settings.ini
     ~/.gtkrc-2.0: gtk/gtkrc-2.0
-    ~/.themes/dummy: gtk/FlatColor
-    ~/.themes/FlatColor: gtk/FlatColor
+    ~/.themes/dummy: gtk/FlatColor/
+    ~/.themes/FlatColor: gtk/FlatColor/
     # Neovim
-    ~/.config/nvim: AstroNvim
+    ~/.config/nvim: AstroNvim/
     # Pipewire
-    ~/.config/pipewire: pipewire
+    ~/.config/pipewire: pipewire/
     # Starship
     ~/.config/starship.toml: starship/starship.toml
     # Sway
-    ~/.config/sway: sway
+    ~/.config/sway: sway/
     # Swaylock
-    ~/.config/swaylock: swaylock
+    ~/.config/swaylock: swaylock/
     # systemd
-    ~/.config/systemd: systemd
+    ~/.config/systemd: systemd/
     # Wallpapers
     ~/.bg-fhd: wallpaper/FHD.png
     ~/.bg-uwqhd: wallpaper/UW-QHD.png
     # Waybar
-    ~/.config/waybar: waybar
+    ~/.config/waybar: waybar/
 
 - shell:
     - [git submodule update --init --recursive, Installing submodules]
