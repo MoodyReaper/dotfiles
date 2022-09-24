@@ -19,7 +19,7 @@
 ## See `man 1 wfrecord` or `wfrecord usage` for further details.
 
 getTargetDirectory() {
-  test -f "${XDG_CONFIG_HOME:-$HOME/.config}/user-dirs.dirs" && \
+  test -f "${XDG_CONFIG_HOME:-$HOME/.config}/user-dirs.dirs" &&
     . "${XDG_CONFIG_HOME:-$HOME/.config}/user-dirs.dirs"
 
   echo "${XDG_SCREENRECORDS_DIR:-${XDG_VIDEOS_DIR:-$HOME}}"
@@ -31,13 +31,13 @@ while [ $# -gt 0 ]; do
   key="$1"
 
   case $key in
-    -n|--notify)
-      NOTIFY=yes
-      shift # past argument
-      ;;
-    *)    # unknown option
-      break # done with parsing --flags
-      ;;
+  -n | --notify)
+    NOTIFY=yes
+    shift # past argument
+    ;;
+  *)      # unknown option
+    break # done with parsing --flags
+    ;;
   esac
 done
 
@@ -93,7 +93,7 @@ die() {
 
 check() {
   COMMAND=$1
-  if command -v "$COMMAND" > /dev/null 2>&1; then
+  if command -v "$COMMAND" >/dev/null 2>&1; then
     RESULT="OK"
   else
     RESULT="NOT FOUND"
@@ -116,15 +116,18 @@ takeScreenrecord() {
 
 waitForStopScreenrecord() {
   while true; do
-      read -p "PRESS ENTER TO STOP RECORDING: " input
-      case $input in
-          * ) echo "STOPPING RECORDING..."; break;;
-      esac
+    read -p "PRESS ENTER TO STOP RECORDING: " input
+    case $input in
+    *)
+      echo "STOPPING RECORDING..."
+      break
+      ;;
+    esac
   done
   killall -s SIGINT wf-recorder
 }
 
-if [ "$ACTION" = "check" ] ; then
+if [ "$ACTION" = "check" ]; then
   echo "Checking if required tools are installed. If something is missing, install it to your system and make it available in PATH..."
   check wf-recorder
   check slurp
@@ -132,38 +135,41 @@ if [ "$ACTION" = "check" ] ; then
   check jq
   check notify-send
   exit
-elif [ "$SUBJECT" = "area" ] ; then
+elif [ "$SUBJECT" = "area" ]; then
   GEOM=$(slurp -d)
   # Check if user exited slurp without selecting the area
   if [ -z "$GEOM" ]; then
     exit 1
   fi
   WHAT="Area"
-elif [ "$SUBJECT" = "active" ] ; then
+elif [ "$SUBJECT" = "active" ]; then
   FOCUSED=$(swaymsg -t get_tree | jq -r 'recurse(.nodes[]?, .floating_nodes[]?) | select(.focused)')
   GEOM=$(echo "$FOCUSED" | jq -r '.rect | "\(.x),\(.y) \(.width)x\(.height)"')
   APP_ID=$(echo "$FOCUSED" | jq -r '.app_id')
   WHAT="$APP_ID window"
-elif [ "$SUBJECT" = "screen" ] ; then
+elif [ "$SUBJECT" = "screen" ]; then
   GEOM=""
   WHAT="Screen"
-elif [ "$SUBJECT" = "output" ] ; then
+elif [ "$SUBJECT" = "output" ]; then
   GEOM=""
   OUTPUT=$(swaymsg -t get_outputs | jq -r '.[] | select(.focused)' | jq -r '.name')
   WHAT="$OUTPUT"
-elif [ "$SUBJECT" = "window" ] ; then
+elif [ "$SUBJECT" = "window" ]; then
   GEOM=$(swaymsg -t get_tree | jq -r '.. | select(.pid? and .visible?) | .rect | "\(.x),\(.y) \(.width)x\(.height)"' | slurp)
   # Check if user exited slurp without selecting the area
   if [ -z "$GEOM" ]; then
-   exit 1
+    exit 1
   fi
   WHAT="Window"
 else
   die "Unknown subject to take a screen record from" "$SUBJECT"
 fi
 
-if [ "$ACTION" = "save" ] ; then
-  if takeScreenrecord "$FILE" "$GEOM" "$OUTPUT" & waitForStopScreenrecord; then
+if [ "$ACTION" = "save" ]; then
+  if
+    takeScreenrecord "$FILE" "$GEOM" "$OUTPUT" &
+    waitForStopScreenrecord
+  then
     TITLE="Screenrecord of $SUBJECT"
     MESSAGE=$(basename "$FILE")
     notifyOk "$MESSAGE" "$TITLE"

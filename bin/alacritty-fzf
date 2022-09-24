@@ -4,7 +4,7 @@
 # https://github.com/Misterio77/dotfiles/tree/03f8c0598117d9c976f5b68359ff877d7dd8857c/home/bin
 
 # This program runs fzf in a graphic-ish way, using alacritty
-# It takes a list of inputs from stdin, spawns alacritty running fzf on that 
+# It takes a list of inputs from stdin, spawns alacritty running fzf on that
 # list (supports passing arguments too) and finally outputs whatever fzf outputs
 # even returning non-zero status if fzf did too (useful for handling the user exiting fzf)
 
@@ -13,7 +13,7 @@ directory="/run/user/$UID/alacritty-fzf"
 mkdir -p "${directory}"
 
 # Get input from stdin
-cat > "${directory}/input"
+cat >"${directory}/input"
 
 # This inner command will be ran through alacritty
 # I couldn't get it working directory on the alacritty command,
@@ -21,7 +21,7 @@ cat > "${directory}/input"
 
 # This script gets its input from directory/input, runs fzf (with passed arguments)
 # returns its output to directory/output, and outputs fzf return code to directory/exitcode
-cat <<'EOF' > "${directory}/inner"
+cat <<'EOF' >"${directory}/inner"
 #!/usr/bin/env bash
 sleep 0.1
 directory="/run/user/$UID/alacritty-fzf"
@@ -39,6 +39,6 @@ cat "${directory}/output"
 # Get fzf exit code
 exitcode="$(cat "${directory}/exitcode")"
 # Remove tmp directory
-rm "${directory}"/* &> /dev/null
+rm "${directory}"/* &>/dev/null
 # Exit with fzf exit code
 exit "${exitcode}"

@@ -13,14 +13,14 @@ swaylock_config="$HOME/.config/swaylock/config"
 
 alphastring="set \$opacity"
 aphasearchresult=$(grep "$alphastring" $sway_config)
-alphavalue=$(cut -d " " -f3 <<< "$aphasearchresult")
+alphavalue=$(cut -d " " -f3 <<<"$aphasearchresult")
 
 colors=(base01 base02 base03 base05 base07 base08)
 
 for color in ${colors[@]}; do
     searchstring="set $"$color" #"
     searchresult=$(grep "$searchstring" $sway_config)
-    colorvalue=$(cut -d "#" -f2 <<< "$searchresult")
+    colorvalue=$(cut -d "#" -f2 <<<"$searchresult")
     declare "$color=#$colorvalue"
 done
 

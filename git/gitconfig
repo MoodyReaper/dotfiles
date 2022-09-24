@@ -1,6 +1,6 @@
 [include]
-	path = .gitconfig-personal
+path = .gitconfig-personal
 [credential]
-	helper = /usr/lib/git-core/git-credential-libsecret
+helper = /usr/lib/git-core/git-credential-libsecret
 [core]
-	editor = nvim
+editor = nvim
