@@ -11,8 +11,8 @@
     # Bin
     ~/.local/bin: bin/
     # Chromium
-    ~/.config/brave-flags.conf: chromium/brave-flags.conf
-    ~/.config/chrome-flags.conf: chromium/chrome-flags.conf
+    ~/.config/brave-flags.conf: chromium/chromium-flags.conf
+    ~/.config/chrome-flags.conf: chromium/chromium-flags.conf
     # Dunst
     ~/.config/dunst: dunst/
     # Electron
