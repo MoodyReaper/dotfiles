@@ -168,13 +168,13 @@ $mybind $mod+r mode "resize"
 #
 
 # Screenshots:
-# https://github.com/swaywm/sway/blob/master/contrib/grimshot
+# https://github.com/swaywm/sway/blob/master/contrib/grimshot (modified, check bin folder)
 # https://github.com/jtheoof/swappy
 set $mode_screenshot Screenshot: a - area, w - window, s - screen, c - color picker
 mode "$mode_screenshot" {
-    $mybind a exec grimshot save area - | swappy -f -; mode "default"
-    $mybind w exec grimshot save window - | swappy -f -; mode "default"
-    $mybind s exec grimshot save screen - | swappy -f -; mode "default"
+    $mybind a exec grimshot -c -d save area - | swappy -f -; mode "default"
+    $mybind w exec grimshot -c -d save window - | swappy -f -; mode "default"
+    $mybind s exec grimshot -c -d save screen - | swappy -f -; mode "default"
     $mybind c exec grim -g "$(slurp -p)" -t ppm - | convert - -format '%[pixel:p{0,0}]' txt:- | wl-copy; mode "default"
     $mybind Escape mode "default"
 }
@@ -185,9 +185,9 @@ $mybind $print mode "$mode_screenshot"
 # Waybar alternative: https://www.reddit.com/r/swaywm/comments/kc8jbw/wfrecorder_indicator_for_swaywm_waybar/
 set $mode_screenrecord Screenrecord: a - area, w - window, s - screen, x - stop and save
 mode "$mode_screenrecord" {
-    $mybind a exec wfrecord save area & mode "default"
-    $mybind w exec wfrecord save window & mode "default"
-    $mybind s exec wfrecord save screen & mode "default"
+    $mybind a exec wfrecord -d save area & mode "default"
+    $mybind w exec wfrecord -d save window & mode "default"
+    $mybind s exec wfrecord -d save screen & mode "default"
     $mybind x exec killall -s SIGINT wf-recorder; mode "default"
     $mybind Escape mode "default"
 }

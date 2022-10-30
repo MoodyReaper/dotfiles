@@ -24,6 +24,7 @@ getTargetDirectory() {
 
 NOTIFY=no
 CURSOR=
+DELAY=0
 
 while [ $# -gt 0 ]; do
   key="$1"
@@ -35,6 +36,10 @@ while [ $# -gt 0 ]; do
     ;;
   -c | --cursor)
     CURSOR=yes
+    shift # past argument
+    ;;
+  -d | --delay)
+    DELAY=1
     shift # past argument
     ;;
   *)      # unknown option
@@ -49,7 +54,7 @@ FILE=${3:-$(getTargetDirectory)/$(date -Ins).png}
 
 if [ "$ACTION" != "save" ] && [ "$ACTION" != "copy" ] && [ "$ACTION" != "check" ]; then
   echo "Usage:"
-  echo "  grimshot [--notify] [--cursor] (copy|save) [active|screen|output|area|window] [FILE|-]"
+  echo "  grimshot [--notify] [--cursor] [--delay] (copy|save) [active|screen|output|area|window] [FILE|-]"
   echo "  grimshot check"
   echo "  grimshot usage"
   echo ""
@@ -105,6 +110,7 @@ check() {
 }
 
 takeScreenshot() {
+  sleep $DELAY
   FILE=$1
   GEOM=$2
   OUTPUT=$3

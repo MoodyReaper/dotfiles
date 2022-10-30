@@ -26,6 +26,7 @@ getTargetDirectory() {
 }
 
 NOTIFY=no
+DELAY=0
 
 while [ $# -gt 0 ]; do
   key="$1"
@@ -33,6 +34,10 @@ while [ $# -gt 0 ]; do
   case $key in
   -n | --notify)
     NOTIFY=yes
+    shift # past argument
+    ;;
+  -d | --delay)
+    DELAY=1
     shift # past argument
     ;;
   *)      # unknown option
@@ -47,7 +52,7 @@ FILE=${3:-$(getTargetDirectory)/$(date -Ins).mp4}
 
 if [ "$ACTION" != "save" ] && [ "$ACTION" != "check" ]; then
   echo "Usage:"
-  echo "  wfrecord [--notify] (save) [active|screen|output|area|window] [FILE]"
+  echo "  wfrecord [--notify] [--delay] (save) [active|screen|output|area|window] [FILE]"
   echo "  wfrecord check"
   echo "  wfrecord usage"
   echo ""
@@ -102,6 +107,7 @@ check() {
 }
 
 takeScreenrecord() {
+  sleep $DELAY
   FILE=$1
   GEOM=$2
   OUTPUT=$3
