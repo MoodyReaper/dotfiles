@@ -3,7 +3,8 @@
 SETUVAR --export PYENV_ROOT:/home/reaper/\x2epyenv
 SETUVAR __fish_initialized:3400
 SETUVAR _fisher_jorgebucaran_2F_fisher_files:\x7e/\x2econfig/fish/functions/fisher\x2efish\x1e\x7e/\x2econfig/fish/completions/fisher\x2efish
-SETUVAR _fisher_plugins:jorgebucaran/fisher\x1eyo\x2dgoto/fish\x2dcolor\x2dcheck
+SETUVAR _fisher_jorgebucaran_2F_nvm_2E_fish_files:\x7e/\x2econfig/fish/functions/_nvm_index_update\x2efish\x1e\x7e/\x2econfig/fish/functions/_nvm_list\x2efish\x1e\x7e/\x2econfig/fish/functions/_nvm_version_activate\x2efish\x1e\x7e/\x2econfig/fish/functions/_nvm_version_deactivate\x2efish\x1e\x7e/\x2econfig/fish/functions/nvm\x2efish\x1e\x7e/\x2econfig/fish/conf\x2ed/nvm\x2efish\x1e\x7e/\x2econfig/fish/completions/nvm\x2efish
+SETUVAR _fisher_plugins:jorgebucaran/fisher\x1eyo\x2dgoto/fish\x2dcolor\x2dcheck\x1ejorgebucaran/nvm\x2efish
 SETUVAR _fisher_upgraded_to_4_4:\x1d
 SETUVAR _fisher_yo_2D_goto_2F_fish_2D_color_2D_check_files:\x7e/\x2econfig/fish/functions/fish\x2dcolor\x2dcheck\x2efish\x1e\x7e/\x2econfig/fish/completions/fish\x2dcolor\x2dcheck\x2efish
 SETUVAR base16_fish_theme:tender
@@ -38,3 +39,5 @@ SETUVAR fish_pager_color_prefix:eeeeee\x1ewhite\x1e\x2d\x2dbold\x1e\x2d\x2dunder
 SETUVAR fish_pager_color_progress:feffff\x1ebrwhite\x1e\x2d\x2dbackground\x3dcyan
 SETUVAR fish_pager_color_selected_background:\x2dr
 SETUVAR fish_user_paths:/home/reaper/\x2elocal/bin\x1e/home/reaper/\x2epyenv/bin
+SETUVAR nvm_data:/home/reaper/\x2elocal/share/nvm
+SETUVAR nvm_mirror:https\x3a//nodejs\x2eorg/dist
