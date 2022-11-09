@@ -10,48 +10,14 @@
 
 window#waybar {
   background-color: @base01;
+  color: @base05;
   opacity: 0.8;
-  color: @base05;
-  transition-property: background-color;
-  transition-duration: 0.5s;
 }
 
-window#waybar.hidden {
-  opacity: 0.2;
-}
-
-#workspaces button {
-  padding: 0 7px;
-  background-color: transparent;
-  color: @base05;
-  /* Use box-shadow instead of border so the text isn't offset */
-  box-shadow: inset 0 -3px transparent;
-}
-
-/* https://github.com/Alexays/Waybar/wiki/FAQ#the-workspace-buttons-have-a-strange-hover-effect */
-#workspaces button:hover {
-  background-color: @base03;
-  box-shadow: inset 0 -3px @base07;
-}
-
-#workspaces button.focused {
-  background-color: @base02;
-  box-shadow: inset 0 -3px @base07;
-}
-
-#workspaces button.urgent {
-  background-color: @base08;
-}
-
-#mode {
-  background-color: @base02;
-  box-shadow: inset 0 -3px @base07;
-}
-
-#mode,
+#workspaces button,
 #custom-media,
-#custom-dunst,
 #idle_inhibitor,
+#custom-dunst,
 #network,
 #pulseaudio,
 #custom-ddcutil,
@@ -59,27 +25,97 @@ window#waybar.hidden {
 #memory,
 #cpu,
 #temperature,
+#custom-gpu-usage,
 #language,
 #battery,
 #clock,
 #tray {
-  padding: 0 10px;
+  background-color: transparent;
+  /* Use box-shadow instead of border so the text isn't offset */
+  box-shadow: inset 0 -3px transparent;
   color: @base05;
+  padding: 0 7px;
 }
 
-#window,
+/* https://github.com/Alexays/Waybar/wiki/FAQ#the-workspace-buttons-have-a-strange-hover-effect */
+#workspaces button:hover,
+#custom-media:hover,
+#idle_inhibitor:hover,
+#custom-dunst:hover,
+#network:hover,
+#pulseaudio:hover,
+#custom-ddcutil:hover,
+#disk:hover,
+#memory:hover,
+#cpu:hover,
+#temperature:hover,
+#custom-gpu-usage:hover,
+#language:hover,
+#battery:hover,
+#clock:hover,
+#tray:hover {
+  background-color: @base03;
+  box-shadow: inset 0 -3px @base07;
+}
+
+#mode,
+#idle_inhibitor.activated,
+#custom-dunst.custom-disabled,
+#network.disconnected,
+#pulseaudio.muted,
+#temperature.critical,
+#workspaces button.focused,
+#custom-media.focused,
+#idle_inhibitor.focused,
+#custom-dunst.focused,
+#network.focused,
+#pulseaudio.focused,
+#custom-ddcutil.focused,
+#disk.focused,
+#memory.focused,
+#cpu.focused,
+#temperature.focused,
+#custom-gpu-usage.focused,
+#language.focused,
+#battery.focused,
+#clock.focused,
+#tray.focused {
+  background-color: @base02;
+  box-shadow: inset 0 -3px @base07;
+}
+
+#workspaces button.urgent,
+#custom-media.urgent,
+#idle_inhibitor.urgent,
+#custom-dunst.urgent,
+#network.urgent,
+#pulseaudio.urgent,
+#custom-ddcutil.urgent,
+#disk.urgent,
+#memory.urgent,
+#cpu.urgent,
+#temperature.urgent,
+#custom-gpu-usage.urgent,
+#language.urgent,
+#battery.urgent,
+#clock.urgent,
+#tray.urgent {
+  background-color: @base08;
+}
+
+/* #window,
 #workspaces {
   margin: 0 4px;
-}
+} */
 
 /* If workspaces is the leftmost module, omit left margin */
-.modules-left > widget:first-child > #workspaces {
-  margin-left: 0;
+.modules-left>widget:first-child>#workspaces {
+  margin-left: 2;
 }
 
 /* If workspaces is the rightmost module, omit right margin */
-.modules-right > widget:last-child > #workspaces {
-  margin-right: 0;
+.modules-right>widget:last-child>#workspaces {
+  margin-right: 2;
 }
 
 @keyframes blink {
@@ -90,35 +126,13 @@ window#waybar.hidden {
 }
 
 #battery.critical:not(.charging) {
-  background-color: @base08;
-  color: @base05;
   animation-name: blink;
   animation-duration: 1s;
   animation-timing-function: linear;
   animation-iteration-count: infinite;
   animation-direction: alternate;
-}
-
-/* TODO: find out what is for
-label:focus {
-    background-color: #000000;
-} */
-
-#network.disconnected,
-#idle_inhibitor.activated,
-#temperature.critical,
-#pulseaudio.muted,
-#custom-dunst.custom-disabled {
-  background-color: @base02;
-}
-
-#tray > .passive {
-  -gtk-icon-effect: dim;
-}
-
-#tray > .needs-attention {
-  -gtk-icon-effect: highlight;
-  background-color: @base02;
+  background-color: @base08;
+  color: @base05;
 }
 
 #custom-media {
@@ -132,4 +146,13 @@ label:focus {
 
 #custom-media.custom-vlc {
   background-color: #ffa000;
+}
+
+#tray>.passive {
+  -gtk-icon-effect: dim;
+}
+
+#tray>.needs-attention {
+  -gtk-icon-effect: highlight;
+  background-color: @base02;
 }

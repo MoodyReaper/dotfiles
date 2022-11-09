@@ -29,7 +29,9 @@
   "sway/language": {
     "format": "{}",
     "tooltip-format": "{long}",
-    "tooltip": true
+    "tooltip": true,
+    // TODO - remove later: https://github.com/Alexays/Waybar/issues/1764
+    "on-click": ""
   },
   "sway/mode": {
     "format": " <span style=\"italic\">{}</span>",
@@ -55,26 +57,36 @@
     "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
     // "today-format": "<b><u>{}</u></b>",
     "interval": 1,
-    "format": "{:%Y-%m-%d %H:%M:%S}"
+    "format": "{:%Y-%m-%d %H:%M:%S}",
     //"format-alt": "{:%Y-%m-%d}"
+    // TODO - remove later: https://github.com/Alexays/Waybar/issues/1764
+    "on-click": ""
   },
   "cpu": {
     "interval": 5,
-    "format": "CPU: {usage}% "
+    "format": "CPU: {usage}% ",
+    // TODO - remove later: https://github.com/Alexays/Waybar/issues/1764
+    "on-click": ""
   },
   "disk#root": {
     "interval": 60,
     "format": "{percentage_used}% ",
-    "path": "/"
+    "path": "/",
+    // TODO - remove later: https://github.com/Alexays/Waybar/issues/1764
+    "on-click": ""
   },
   "disk#home": {
     "interval": 60,
     "format": "{percentage_used}% ",
-    "path": "/home"
+    "path": "/home",
+    // TODO - remove later: https://github.com/Alexays/Waybar/issues/1764
+    "on-click": ""
   },
   "memory": {
     "format": "{}% ",
-    "tooltip-format": "{used:0.1f}G used out of {total:0.1f}G"
+    "tooltip-format": "{used:0.1f}G used out of {total:0.1f}G",
+    // TODO - remove later: https://github.com/Alexays/Waybar/issues/1764
+    "on-click": ""
   },
   // https://joonas.fi/2021/07/stable-device-path-for-linux-hwmon-interfaces/
   "temperature#CPU": {
@@ -83,7 +95,9 @@
     "tooltip-format": "CPU",
     "interval": 5,
     "critical-threshold": 80,
-    "hwmon-path": "/dev/cpu_temp"
+    "hwmon-path": "/dev/cpu_temp",
+    // TODO - remove later: https://github.com/Alexays/Waybar/issues/1764
+    "on-click": ""
   },
   "temperature#GPU": {
     "format": "{temperatureC}°C {icon}",
@@ -91,7 +105,9 @@
     "tooltip-format": "GPU",
     "interval": 5,
     "critical-threshold": 80,
-    "hwmon-path": "/dev/gpu_temp"
+    "hwmon-path": "/dev/gpu_temp",
+    // TODO - remove later: https://github.com/Alexays/Waybar/issues/1764
+    "on-click": ""
   },
   "backlight": {
     "device": "intel_backlight",
@@ -176,7 +192,9 @@
   "custom/gpu-usage": {
     "interval": 5,
     "exec": "cat /sys/class/drm/card0/device/gpu_busy_percent",
-    "format": "GPU: {}% ﯅ "
+    "format": "GPU: {}% ﯅ ",
+    // TODO - remove later: https://github.com/Alexays/Waybar/issues/1764
+    "on-click": ""
   }
   // https://gist.github.com/nicodebo/297c1e134256ea24abf02a485ce41420
   // "custom/ddcutil": {
