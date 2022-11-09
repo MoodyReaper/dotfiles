@@ -8,10 +8,10 @@ function base16-fish --description 'Applies base16 colors for Fish shell'
     # Fish syntax highlighting
     # https://fishshell.com/docs/current/interactive.html#syntax-highlighting
 
-    set -U fish_color_autosuggestion 4c4c4c brblack
+    set -U fish_color_autosuggestion b8b8b8 brblack
     set -U fish_color_cancel -r
     set -U fish_color_command b3deef blue --bold
-    set -U fish_color_comment 4c4c4c brblack
+    set -U fish_color_comment b8b8b8 brblack
     set -U fish_color_cwd c9d05c green
     # "fish_color_cwd_root" - did not find in doc for some reason
     set -U fish_color_cwd_root f43753 red

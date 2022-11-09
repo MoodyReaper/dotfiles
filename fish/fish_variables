@@ -8,10 +8,10 @@ SETUVAR _fisher_plugins:jorgebucaran/fisher\x1eyo\x2dgoto/fish\x2dcolor\x2dcheck
 SETUVAR _fisher_upgraded_to_4_4:\x1d
 SETUVAR _fisher_yo_2D_goto_2F_fish_2D_color_2D_check_files:\x7e/\x2econfig/fish/functions/fish\x2dcolor\x2dcheck\x2efish\x1e\x7e/\x2econfig/fish/completions/fish\x2dcolor\x2dcheck\x2efish
 SETUVAR base16_fish_theme:tender
-SETUVAR fish_color_autosuggestion:4c4c4c\x1ebrblack
+SETUVAR fish_color_autosuggestion:b8b8b8\x1ebrblack
 SETUVAR fish_color_cancel:\x2dr
 SETUVAR fish_color_command:b3deef\x1eblue\x1e\x2d\x2dbold
-SETUVAR fish_color_comment:4c4c4c\x1ebrblack
+SETUVAR fish_color_comment:b8b8b8\x1ebrblack
 SETUVAR fish_color_cwd:c9d05c\x1egreen
 SETUVAR fish_color_cwd_root:f43753\x1ered
 SETUVAR fish_color_end:73cef4\x1ecyan
