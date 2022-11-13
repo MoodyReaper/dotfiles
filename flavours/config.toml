@@ -59,13 +59,13 @@ subtemplate = "default-256"
 # Custom Fish template
 [[items]]
 file = "~/.config/fish/functions/base16-fish.fish"
-template = "fish"
+template = "fish-custom"
 # Works only with Fish shell set as default shell
 hook = "base16-fish"
 
 [[item]]
 file = "~/.config/dunst/dunstrc"
-template = "dunst"
+template = "dunst-custom"
 hook = 'killall dunst;notify-send "Theme was applied"'
 
 [[item]]

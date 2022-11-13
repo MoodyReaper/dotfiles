@@ -24,7 +24,8 @@
     ~/.config/fish: fish/
     # Flavours
     ~/.config/flavours: flavours/
-    ~/.local/share/flavours/base16/templates/fish: flavours/custom-templates/fish/
+    ~/.local/share/flavours/base16/templates/dunst-custom: flavours/templates/dunst/
+    ~/.local/share/flavours/base16/templates/fish-custom: flavours/templates/fish/
     # Git
     ~/.gitconfig: git/gitconfig
     ~/.gitconfig-personal: git/gitconfig-personal
