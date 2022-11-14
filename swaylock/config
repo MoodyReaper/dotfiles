@@ -42,8 +42,8 @@ text-wrong-color=#eeeeeeCC
 text-caps-lock-color=#eeeeeeCC
 
 key-hl-color=#feffffCC
-key-hl-color=#feffffCC
+caps-lock-key-hl-color=#feffffCC
 bs-hl-color=#4c4c4cCC
-bs-hl-color=#4c4c4cCC
+caps-lock-bs-hl-color=#4c4c4cCC
 
 separator-color=#484848
