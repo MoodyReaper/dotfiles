@@ -34,6 +34,7 @@ window#waybar {
   /* Use box-shadow instead of border so the text isn't offset */
   box-shadow: inset 0 -3px transparent;
   color: @base05;
+  margin: 0 2px;
   padding: 0 7px;
 }
 
@@ -103,10 +104,14 @@ window#waybar {
   background-color: @base08;
 }
 
-/* #window,
+#mode {
+  padding: 0 7px;
+}
+
+#window,
 #workspaces {
-  margin: 0 4px;
-} */
+  margin: 0 2px;
+}
 
 /* If workspaces is the leftmost module, omit left margin */
 .modules-left>widget:first-child>#workspaces {

@@ -14,7 +14,7 @@
 
     # XDG
     # https://wiki.archlinux.org/title/PipeWire#xdg-desktop-portal-wlr
-    #exec systemctl --user import-environment WAYLAND_DISPLAY XDG_CURRENT_DESKTOP
+    # exec systemctl --user import-environment WAYLAND_DISPLAY XDG_CURRENT_DESKTOP
     # ^ unneeded if /etc/sway/config.d/* is used (see below)
     # Distro-related stuff bundled with package (systemd integration at the moment)
     include /etc/sway/config.d/*
@@ -26,11 +26,11 @@
 # User apps:
 
     # Discord
-    #exec discord
+    # exec discord
 
     # NetworkManager is the most popular way to manage wireless networks on Linux,
     # and nm-applet is a desktop environment-independent system tray GUI for it.
-    #exec nm-applet --indicator
+    # exec nm-applet --indicator
 
     # Telegram
     exec telegram-desktop

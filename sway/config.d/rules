@@ -6,7 +6,7 @@
 
 # Running natively under Wayland:
 for_window [app_id="AlacrittyFloating*"] floating enable
-for_window [app_id="AlacrittyFloatingSelector"] [floating] resize set 600 700
+for_window [app_id="AlacrittyFloatingSelector"] [floating] resize set 800 700
 for_window [app_id="blueman-manager"] floating enable
 for_window [app_id="catfish"] floating enable
 for_window [app_id="io.github.celluloid_player.Celluloid"] floating enable
@@ -21,14 +21,14 @@ for_window [app_id="python3"] floating enable # Cadence
 for_window [app_id="qjackctl"] floating enable
 for_window [app_id="org.remmina.Remmina"] floating enable
 for_window [app_id="org.speedcrunch.speedcrunch"] floating enable
-for_window [app_id="telegramdesktop"] floating enable
+for_window [app_id="org.telegram.desktop"] floating enable
 for_window [app_id="zenity"] floating enable # Graphical dialog boxes from shell scripts
 for_window [app_id="zoom"] floating enable
 
 # Running under XWayland:
 for_window [class="com-xk72-charles-gui-MainWithClassLoad"] floating enable # Charles
+for_window [class="CodeceptUI"] floating enable # CodeceptJS UI Test Runner
 for_window [class="discord"] floating enable # Discord
-for_window [title="^Discord$"] floating enable # https://github.com/swaywm/sway/issues/6177
 for_window [class="Joplin"] floating enable
 for_window [class="Keybase"] floating enable
 for_window [class="Lxappearance"] floating enable
@@ -39,16 +39,22 @@ for_window [class="ToneLib-Jam"] floating enable
 for_window [class="VirtualBox Manager"] floating enable
 for_window [class="com.wurmonline.client.launcherfx.WurmMain"] floating enable # Wurm Online
 
+for_window [title="^Discord$"] floating enable # https://github.com/swaywm/sway/issues/6177
+
 # Additional rules:
 # https://wiki.archlinux.org/title/I3#Correct_handling_of_floating_dialogs
-for_window [window_role="pop-up"] floating enable
-for_window [window_role="task_dialog"] floating enable
 for_window [title="Preferences$"] floating enable
-# https://github.com/201dreamers/sway-config/blob/master/.config/sway/config
+for_window [title="(?:Open|Save) (?:File|Folder|As)"] floating enable
+
 for_window [window_role="bubble"] floating enable
 for_window [window_role="dialog"] floating enable
+for_window [window_role="pop-up"] floating enable
+for_window [window_role="Preferences"] floating enable
+for_window [window_role="task_dialog"] floating enable
+
 for_window [window_type="dialog"] floating enable
+for_window [window_type="menu"] floating enable
 
 # XWayland check
 # https://github.com/swaywm/sway/wiki#is-an-application-using-xwayland
-#for_window [shell=".*"] title_format "%title :: %shell"
+# for_window [shell=".*"] title_format "%title :: %shell"

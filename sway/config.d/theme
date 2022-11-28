@@ -2,7 +2,7 @@
 #
 
 # Font config
-#font pango:Fira Sans Regular 11
+# font pango:Fira Sans Regular 11
 font pango:FiraCode Nerd Font 11
 
 # Borders / Title bars
