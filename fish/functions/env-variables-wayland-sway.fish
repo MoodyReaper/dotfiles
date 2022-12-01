@@ -23,7 +23,7 @@ function env-variables-wayland-sway --description 'Applies ENV variables for Way
     set -gx ELM_ENGINE wayland_egl
 
     # Java
-    # Some Java AWT applications will not display properly unless you set the following.
+    # Some Java AWT applications will not display properly unless you set the following
     # https://github.com/swaywm/sway/wiki/Running-programs-natively-under-wayland#java-under-xwayland
     # https://github.com/swaywm/sway/issues/595
     set -gx _JAVA_AWT_WM_NONREPARENTING 1
