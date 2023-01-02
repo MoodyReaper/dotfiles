@@ -111,6 +111,9 @@ symbol = " "
 [haskell]
 disabled = true
 
+[haxe]
+disabled = true
+
 [helm]
 disabled = true
 
@@ -165,6 +168,9 @@ disabled = false
 disabled = true
 
 [openstack]
+disabled = true
+
+[os]
 disabled = true
 
 [package]

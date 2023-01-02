@@ -37,7 +37,8 @@
     ~/.themes/dummy: gtk/FlatColor/
     ~/.themes/FlatColor: gtk/FlatColor/
     # Neovim
-    ~/.config/nvim: AstroNvim/
+    ~/.config/nvim: neovim/AstroNvim/
+    ~/.config/nvim/lua/user: neovim/user/
     # Pipewire
     ~/.config/pipewire: pipewire/
     # Starship
