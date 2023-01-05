@@ -20,7 +20,7 @@ SETUVAR fish_color_escape:73cef4\x1ecyan
 SETUVAR fish_color_history_current:\x2d\x2dbold
 SETUVAR fish_color_host:normal
 SETUVAR fish_color_host_remote:yellow
-SETUVAR fish_color_match:\x2d\x2dbackground\x3dbrblue
+SETUVAR fish_color_keyword:73cef4\x1ecyan
 SETUVAR fish_color_normal:normal
 SETUVAR fish_color_operator:73cef4\x1ecyan
 SETUVAR fish_color_param:e8e8e8\x1ecyan
