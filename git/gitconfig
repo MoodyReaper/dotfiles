@@ -1,5 +1,7 @@
 [include]
 path = .gitconfig-personal
+[includeIf "gitdir:~/Work/"]
+path = .gitconfig-work
 [credential]
 helper = /usr/lib/git-core/git-credential-libsecret
 [core]

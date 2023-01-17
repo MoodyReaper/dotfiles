@@ -29,6 +29,7 @@
     # Git
     ~/.gitconfig: git/gitconfig
     ~/.gitconfig-personal: git/gitconfig-personal
+    ~/.gitconfig-work: git/gitconfig-work
     # GnuPG
     ~/.gnupg/gpg-agent.conf: gnupg/gpg-agent.conf
     # GTK

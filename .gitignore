@@ -1,8 +1,9 @@
 # Wallpapers
 wallpaper/*
 
-# Git - personal settings (user: name, email; etc.)
+# Git - personal and work settings
 git/gitconfig-personal
+git/gitconfig-work
 
 # VS Code
 .vscode/
