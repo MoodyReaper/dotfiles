@@ -2,7 +2,7 @@
 # Any customization should be done in ~/.gtkrc-2.0.mine instead.
 
 include "/home/reaper/.gtkrc-2.0.mine"
-gtk-theme-name="dummy"
+gtk-theme-name="FlatColor"
 gtk-icon-theme-name="Papirus-Dark"
 gtk-font-name="Fira Sans 12"
 gtk-cursor-theme-name="Adwaita"

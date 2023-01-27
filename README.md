@@ -31,31 +31,31 @@ _Note: this repository contains user files only (system files are not presented)
 
 ## Software
 
-| Type                     | Name                                                                                  | Notes                                               |
-| :----------------------- | :------------------------------------------------------------------------------------ | :-------------------------------------------------- |
-| Linux Distribution       | [Arch Linux](https://archlinux.org)                                                   | My favorite distro ever!                            |
-| System / Service Manager | [systemd](https://systemd.io)                                                         | Yes. Sorry.                                         |
-| Login Manager            | [Ly](https://github.com/fairyglade/ly)                                                | -                                                   |
-| Audio Server             | [Pipewire](https://pipewire.org)                                                      | No to PulseAudio, yes to old new bugs. Psh-psh (:   |
-| Display Server           | [Wayland](https://wayland.freedesktop.org)                                            | -                                                   |
-| Window Manager           | [Sway](https://swaywm.org)                                                            | -                                                   |
-| App Launcher             | [sway-launcher-desktop](https://github.com/Biont/sway-launcher-desktop)               | -                                                   |
-| Taskbar / Statusbar      | [Waybar](https://github.com/Alexays/Waybar)                                           | -                                                   |
-| Notification Manager     | [Dunst](https://dunst-project.org)                                                    | -                                                   |
-| Screen Lock              | [swaylock-effects](https://github.com/jirutka/swaylock-effects)                       | [swaylock](https://github.com/swaywm/swaylock) fork |
-| Shell                    | [Fish](https://fishshell.com)                                                         | -                                                   |
-| Shell Prompt             | [Starship](https://starship.rs)                                                       | -                                                   |
-| Terminal                 | [Alacritty](https://alacritty.org)                                                    | -                                                   |
-| GUI File Manager         | [Thunar](https://docs.xfce.org/xfce/thunar)                                           | -                                                   |
-| TUI File Manager         | [nnn](https://github.com/jarun/nnn)                                                   | -                                                   |
-| GUI Text Editor          | [VS Code OSS](https://github.com/microsoft/vscode)                                    | -                                                   |
-| TUI Text Editor          | [neovim](https://neovim.io) + [neovide](https://neovide.dev)                          | -                                                   |
-| Config Manager           | [Dotbot](https://github.com/anishathalye/dotbot)                                      | -                                                   |
-| Theme Manager            | [Flavours](https://github.com/Misterio77/flavours)                                    | -                                                   |
-| Color Schemes            | [Base16](https://github.com/chriskempson/base16)                                      | -                                                   |
-| Fonts / Glyphs           | [Fira Code](https://github.com/tonsky/FiraCode) + [Nerd Fonts](https://nerdfonts.com) | -                                                   |
-| Icons                    | [Papirus](https://github.com/PapirusDevelopmentTeam/papirus-icon-theme)               | -                                                   |
-| VCS                      | [Git](https://git-scm.com) + [lazygit](https://github.com/jesseduffield/lazygit)      | -                                                   |
+| Type                     | Name                                                                                                       | Notes                                               |
+| :----------------------- | :--------------------------------------------------------------------------------------------------------- | :-------------------------------------------------- |
+| Linux Distribution       | [Arch Linux](https://archlinux.org)                                                                        | My favorite distro ever!                            |
+| System / Service Manager | [systemd](https://systemd.io)                                                                              | Yes. Sorry.                                         |
+| Login Manager            | [Ly](https://github.com/fairyglade/ly)                                                                     | -                                                   |
+| Audio Server             | [Pipewire](https://pipewire.org)                                                                           | No to PulseAudio, yes to old new bugs. Psh-psh (:   |
+| Display Server           | [Wayland](https://wayland.freedesktop.org)                                                                 | -                                                   |
+| Window Manager           | [Sway](https://swaywm.org)                                                                                 | -                                                   |
+| App Launcher             | [sway-launcher-desktop](https://github.com/Biont/sway-launcher-desktop)                                    | -                                                   |
+| Taskbar / Statusbar      | [Waybar](https://github.com/Alexays/Waybar)                                                                | -                                                   |
+| Notification Manager     | [Dunst](https://dunst-project.org)                                                                         | -                                                   |
+| Screen Lock              | [swaylock-effects](https://github.com/jirutka/swaylock-effects)                                            | [swaylock](https://github.com/swaywm/swaylock) fork |
+| Shell                    | [Fish](https://fishshell.com)                                                                              | -                                                   |
+| Shell Prompt             | [Starship](https://starship.rs)                                                                            | -                                                   |
+| Terminal                 | [Alacritty](https://alacritty.org)                                                                         | -                                                   |
+| GUI File Manager         | [Thunar](https://docs.xfce.org/xfce/thunar)                                                                | -                                                   |
+| TUI File Manager         | [nnn](https://github.com/jarun/nnn)                                                                        | -                                                   |
+| GUI Text Editor          | [VS Code OSS](https://github.com/microsoft/vscode)                                                         | -                                                   |
+| TUI Text Editor          | [neovim](https://neovim.io) + [neovide](https://neovide.dev)                                               | -                                                   |
+| Config Manager           | [Dotbot](https://github.com/anishathalye/dotbot)                                                           | -                                                   |
+| Theme Manager            | [Flavours](https://github.com/Misterio77/flavours)                                                         | -                                                   |
+| Color Schemes            | [Base16](https://github.com/chriskempson/base16)                                                           | -                                                   |
+| Fonts / Glyphs           | [Fira Sans](https://mozilla.github.io/Fira) + [Fira Code Nerd + Nerd Fonts Symbols](https://nerdfonts.com) | -                                                   |
+| Icons                    | [Papirus](https://github.com/PapirusDevelopmentTeam/papirus-icon-theme)                                    | -                                                   |
+| VCS                      | [Git](https://git-scm.com) + [lazygit](https://github.com/jesseduffield/lazygit)                           | -                                                   |
 
 ### Additional software (dependencies)
 
