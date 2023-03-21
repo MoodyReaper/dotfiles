@@ -1,0 +1,14 @@
+{
+  "files.insertFinalNewline": true,
+  "files.trimFinalNewlines": true,
+  "files.trimTrailingWhitespace": true,
+  "gitlens.telemetry.enabled": false,
+  "redhat.telemetry.enabled": false
+  // Recommendations:
+  // "editor.defaultFormatter": "trunk.io",
+  // "editor.formatOnSave": true,
+  // "git.enableCommitSigning": true,
+  // "terminal.integrated.scrollback": 10000
+  // Can not be set on a project level (set in user settings file):
+  // "telemetry.telemetryLevel": "off"
+}
