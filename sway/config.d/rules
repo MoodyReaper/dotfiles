@@ -22,6 +22,7 @@ for_window [app_id="qjackctl"] floating enable
 for_window [app_id="org.remmina.Remmina"] floating enable
 for_window [app_id="org.speedcrunch.speedcrunch"] floating enable
 for_window [app_id="org.telegram.desktop"] floating enable
+for_window [app_id="virt-manager"] floating enable
 for_window [app_id="zenity"] floating enable # Graphical dialog boxes from shell scripts
 for_window [app_id="zoom"] floating enable
 
