@@ -4,5 +4,7 @@
 # https://github.com/Misterio77/dotfiles/blob/sway/home/.config/waybar/config.json
 
 THEME=$(flavours current)
-flavours list -l | alacritty-fzf --preview='flavours apply -l {}' || flavours apply ${THEME}
-flavours apply $(flavours current)
+# shellcheck disable=SC2312
+flavours list -l | alacritty-fzf --preview='flavours apply -l {}' || flavours apply "${THEME}"
+# shellcheck disable=SC2312
+flavours apply "$(flavours current)"

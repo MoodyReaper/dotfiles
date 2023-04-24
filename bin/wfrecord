@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 
 # References:
 # https://github.com/swaywm/sway/blob/master/contrib/grimshot
@@ -19,6 +19,7 @@
 ## See `man 1 wfrecord` or `wfrecord usage` for further details.
 
 getTargetDirectory() {
+  # shellcheck disable=SC1091
   test -f "${XDG_CONFIG_HOME:-$HOME/.config}/user-dirs.dirs" &&
     . "${XDG_CONFIG_HOME:-$HOME/.config}/user-dirs.dirs"
 
@@ -28,7 +29,7 @@ getTargetDirectory() {
 NOTIFY=no
 DELAY=0
 
-while [ $# -gt 0 ]; do
+while [[ $# -gt 0 ]]; do
   key="$1"
 
   case $key in
@@ -48,9 +49,10 @@ done
 
 ACTION=${1:-usage}
 SUBJECT=${2:-screen}
+# shellcheck disable=SC2312
 FILE=${3:-$(getTargetDirectory)/$(date -Ins).mp4}
 
-if [ "$ACTION" != "save" ] && [ "$ACTION" != "check" ]; then
+if [[ $ACTION != "save" ]] && [[ $ACTION != "check" ]]; then
   echo "Usage:"
   echo "  wfrecord [--notify] [--delay] (save) [active|screen|output|area|window] [FILE]"
   echo "  wfrecord check"
@@ -74,14 +76,14 @@ notify() {
   notify-send -t 3000 -a wfrecord "$@"
 }
 notifyOk() {
-  [ "$NOTIFY" = "no" ] && return
+  [[ $NOTIFY == "no" ]] && return
 
   TITLE=${2:-"Screenrecord"}
   MESSAGE=${1:-"OK"}
   notify "$TITLE" "$MESSAGE"
 }
 notifyError() {
-  if [ $NOTIFY = "yes" ]; then
+  if [[ $NOTIFY == "yes" ]]; then
     TITLE=${2:-"Screenrecord"}
     MESSAGE=${1:-"Error taking screenrecord with wf-recorder"}
     notify -u critical "$TITLE" "$MESSAGE"
@@ -107,13 +109,13 @@ check() {
 }
 
 takeScreenrecord() {
-  sleep $DELAY
+  sleep "$DELAY"
   FILE=$1
   GEOM=$2
   OUTPUT=$3
-  if [ -n "$OUTPUT" ]; then
+  if [[ -n $OUTPUT ]]; then
     wf-recorder -o "$OUTPUT" -f "$FILE" || die "Unable to invoke wf-recorder"
-  elif [ -z "$GEOM" ]; then
+  elif [[ -z $GEOM ]]; then
     wf-recorder -f "$FILE" || die "Unable to invoke wf-recorder"
   else
     wf-recorder -g "$GEOM" -f "$FILE" || die "Unable to invoke wf-recorder"
@@ -122,7 +124,7 @@ takeScreenrecord() {
 
 waitForStopScreenrecord() {
   while true; do
-    read -p "PRESS ENTER TO STOP RECORDING: " input
+    read -r -p "PRESS ENTER TO STOP RECORDING: " input
     case $input in
     *)
       echo "STOPPING RECORDING..."
@@ -133,7 +135,7 @@ waitForStopScreenrecord() {
   killall -s SIGINT wf-recorder
 }
 
-if [ "$ACTION" = "check" ]; then
+if [[ $ACTION == "check" ]]; then
   echo "Checking if required tools are installed. If something is missing, install it to your system and make it available in PATH..."
   check wf-recorder
   check slurp
@@ -141,37 +143,34 @@ if [ "$ACTION" = "check" ]; then
   check jq
   check notify-send
   exit
-elif [ "$SUBJECT" = "area" ]; then
+elif [[ $SUBJECT == "area" ]]; then
   GEOM=$(slurp -d)
   # Check if user exited slurp without selecting the area
-  if [ -z "$GEOM" ]; then
+  if [[ -z $GEOM ]]; then
     exit 1
   fi
-  WHAT="Area"
-elif [ "$SUBJECT" = "active" ]; then
+elif [[ $SUBJECT == "active" ]]; then
+  # shellcheck disable=SC2312
   FOCUSED=$(swaymsg -t get_tree | jq -r 'recurse(.nodes[]?, .floating_nodes[]?) | select(.focused)')
   GEOM=$(echo "$FOCUSED" | jq -r '.rect | "\(.x),\(.y) \(.width)x\(.height)"')
-  APP_ID=$(echo "$FOCUSED" | jq -r '.app_id')
-  WHAT="$APP_ID window"
-elif [ "$SUBJECT" = "screen" ]; then
+elif [[ $SUBJECT == "screen" ]]; then
   GEOM=""
-  WHAT="Screen"
-elif [ "$SUBJECT" = "output" ]; then
+elif [[ $SUBJECT == "output" ]]; then
   GEOM=""
+  # shellcheck disable=SC2312
   OUTPUT=$(swaymsg -t get_outputs | jq -r '.[] | select(.focused)' | jq -r '.name')
-  WHAT="$OUTPUT"
-elif [ "$SUBJECT" = "window" ]; then
+elif [[ $SUBJECT == "window" ]]; then
+  # shellcheck disable=SC2312
   GEOM=$(swaymsg -t get_tree | jq -r '.. | select(.pid? and .visible?) | .rect | "\(.x),\(.y) \(.width)x\(.height)"' | slurp)
   # Check if user exited slurp without selecting the area
-  if [ -z "$GEOM" ]; then
+  if [[ -z $GEOM ]]; then
     exit 1
   fi
-  WHAT="Window"
 else
   die "Unknown subject to take a screen record from" "$SUBJECT"
 fi
 
-if [ "$ACTION" = "save" ]; then
+if [[ $ACTION == "save" ]]; then
   if
     takeScreenrecord "$FILE" "$GEOM" "$OUTPUT" &
     waitForStopScreenrecord

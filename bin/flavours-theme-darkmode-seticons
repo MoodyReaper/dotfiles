@@ -3,14 +3,14 @@
 # Credits:
 # https://github.com/Misterio77/dotfiles/blob/sway/home/bin/seticons
 
-if [[ "$1" == "dark" ]]; then
-    sed -i "s/Papirus-Light/Papirus-Dark/" ~/.gtkrc-2.0 ~/.config/gtk-3.0/settings.ini
-    # https://github.com/PapirusDevelopmentTeam/papirus-folders
-    # TODO: choose color automatically
-    #papirus-folders -C brown --theme Papirus-Dark
-    # https://github.com/PapirusDevelopmentTeam/papirus-icon-theme#hardcoded-tray-icons
-    # TODO: change tray icons
+if [[ $1 == "dark" ]]; then
+  sed -i "s/Papirus-Light/Papirus-Dark/" ~/.gtkrc-2.0 ~/.config/gtk-3.0/settings.ini
+  # TODO: change folder color
+  # https://github.com/PapirusDevelopmentTeam/papirus-folders
+  # papirus-folders -C brown --theme Papirus-Dark
+  # TODO: change tray icons
+  # https://github.com/PapirusDevelopmentTeam/papirus-icon-theme#hardcoded-tray-icons
 else
-    sed -i "s/Papirus-Dark/Papirus-Light/" ~/.gtkrc-2.0 ~/.config/gtk-3.0/settings.ini
-    #papirus-folders -C brown --theme Papirus-Light
+  sed -i "s/Papirus-Dark/Papirus-Light/" ~/.gtkrc-2.0 ~/.config/gtk-3.0/settings.ini
+  # papirus-folders -C brown --theme Papirus-Light
 fi

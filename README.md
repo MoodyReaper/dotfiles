@@ -1,6 +1,8 @@
+# dotfiles
+
 ## Introduction
 
-Welcome to my dotfiles!  
+Welcome to my dotfiles!\
 _Note: this repository contains user files only (system files are not presented)_
 
 ![desktop-example-0](https://user-images.githubusercontent.com/16370497/188315613-907149c8-1397-4a80-880f-8ae73754b091.png)
@@ -84,8 +86,8 @@ _Note: this repository contains user files only (system files are not presented)
 
 ![neofetch](https://user-images.githubusercontent.com/16370497/188314845-544f3077-984f-4455-936c-c474eaacd11f.png)
 
-## P.S.
+## Postscript
 
-If you found it useful, please, let me know!  
-I'd be very grateful for any improvements or suggestions (:  
+If you found it useful, please, let me know!\
+I'd be very grateful for any improvements or suggestions (:\
 Contacts: [moodyreaper.space](https://moodyreaper.space)

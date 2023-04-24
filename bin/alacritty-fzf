@@ -1,7 +1,7 @@
 #!/usr/bin/bash
 
 # Credits:
-# https://github.com/Misterio77/dotfiles/tree/03f8c0598117d9c976f5b68359ff877d7dd8857c/home/bin
+# https://github.com/Misterio77/dotfiles/blob/sway/home/bin/alacritty-fzf
 
 # This program runs fzf in a graphic-ish way, using alacritty
 # It takes a list of inputs from stdin, spawns alacritty running fzf on that

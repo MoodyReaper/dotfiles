@@ -185,7 +185,7 @@
   //    "format-icons": ["", "", ""],
   //    "exec": "$HOME/.config/waybar/scripts/waybar-ddcutil.py",
   //    "return-type": "json",
-  //    // TODO: Finish it (it doesn't work)
+  //    // TODO: Finish (it doesn't work)
   //    "on-click": "ddcutil setvcp 10 50",
   //    "on-click-right": "ddcutil setvcp 10 70"
   // }

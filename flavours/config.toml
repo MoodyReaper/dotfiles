@@ -33,8 +33,8 @@
 # I use Fish shell (check also Fish item below)
 shell = "fish -c '{}'"
 
-# Sway supports the default '#' comments, so it can be ommited
-# 'rewrite' is also ommited, as it defaults to false
+# Sway supports the default '#' comments, so it can be omitted
+# 'rewrite' is also omitted, as it defaults to false
 [[items]]
 file = "~/.config/sway/config.d/theme"
 template = "sway"
@@ -43,7 +43,7 @@ hook = "sh ~/.config/sway/scripts/flavours-sway-alpha-colors.sh;swaymsg reload;s
 # Swaymsg reload temporarily freezes input, so it's marked as not-light
 light = false
 
-# This one uses waybar 'default' subtemplate, so it can be ommited
+# This one uses waybar 'default' subtemplate, so it can be omitted
 [[items]]
 file = "~/.config/waybar/colors.css"
 template = "waybar"
@@ -82,11 +82,3 @@ subtemplate = "gtk-2"
 rewrite = true
 # Changing Paper icons globally for GTK3 and GTK2
 hook = "flavours-theme-darkmode-seticons (flavours-theme-darkmode-switch query)"
-
-#[[items]]
-#file = "~/.config/beautifuldiscord/style.css"
-#template = "styles"
-#subtemplate = "css-variables"
-# What if the configuration doesn't support '#' comments? Just change them!
-#start= "/* Start flavours */"
-#end = "/* End flavours */"

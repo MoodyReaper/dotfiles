@@ -1,0 +1,11 @@
+enable=all
+source-path=SCRIPTDIR
+disable=SC2154
+
+# If you're having issues with shellcheck following source, disable the errors via:
+# disable=SC1090
+# disable=SC1091
+
+# ! This optional rule was disabled explicitly for this repo
+# TODO: decide whether enable it or not
+disable=SC2250

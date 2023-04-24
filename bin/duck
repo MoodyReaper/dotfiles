@@ -3,6 +3,7 @@
 # Credits:
 # https://github.com/Misterio77/dotfiles/blob/sway/home/bin/duck
 
+# shellcheck disable=SC2016
 echo '             ,-.          '
 echo '     ,      ( {o\         '
 echo '     {`"=,___) (`~        '

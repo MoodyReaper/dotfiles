@@ -11,62 +11,61 @@ sway_config="$HOME/.config/sway/config.d/theme"
 # Setting colors in Swaylock config
 swaylock_config="$HOME/.config/swaylock/config"
 
-alphastring="set \$opacity"
-aphasearchresult=$(grep "$alphastring" $sway_config)
-alphavalue=$(cut -d " " -f3 <<<"$aphasearchresult")
+# shellcheck disable=SC2016
+alpha_string='set \$opacity'
+alpha_search_result=$(grep "$alpha_string" "$sway_config")
+alpha_value=$(cut -d " " -f3 <<<"$alpha_search_result")
 
 colors=(base01 base02 base03 base05 base07 base08)
 
-for color in ${colors[@]}; do
-    searchstring="set $"$color" #"
-    searchresult=$(grep "$searchstring" $sway_config)
-    colorvalue=$(cut -d "#" -f2 <<<"$searchresult")
-    declare "$color=#$colorvalue"
+for color in "${colors[@]}"; do
+  search_string="set \$$color #"
+  search_result=$(grep "$search_string" "$sway_config")
+  color_value=$(cut -d "#" -f2 <<<"$search_result")
+  declare "$color=#$color_value"
 done
 
-insidecolor=$base01$alphavalue
-ringcolor=$base02
-errorcolor=$base08$alphavalue
-clearedcolor=$base03$alphavalue
-highlightcolor=$base07$alphavalue
-verifyngcolor=$base03$alphavalue
-textcolor=$base05$alphavalue
+inside_color=$base01$alpha_value
+ring_color=$base02
+error_color=$base08$alpha_value
+cleared_color=$base03$alpha_value
+highlight_color=$base07$alpha_value
+verifying_color=$base03$alpha_value
+text_color=$base05$alpha_value
 
 declare -A arguments
 
-arguments['layout-bg-color']=$insidecolor
-arguments['layout-border-color']=$insidecolor
-arguments['layout-text-color']=$textcolor
+arguments['layout-bg-color']=$inside_color
+arguments['layout-border-color']=$inside_color
+arguments['layout-text-color']=$text_color
 
-arguments['ring-color']=$ringcolor
-arguments['ring-wrong-color']=$errorcolor
-arguments['ring-ver-color']=$verifyngcolor
-arguments['ring-clear-color']=$clearedcolor
-arguments['ring-caps-lock-color']=$ringcolor
+arguments['ring-color']=$ring_color
+arguments['ring-wrong-color']=$error_color
+arguments['ring-ver-color']=$verifying_color
+arguments['ring-clear-color']=$cleared_color
+arguments['ring-caps-lock-color']=$ring_color
 
-arguments['inside-color']=$insidecolor
-arguments['inside-wrong-color']=$errorcolor
-arguments['inside-ver-color']=$verifyngcolor
-arguments['inside-clear-color']=$clearedcolor
-arguments['inside-caps-lock-color']=$verifyngcolor
+arguments['inside-color']=$inside_color
+arguments['inside-wrong-color']=$error_color
+arguments['inside-ver-color']=$verifying_color
+arguments['inside-clear-color']=$cleared_color
+arguments['inside-caps-lock-color']=$verifying_color
 
-arguments['text-color']=$textcolor
-arguments['text-clear-color']=$textcolor
-arguments['text-ver-color']=$textcolor
-arguments['text-wrong-color']=$textcolor
-arguments['text-caps-lock-color']=$textcolor
+arguments['text-color']=$text_color
+arguments['text-clear-color']=$text_color
+arguments['text-ver-color']=$text_color
+arguments['text-wrong-color']=$text_color
+arguments['text-caps-lock-color']=$text_color
 
-arguments['key-hl-color']=$highlightcolor
-arguments['caps-lock-key-hl-color']=$highlightcolor
-arguments['bs-hl-color']=$clearedcolor
-arguments['caps-lock-bs-hl-color']=$clearedcolor
+arguments['key-hl-color']=$highlight_color
+arguments['caps-lock-key-hl-color']=$highlight_color
+arguments['bs-hl-color']=$cleared_color
+arguments['caps-lock-bs-hl-color']=$cleared_color
 
-arguments['separator-color']=$ringcolor
+arguments['separator-color']=$ring_color
 
-for key in ${!arguments[@]}; do
-    # echo ${key} ${arguments[${key}]}
-    searchstring="$key="
-    replacementstring=$searchstring${arguments[${key}]}
-    # echo $replacementstring
-    sed -i "/^$searchstring/c $replacementstring" $swaylock_config
+for key in "${!arguments[@]}"; do
+  search_string="$key="
+  replacement_string=$search_string${arguments[${key}]}
+  sed -i "/^$search_string/c $replacement_string" "$swaylock_config"
 done

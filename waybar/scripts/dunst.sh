@@ -1,9 +1,15 @@
 #!/bin/bash
 
-COUNT=$(dunstctl count waiting)
+set -e
+
+PAUSED=$(dunstctl is-paused)
 ENABLED=
 DISABLED=
-if [ $COUNT != 0 ]; then DISABLED=" $COUNT"; fi
-if dunstctl is-paused | grep -q "false"; then
-    echo '{"text": "'"$ENABLED"'", "tooltip": "Dunst noficitaions are enabled", "class": "custom-enabled"}'
-else echo '{"text": "'"$DISABLED"'", "tooltip": "Dunst noficitaions are disabled", "class": "custom-disabled"}'; fi
+
+if [[ $PAUSED == "false" ]]; then
+  echo '{"text": "'"$ENABLED"'", "tooltip": "Dunst notifications are enabled", "class": "custom-enabled"}'
+else
+  COUNT=$(dunstctl count waiting)
+  if [[ $COUNT != 0 ]]; then DISABLED=" $COUNT"; fi
+  echo '{"text": "'"$DISABLED"'", "tooltip": "Dunst notifications are disabled", "class": "custom-disabled"}'
+fi

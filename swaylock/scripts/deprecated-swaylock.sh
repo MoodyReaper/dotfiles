@@ -8,26 +8,27 @@
 # Getting colors from Sway config
 file="$HOME/.config/sway/config.d/theme"
 
-alphastring="set \$opacity"
-aphasearchresult=$(grep "$alphastring" $file)
-alphavalue=$(cut -d " " -f3 <<<"$aphasearchresult")
+# shellcheck disable=SC2016
+alpha_string='set $opacity'
+alpha_search_result=$(grep "$alpha_string" "$file")
+alpha_value=$(cut -d " " -f3 <<<"$alpha_search_result")
 
 colors=(base01 base02 base03 base05 base07 base08)
 
-for color in ${colors[@]}; do
-    searchstring="set $"$color" #"
-    searchresult=$(grep "$searchstring" $file)
-    colorvalue=$(cut -d "#" -f2 <<<"$searchresult")
-    declare "$color=#$colorvalue"
+for color in "${colors[@]}"; do
+  search_string="set \$$color #"
+  search_result=$(grep "$search_string" "$file")
+  color_value=$(cut -d "#" -f2 <<<"$search_result")
+  declare "$color=#$color_value"
 done
 
-insidecolor=$base01$alphavalue
-ringcolor=$base02
-errorcolor=$base08$alphavalue
-clearedcolor=$base03$alphavalue
-highlightcolor=$base07$alphavalue
-verifyngcolor=$base03$alphavalue
-textcolor=$base05$alphavalue
+inside_color=$base01$alpha_value
+ring_color=$base02
+error_color=$base08$alpha_value
+cleared_color=$base03$alpha_value
+highlight_color=$base07$alpha_value
+verifying_color=$base03$alpha_value
+text_color=$base05$alpha_value
 
 arguments="--show-failed-attempts \
 --effect-blur 20x3 --fade-in 1 \
@@ -37,14 +38,14 @@ arguments="--show-failed-attempts \
 --font FiraCode_Nerd_Font --font-size 24 \
 --indicator-radius 120 --indicator-thickness 13 --indicator-idle-visible \
 --line-uses-inside \
---layout-bg-color $insidecolor --layout-border-color $insidecolor --layout-text-color $textcolor \
---ring-color $ringcolor --ring-wrong-color $errorcolor --ring-ver-color $verifyngcolor --ring-clear-color $clearedcolor --ring-caps-lock-color $ringcolor \
---inside-color $insidecolor --inside-wrong-color $errorcolor --inside-ver-color $verifyngcolor --inside-clear-color $clearedcolor --inside-caps-lock-color $verifyngcolor \
---text-color $textcolor --text-clear-color $textcolor --text-ver-color $textcolor --text-wrong-color $textcolor --text-caps-lock-color $textcolor \
---key-hl-color $highlightcolor --caps-lock-key-hl-color $highlightcolor --bs-hl-color $clearedcolor --caps-lock-bs-hl-color $clearedcolor \
---separator-color $ringcolor"
+--layout-bg-color $inside_color --layout-border-color $inside_color --layout-text-color $text_color \
+--ring-color $ring_color --ring-wrong-color $error_color --ring-ver-color $verifying_color --ring-clear-color $cleared_color --ring-caps-lock-color $ring_color \
+--inside-color $inside_color --inside-wrong-color $error_color --inside-ver-color $verifying_color --inside-clear-color $cleared_color --inside-caps-lock-color $verifying_color \
+--text-color $text_color --text-clear-color $text_color --text-ver-color $text_color --text-wrong-color $text_color --text-caps-lock-color $text_color \
+--key-hl-color $highlight_color --caps-lock-key-hl-color $highlight_color --bs-hl-color $cleared_color --caps-lock-bs-hl-color $cleared_color \
+--separator-color $ring_color"
 
 # No needed with --line-uses-inside or --line-uses-ring
-# --line-color $insidecolor --line-wrong-color $errorcolor --line-ver-color $verifyngcolor --line-clear-color $clearedcolor --line-caps-lock-color $highlightcolor   \
+# --line-color $inside_color --line-wrong-color $error_color --line-ver-color $verifying_color --line-clear-color $cleared_color --line-caps-lock-color $highlight_color   \
 
-swaylock $arguments $@
+swaylock "$arguments" "$@"
