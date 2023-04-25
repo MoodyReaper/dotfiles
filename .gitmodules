@@ -2,11 +2,11 @@
 path = dotbot
 url = https://github.com/anishathalye/dotbot
 ignore = dirty
-[submodule "AstroNvim"]
-path = neovim/AstroNvim
-url = https://github.com/AstroNvim/AstroNvim
-ignore = dirty
 [submodule "gtk/FlatColor"]
 path = gtk/FlatColor
 url = https://github.com/MoodyReaper/FlatColor
+ignore = dirty
+[submodule "neovim/AstroNvim"]
+path = neovim/AstroNvim
+url = https://github.com/AstroNvim/AstroNvim
 ignore = dirty

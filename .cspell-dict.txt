@@ -10,6 +10,8 @@ appname
 argparse
 armv
 Astro
+astrocommunity
+astrodark
 AstroNvim
 augroups
 autocommands
@@ -27,8 +29,10 @@ bufferline
 bufnr
 builtins
 buttonless
+catppuccin
 Codecept
 compiz
+conds
 Consolas
 daml
 darkmode
@@ -65,6 +69,7 @@ feffff
 filezilla
 Fira
 FlatColor
+folke
 Foofile
 fooscript
 fullscreen
@@ -112,6 +117,7 @@ Lxappearance
 Mainwindow
 mapleader
 markdownlint
+matchit
 mediaplayer
 Menlo
 mktemp
@@ -123,7 +129,9 @@ mybind
 neofetch
 neovide
 neovim
+netrw
 NONREPARENTING
+npairs
 numpad
 nvim
 nvmrc
@@ -204,6 +212,7 @@ tamasfe
 terminfo
 Thunar
 timestr
+tohtml
 tolower
 trackid
 treesitter
@@ -219,8 +228,10 @@ vttest
 waybar
 Wfrecord
 whichwrap
+williamboman
 winbar
 WINDOWDECORATION
+windwp
 wlan
 xcompmgr
 xcursor
