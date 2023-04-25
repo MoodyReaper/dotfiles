@@ -64,10 +64,10 @@ exitcode
 feffff
 filezilla
 Fira
-flatcolor
+FlatColor
 Foofile
 fooscript
-Fullscreen
+fullscreen
 gcloud
 getvcp
 gitdir
@@ -99,7 +99,6 @@ Keybase
 Keychron
 keymap
 killall
-launcherfx
 lazygit
 lefthand
 levelname
@@ -223,8 +222,6 @@ whichwrap
 winbar
 WINDOWDECORATION
 wlan
-Wurm
-wurmonline
 xcompmgr
 xcursor
 Xinerama

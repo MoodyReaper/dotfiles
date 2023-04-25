@@ -8,8 +8,10 @@
 
 # Getting colors from Sway config
 sway_config="$HOME/.config/sway/config.d/theme"
+if [[ ! -f $sway_config ]]; then exit 1; fi
 # Setting colors in Swaylock config
 swaylock_config="$HOME/.config/swaylock/config"
+if [[ ! -f $swaylock_config ]]; then exit 1; fi
 
 # shellcheck disable=SC2016
 alpha_string='set \$opacity'
