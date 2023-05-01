@@ -175,7 +175,7 @@ disabled = true
 
 [package]
 disabled = false
-symbol = " "
+symbol = "󰏖 "
 
 [perl]
 disabled = true
@@ -207,16 +207,16 @@ disabled = true
 
 [rust]
 disabled = false
-symbol = " "
+symbol = "󱘗 "
 
 [scala]
 disabled = true
 
 [shell]
 bash_indicator = ""
-fish_indicator = ""
-zsh_indicator = ""
-powershell_indicator = ""
+fish_indicator = "󰈺"
+zsh_indicator = "󱋪"
+powershell_indicator = ""
 style = "cyan bold"
 disabled = false
 
