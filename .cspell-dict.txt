@@ -76,6 +76,7 @@ fullscreen
 gcloud
 getvcp
 gitdir
+gitsubmodule
 globbing
 goolord
 Grimshot
