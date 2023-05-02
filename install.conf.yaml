@@ -18,7 +18,6 @@
     # Electron
     ~/.config/code-flags.conf: electron/electron-flags.conf
     ~/.config/electron-flags.conf: electron/electron-flags.conf
-    ~/.config/electron18-flags.conf: electron/electron-flags.conf
     ~/.config/electron19-flags.conf: electron/electron-flags.conf
     # Fish
     ~/.config/fish: fish/
