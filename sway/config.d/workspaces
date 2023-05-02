@@ -2,16 +2,16 @@
 #
 
 # Workspace names
-set $workspace1 "1: Web "
-set $workspace2 "2: Console ﲵ"
-set $workspace3 "3: Dev "
+set $workspace1 "1: Web 󰖟"
+set $workspace2 "2: Console 󰞷"
+set $workspace3 "3: Dev "
 set $workspace4 "4: Files "
-set $workspace5 "5: Different "
+set $workspace5 "5: Different 󰛇"
 set $workspace6 "6: Games "
 set $workspace7 "7: Media "
-set $workspace8 "8: Messengers "
+set $workspace8 "8: Messengers 󰍡"
 set $workspace9 "9: Additional "
-set $workspace10 "10: Additional "
+set $workspace10 "10: Additional "
 
 # Switch to workspace
 $mybind $mod+1 workspace number $workspace1
