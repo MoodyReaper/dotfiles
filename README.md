@@ -5,7 +5,7 @@
 Welcome to my dotfiles!\
 _Note: this repository contains user files only (system files are not presented)_
 
-![desktop-example-0](https://user-images.githubusercontent.com/16370497/188315613-907149c8-1397-4a80-880f-8ae73754b091.png)
+![desktop-example-0](https://github.com/MoodyReaper/dotfiles/assets/16370497/4c796227-22f6-4c94-9c9f-cf5a13a05ee6)
 
 ## Installation
 
@@ -84,7 +84,7 @@ _Note: this repository contains user files only (system files are not presented)
 | Sound card | `Solid State Logic SSL 2+`       | Worked out of the box, other devices might require special configuration            |
 | Keyboard   | `Keychron K8`                    | Windows mode is used. Some keybindings might not work due to a different keyboard   |
 
-![neofetch](https://user-images.githubusercontent.com/16370497/188314845-544f3077-984f-4455-936c-c474eaacd11f.png)
+![neofetch](https://github.com/MoodyReaper/dotfiles/assets/16370497/b248c8b3-c69a-442d-9b26-76d8a1bff081)
 
 ## Postscript
 
