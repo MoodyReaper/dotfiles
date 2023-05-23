@@ -1,5 +1,7 @@
 #!/bin/bash
 
+set -euo pipefail
+
 # Credits:
 # https://github.com/Misterio77/dotfiles/blob/sway/home/.config/waybar/config.json
 

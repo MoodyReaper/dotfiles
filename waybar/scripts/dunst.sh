@@ -1,6 +1,6 @@
 #!/bin/bash
 
-set -e
+set -euo pipefail
 
 PAUSED=$(dunstctl is-paused)
 ENABLED=

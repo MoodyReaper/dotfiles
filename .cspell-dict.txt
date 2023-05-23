@@ -143,6 +143,7 @@ Papirus
 pavucontrol
 pgrep
 pinentry
+pipefail
 pipestatus
 Pipewire
 pkill

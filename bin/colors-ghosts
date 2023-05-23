@@ -1,4 +1,6 @@
-#!/usr/bin/env bash
+#!/bin/bash
+
+set -euo pipefail
 
 # ANSI color scheme script by pfh
 # Source: http://crunchbang.org/forums/viewtopic.php?pid=157979#p157979

@@ -1,4 +1,6 @@
-#!/usr/bin/bash
+#!/bin/bash
+
+set -eo pipefail
 
 # Credits:
 # https://github.com/Misterio77/dotfiles/blob/sway/home/bin/darkmode

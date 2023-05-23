@@ -1,5 +1,7 @@
 #!/bin/bash
 
+set -euo pipefail
+
 file="$HOME/.config/sway/config.d/theme"
 if [[ ! -f $file ]]; then exit 1; fi
 
