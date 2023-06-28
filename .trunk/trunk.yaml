@@ -1,31 +1,47 @@
 version: 0.1
 cli:
-  version: 1.9.1
+  version: 1.11.1
   sha256:
-    darwin_arm64: 6fcf74b60f1a8db1d42374419b688b0cabf5ea674f7310217e632e8a355ec5c5
-    darwin_x86_64: da7f171d75c7512c721bef59cc0dcf559afd356b351bcfd2ecb9ec9f137dce4b
-    linux_x86_64: b5794d6684e276b55198512a2779de445dba194592bdfcd77e18671bf379e19c
+    darwin_arm64: 6c9dc132c00ffc66b89a96183782872ef8ba9650abdd531acb6e54bdbe6e0f64
+    darwin_x86_64: 8c4af6083240538d9b03786e01ba3f389194a14bc0e9a40c3e664628434631a5
+    linux_x86_64: 87dc619b29115876a2816b0bcca2980795fe26fea2b7056ee9933189e6108b08
 plugins:
   sources:
     - id: trunk
-      ref: v0.0.17
+      ref: v0.0.21
       uri: https://github.com/trunk-io/plugins
 lint:
   enabled:
-    - actionlint@1.6.24
-    - git-diff-check
-    - gitleaks@8.16.3
-    - markdownlint@0.34.0
-    - prettier@2.8.8
-    - yamllint@1.31.0
-    - cspell@6.31.1
-    - semgrep@1.21.0
+    # Code - multi-language
+    - semgrep@1.29.0
+    # Code - Python
+    - bandit@1.7.5
     - black@23.3.0
     - isort@5.12.0
-    - ruff@0.0.265
+    - ruff@0.0.275
+    # Code - shell
     - shellcheck@0.9.0
-    - shfmt@3.5.0
+    - shfmt@3.6.0
+    # File - Markdown
+    - markdownlint@0.35.0
+    # File - TOML
     - taplo@0.7.0
+    # File - YAML
+    - yamllint@1.32.0
+    # Formatting
+    - prettier@2.8.8
+    # Git
+    - git-diff-check
+    # GitHub Actions
+    - actionlint@1.6.25
+    # Security - general
+    - checkov@2.3.307
+    - trivy@0.42.1
+    # Security - secrets
+    - gitleaks@8.17.0
+    - trufflehog@3.41.1
+    # Spell check
+    - cspell@6.31.1
 runtimes:
   enabled:
     - go@1.19.5
