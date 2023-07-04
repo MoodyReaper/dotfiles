@@ -123,7 +123,6 @@ matchit
 mediaplayer
 Menlo
 mktemp
-mnvm
 MoodyReaper
 mpris
 MSYS
@@ -136,7 +135,6 @@ NONREPARENTING
 npairs
 numpad
 nvim
-nvmrc
 oderwat
 pactl
 pango
@@ -157,7 +155,6 @@ pulseaudio
 pulumi
 purescript
 pushback
-pyenv
 pypoetry
 pyright
 qjackctl
