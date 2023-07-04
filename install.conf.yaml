@@ -32,8 +32,12 @@
     # GnuPG
     ~/.gnupg/gpg-agent.conf: gnupg/gpg-agent.conf
     # GTK
-    ~/.config/gtk-3.0/settings.ini: gtk/gtk-3.0/settings.ini
-    ~/.gtkrc-2.0: gtk/gtkrc-2.0
+    ~/.config/gtk-3.0/settings.ini:
+      path: gtk/gtk-3.0/settings.ini
+      force: force
+    ~/.gtkrc-2.0:
+      path: gtk/gtkrc-2.0
+      force: force
     ~/.themes/FlatColor: gtk/FlatColor/
     # Neovim
     ~/.config/nvim: neovim/AstroNvim/
