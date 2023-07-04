@@ -166,6 +166,7 @@ realpath
 relativenumber
 Relogin
 Remmina
+resession
 rgba
 rlang
 runtimes
