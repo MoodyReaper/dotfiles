@@ -44,6 +44,8 @@
     ~/.config/nvim/lua/user: neovim/user/
     # Pipewire
     ~/.config/pipewire: pipewire/
+    # Poetry
+    ~/.config/pypoetry/config.toml: poetry/config.toml
     # Starship
     ~/.config/starship.toml: starship/starship.toml
     # Sway

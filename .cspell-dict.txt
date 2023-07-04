@@ -157,6 +157,7 @@ pulumi
 purescript
 pushback
 pyenv
+pypoetry
 pyright
 qjackctl
 Radeon
@@ -226,6 +227,7 @@ VDPAU
 VIDEODRIVER
 vimwiki
 virt
+virtualenvs
 vlang
 vttest
 waybar
