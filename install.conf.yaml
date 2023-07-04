@@ -8,6 +8,11 @@
 - link:
     # Alacritty
     ~/.config/alacritty/alacritty.yml: alacritty/alacritty.yml
+    # asdf
+    ~/.asdfrc: asdf/asdfrc
+    ~/.tool-versions:
+      path: asdf/tool-versions
+      force: force
     # Bin
     ~/.local/bin: bin/
     # Chromium

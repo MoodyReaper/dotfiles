@@ -9,6 +9,7 @@ andweeb
 appname
 argparse
 armv
+asdfrc
 Astro
 astrocommunity
 astrodark
