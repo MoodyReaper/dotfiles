@@ -13,12 +13,12 @@ plugins:
 lint:
   enabled:
     # Code - multi-language
-    - semgrep@1.29.0
+    - semgrep@1.31.2
     # Code - Python
     - bandit@1.7.5
     - black@23.3.0
     - isort@5.12.0
-    - ruff@0.0.275
+    - ruff@0.0.277
     # Code - shell
     - shellcheck@0.9.0
     - shfmt@3.6.0
@@ -29,24 +29,24 @@ lint:
     # File - YAML
     - yamllint@1.32.0
     # Formatting
-    - prettier@2.8.8
+    - prettier@3.0.0
     # Git
     - git-diff-check
     # GitHub Actions
     - actionlint@1.6.25
     # Security - general
-    - checkov@2.3.307
-    - trivy@0.42.1
+    - checkov@2.3.316
+    - trivy@0.43.1
     # Security - secrets
     - gitleaks@8.17.0
-    - trufflehog@3.41.1
+    - trufflehog@3.43.0
     # Spell check
     - cspell@6.31.1
 runtimes:
   enabled:
-    - go@1.19.5
-    - node@18.12.1
-    - python@3.10.8
+    - go@1.20.5
+    - node@20.3.1
+    - python@3.11.1 # TODO: upgrade to 3.11.4 when available
 actions:
   enabled:
     - trunk-announce
