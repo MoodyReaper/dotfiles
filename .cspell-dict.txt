@@ -111,6 +111,7 @@ lefthand
 levelname
 libsecret
 lightspeed
+liveshare
 localip
 lolilolicon
 lspconfig

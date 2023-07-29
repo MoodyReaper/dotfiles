@@ -1,14 +1,28 @@
 {
+  // .editorconfig
+  "editor.insertSpaces": true, // indent_style
+  "editor.tabSize": 2, // indent_size
+  "files.encoding": "utf8", // charset
+  "files.eol": "\n", // end_of_line
+  "files.insertFinalNewline": true, // insert_final_newline
+  "files.trimFinalNewlines": true, // insert_final_newline
+  "files.trimTrailingWhitespace": true, // trim_trailing_whitespace
+
+  // General
   "editor.defaultFormatter": "trunk.io",
-  "files.insertFinalNewline": true,
-  "files.trimFinalNewlines": true,
-  "files.trimTrailingWhitespace": true,
+
+  // Extensions
   "gitlens.telemetry.enabled": false,
+  "liveshare.guestApprovalRequired": true,
   "redhat.telemetry.enabled": false
-  // Recommendations:
+
+  // Recommendations (set in user settings file):
   // "editor.formatOnSave": true,
   // "git.enableCommitSigning": true,
-  // "terminal.integrated.scrollback": 10000
+  // "terminal.integrated.scrollback": 10000,
+  // "trunk.autoInit": false, // "trunk" extension
+  // "workbench.iconTheme": "vscode-icons", // "vscode-icons" extension
+
   // Can not be set on a project level (set in user settings file):
   // "telemetry.telemetryLevel": "off"
 }

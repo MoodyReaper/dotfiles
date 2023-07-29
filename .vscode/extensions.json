@@ -1,21 +1,20 @@
 {
-  // See https://go.microsoft.com/fwlink/?LinkId=827846 to learn about workspace recommendations.
-  // Extension identifier format: ${publisher}.${name}. Example: vscode.csharp
-
-  // List of extensions which should be recommended for users of this workspace.
   "recommendations": [
+    // General
     "aaron-bond.better-comments",
-    "tamasfe.even-better-toml",
-    "bmalehorn.vscode-fish",
     "eamodio.gitlens",
-    "ecmel.vscode-html-css",
     "oderwat.indent-rainbow",
-    "ms-python.python",
+    "ms-vsliveshare.vsliveshare",
     "gruntfuggly.todo-tree",
     "trunk.io",
     "vscode-icons-team.vscode-icons",
-    "redhat.vscode-yaml"
+    "redhat.vscode-yaml",
+
+    // Project specific
+    "tamasfe.even-better-toml",
+    "bmalehorn.vscode-fish",
+    "ecmel.vscode-html-css",
+    "ms-python.python"
   ],
-  // List of extensions recommended by VS Code that should not be recommended for users of this workspace.
   "unwantedRecommendations": []
 }
