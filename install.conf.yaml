@@ -12,7 +12,7 @@
     ~/.asdfrc: asdf/asdfrc
     ~/.tool-versions:
       path: asdf/tool-versions
-      force: force
+      force: true
     # Bin
     ~/.local/bin: bin/
     # Chromium
@@ -39,10 +39,10 @@
     # GTK
     ~/.config/gtk-3.0/settings.ini:
       path: gtk/gtk-3.0/settings.ini
-      force: force
+      force: true
     ~/.gtkrc-2.0:
       path: gtk/gtkrc-2.0
-      force: force
+      force: true
     ~/.themes/FlatColor: gtk/FlatColor/
     # Neovim
     ~/.config/nvim: neovim/AstroNvim/
