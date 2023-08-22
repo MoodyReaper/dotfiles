@@ -1,47 +1,47 @@
 version: 0.1
 cli:
-  version: 1.11.1
+  version: 1.14.1
   sha256:
-    darwin_arm64: 6c9dc132c00ffc66b89a96183782872ef8ba9650abdd531acb6e54bdbe6e0f64
-    darwin_x86_64: 8c4af6083240538d9b03786e01ba3f389194a14bc0e9a40c3e664628434631a5
-    linux_x86_64: 87dc619b29115876a2816b0bcca2980795fe26fea2b7056ee9933189e6108b08
+    darwin_arm64: d06522f4b77d1d723584aeac9354ed5f22a8db75905458240b031b88175829d2
+    darwin_x86_64: 2e147cbc7c2fbd3814537ca21e202faaf75d686f9e2ed9ab6a2ca5ee8713d522
+    linux_x86_64: 46dbd45404c62795a6c593746cc7ab87651f9ffcb82c3e58d57708eb3fb15fa8
 plugins:
   sources:
     - id: trunk
-      ref: v0.0.21
+      ref: v1.2.1
       uri: https://github.com/trunk-io/plugins
 lint:
   enabled:
     # Code - multi-language
-    - semgrep@1.31.2
+    - semgrep@1.36.0
     # Code - Python
     - bandit@1.7.5
-    - black@23.3.0
+    - black@23.7.0
     - isort@5.12.0
-    - ruff@0.0.277
+    - ruff@0.0.285
     # Code - shell
     - shellcheck@0.9.0
     - shfmt@3.6.0
     # File - Markdown
     - markdownlint@0.35.0
     # File - TOML
-    - taplo@0.7.0
+    - taplo@0.8.1
     # File - YAML
     - yamllint@1.32.0
     # Formatting
-    - prettier@3.0.0
+    - prettier@3.0.2
     # Git
     - git-diff-check
     # GitHub Actions
     - actionlint@1.6.25
     # Security - general
-    - checkov@2.3.316
-    - trivy@0.43.1
+    - checkov@2.4.4
+    - trivy@0.44.1
     # Security - secrets
     - gitleaks@8.17.0
-    - trufflehog@3.43.0
+    - trufflehog@3.48.0
     # Spell check
-    - cspell@6.31.1
+    - cspell@7.0.1
 runtimes:
   enabled:
     - go@1.20.5
