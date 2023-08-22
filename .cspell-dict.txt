@@ -149,6 +149,8 @@ MoodyReaper
 mpris
 MSYS
 mybind
+neoconf
+neodev
 neofetch
 neovide
 neovim
