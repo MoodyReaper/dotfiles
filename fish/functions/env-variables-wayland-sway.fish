@@ -9,18 +9,13 @@ function env-variables-wayland-sway --description 'Applies ENV variables for Way
     set -gx CLUTTER_BACKEND wayland
 
     # SDL2
-    set -gx SDL_VIDEODRIVER wayland
+    set -gx SDL_VIDEODRIVER 'wayland,x11'
 
     # QT
-    set -gx QT_QPA_PLATFORM wayland
+    set -gx QT_QPA_PLATFORM 'wayland;xcb'
     set -gx QT_QPA_PLATFORMTHEME qt5ct
     # https://github.com/swaywm/sway/wiki#disabling-client-side-qt-decorations
     set -gx QT_WAYLAND_DISABLE_WINDOWDECORATION 1
-
-    # Elementary/EFL
-    # You could set them to wayland_shm instead, if you want to use software rendering
-    set -gx ECORE_EVAS_ENGINE wayland_egl
-    set -gx ELM_ENGINE wayland_egl
 
     # Java
     # Some Java AWT applications will not display properly unless you set the following
