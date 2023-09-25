@@ -224,6 +224,7 @@ splitv
 startcenter
 statusline
 strikethrough
+stylelint
 stylua
 subtemplate
 sumneko
