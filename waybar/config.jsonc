@@ -175,7 +175,7 @@
   // https://www.reddit.com/r/swaywm/comments/ncjpfz/how_to_add_gpu_usage_to_waybar/
   "custom/gpu-usage": {
     "interval": 5,
-    "exec": "cat /sys/class/drm/card0/device/gpu_busy_percent",
+    "exec": "cat /sys/class/drm/card1/device/gpu_busy_percent",
     "format": "GPU: {}% 󰤽"
   }
   // https://gist.github.com/nicodebo/297c1e134256ea24abf02a485ce41420
