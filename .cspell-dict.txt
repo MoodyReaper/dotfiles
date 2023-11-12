@@ -149,6 +149,7 @@ MoodyReaper
 mpris
 MSYS
 mybind
+mypy
 neoconf
 neodev
 neofetch
