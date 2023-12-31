@@ -1,25 +1,25 @@
 version: 0.1
 cli:
-  version: 1.17.2
+  version: 1.18.1
   sha256:
-    darwin_arm64: 5de2f7d68e8941d268d85b337859bac0ad890a76535b9c972acdf99b708aeff8
-    darwin_x86_64: b2d65d906a4c946e2b87d11c62d306fe7899ccfae31bb78429b328da000b4cb0
-    linux_x86_64: b192cf635142b8f043f435012c69e4e95989d5420bdbe66e3caad74cf2be6636
+    darwin_arm64: 135b642dcbbf7992788725f3e4f0aac435f54a8fc06e98e12091fdfe8356e5a1
+    darwin_x86_64: aac02e3db57653b6978f68aba50525ad5cc3aa954465c2e19ffad8497898cfba
+    linux_x86_64: bee9dda51763f35a8b988f53eb3e00fbdeffa14d5b26162cc80d0d319c47be58
 plugins:
   sources:
     - id: trunk
-      ref: v1.2.6
+      ref: v1.4.1
       uri: https://github.com/trunk-io/plugins
 lint:
   enabled:
     # Code - multi-language
-    - semgrep@1.48.0
+    - semgrep@1.54.3
     # Code - Python
-    - bandit@1.7.5
-    - black@23.9.1
-    - isort@5.12.0
-    - mypy@1.6.1
-    - ruff@0.1.5
+    - bandit@1.7.6
+    - black@23.12.1
+    - isort@5.13.2
+    - mypy@1.8.0
+    - ruff@0.1.9
     # Code - shell
     - shellcheck@0.9.0
     - shfmt@3.6.0
@@ -30,25 +30,25 @@ lint:
     #       - stylelint-config-standard-scss@11.1.0
     #       - stylelint-config-clean-order@5.2.0
     # File - Markdown
-    - markdownlint@0.37.0
+    - markdownlint@0.38.0
     # File - TOML
     - taplo@0.8.1
     # File - YAML
     - yamllint@1.33.0
     # Formatting
-    - prettier@3.0.3
+    - prettier@3.1.1
     # Git
     - git-diff-check
     # GitHub Actions
     - actionlint@1.6.26
     # Security - general
-    - checkov@3.0.32
-    - trivy@0.47.0
+    - checkov@3.1.46
+    - trivy@0.48.1
     # Security - secrets
-    - gitleaks@8.18.0
-    - trufflehog@3.62.1
+    - gitleaks@8.18.1
+    - trufflehog@3.63.7
     # Spell check
-    - cspell@8.0.0
+    - cspell@8.2.4
 runtimes:
   enabled:
     - go@1.21.1
@@ -60,6 +60,7 @@ actions:
     - trunk-check-pre-push
     - trunk-fmt-pre-commit
     - trunk-upgrade-available
+    - commitlint
 merge:
   required_statuses:
     - Trunk Check
