@@ -22,6 +22,6 @@ jobs:
     timeout-minutes: 5
     steps:
       - name: Checkout
-        uses: actions/checkout@b4ffde65f46336ab88eb53be808477a3936bae11 # v4.1.1
+        uses: actions/checkout@9bb56186c3b09b4f86b1c65136769dd318469633 # v4.1.2
       - name: Trunk Check
         uses: trunk-io/trunk-action@718b71fb3e4d83f6734f0c372d92ee7d4c9976d7 # v1.1.11
