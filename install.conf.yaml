@@ -25,6 +25,8 @@
     ~/.config/electron-flags.conf: electron/electron-flags.conf
     ~/.config/electron18-flags.conf: electron/electron-flags.conf
     ~/.config/electron22-flags.conf: electron/electron-flags.conf
+    ~/.config/electron28-flags.conf: electron/electron-flags.conf
+    ~/.config/obsidian/user-flags.conf: electron/electron-flags.conf
     # Fish
     ~/.config/fish: fish/
     # Flavours
