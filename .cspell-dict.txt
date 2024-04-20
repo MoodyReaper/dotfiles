@@ -289,3 +289,4 @@ Xinerama
 xwayland
 yamlls
 zenity
+zoxide
