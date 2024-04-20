@@ -45,9 +45,6 @@
       path: gtk/gtkrc-2.0
       force: true
     ~/.themes/FlatColor: gtk/FlatColor/
-    # Neovim
-    ~/.config/nvim: neovim/AstroNvim/
-    ~/.config/nvim/lua/user: neovim/user/
     # Pipewire
     ~/.config/pipewire: pipewire/
     # Poetry
