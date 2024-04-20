@@ -33,4 +33,4 @@
     # exec nm-applet --indicator
 
     # Telegram
-    exec telegram-desktop
+    # exec telegram-desktop
