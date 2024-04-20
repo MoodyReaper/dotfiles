@@ -12,9 +12,16 @@ armv
 asdfrc
 Astro
 astrocommunity
+astrocore
 astrodark
+astrolsp
 AstroNvim
+astrotheme
+astroui
+augroup
 augroups
+autocmd
+autocmds
 autocommands
 autopairs
 backoff
@@ -37,9 +44,11 @@ bytecodes
 catppuccin
 cheatcode
 checksummed
+clangd
 cleartext
 Codecept
 codesize
+colorschemes
 commitlint
 compiz
 concat
@@ -88,6 +97,7 @@ fooscript
 froms
 fullscreen
 gcloud
+getchar
 getvcp
 gitdir
 gitsubmodule
@@ -98,6 +108,7 @@ grsync
 gruntfuggly
 gsettings
 gtkrc
+habamax
 hardfork
 haxe
 heirline
@@ -127,6 +138,7 @@ keymap
 keypair
 killall
 lazygit
+lazypath
 lcov
 lefthand
 levelname
@@ -134,12 +146,14 @@ libsecret
 lightspeed
 liveshare
 localip
+localleader
 lolilolicon
 lspconfig
 luasnip
 Lxappearance
 Mainwindow
 mapleader
+maplocalleader
 markdownlint
 matchit
 mdbook
@@ -161,6 +175,7 @@ NONREPARENTING
 npairs
 numpad
 nvim
+nvimtools
 oderwat
 pactl
 pango
@@ -225,6 +240,7 @@ splith
 splitv
 startcenter
 statusline
+stdpath
 strikethrough
 stylelint
 stylua
@@ -253,6 +269,7 @@ uwqhd
 vcsh
 VDPAU
 VIDEODRIVER
+vimdocs
 vimwiki
 virt
 virtualenvs

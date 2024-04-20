@@ -9,5 +9,9 @@
     }
   ],
   "dictionaries": ["project-dict"],
-  "ignorePaths": ["./.cspell-dict.txt,", "./fish/fish_variables"]
+  "ignorePaths": [
+    "./.cspell-dict.txt",
+    "./fish/fish_variables",
+    "./neovim/lazy-lock.json"
+  ]
 }
