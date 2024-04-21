@@ -51,9 +51,10 @@ template = "waybar"
 rewrite = true
 hook = "pkill -SIGRTMIN+7 waybar"
 
+# Custom Alacritty template
 [[item]]
-file = "~/.config/alacritty/alacritty.yml"
-template = "alacritty"
+file = "~/.config/alacritty/alacritty.toml"
+template = "alacritty-custom"
 subtemplate = "default-256"
 
 # Custom Fish template
