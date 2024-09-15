@@ -256,6 +256,7 @@ swaymsg
 swaynag
 Synaptics
 Tabernero
+tabline
 tabnew
 tamasfe
 terminfo
