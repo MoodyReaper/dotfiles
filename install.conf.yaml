@@ -13,6 +13,8 @@
     ~/.tool-versions:
       path: asdf/tool-versions
       force: true
+    # bat
+    ~/.config/bat/config: bat/config
     # Bin
     ~/.local/bin: bin/
     # Chromium

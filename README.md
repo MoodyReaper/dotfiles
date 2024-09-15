@@ -64,6 +64,7 @@ _Note: this repository contains user files only (system files are not presented)
 | Configured in | Name                                                          | Notes                                  |
 | :------------ | :------------------------------------------------------------ | :------------------------------------- |
 | `Fish`        | [asdf](https://asdf-vm.com)                                   | Multiple runtime version manager       |
+| `Fish`        | [bat](https://github.com/sharkdp/bat)                         | `cat` command replacement              |
 | `Fish`        | [fzf](https://github.com/junegunn/fzf)                        | Fuzzy search                           |
 | `Fish`        | [Gnome Keyring](https://wiki.gnome.org/Projects/GnomeKeyring) | Secrets storage                        |
 | `Fish`        | [zoxide](https://github.com/ajeetdsouza/zoxide)               | `cd` command replacement               |
