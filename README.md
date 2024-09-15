@@ -63,8 +63,8 @@ _Note: this repository contains user files only (system files are not presented)
 
 | Configured in | Name                                                          | Notes                                  |
 | :------------ | :------------------------------------------------------------ | :------------------------------------- |
-| `bin/`        | [fzf](https://github.com/junegunn/fzf)                        | Fuzzy search                           |
 | `Fish`        | [asdf](https://asdf-vm.com)                                   | Multiple runtime version manager       |
+| `Fish`        | [fzf](https://github.com/junegunn/fzf)                        | Fuzzy search                           |
 | `Fish`        | [Gnome Keyring](https://wiki.gnome.org/Projects/GnomeKeyring) | Secrets storage                        |
 | `Sway`        | [grim](https://github.com/emersion/grim)                      | Screenshots - image grabber            |
 | `Sway`        | [slurp](https://github.com/emersion/slurp)                    | Screen capture - region selector       |
