@@ -53,6 +53,7 @@ commitlint
 compiz
 concat
 conds
+conflictstyle
 Consolas
 daml
 darkmode

@@ -1,8 +1,27 @@
 [include]
-path = .gitconfig-personal
+    path = .gitconfig-personal
+
 [includeIf "gitdir:~/Work/"]
-path = .gitconfig-work
+    path = .gitconfig-work
+
 [credential]
-helper = /usr/lib/git-core/git-credential-libsecret
+    helper = /usr/lib/git-core/git-credential-libsecret
+
 [core]
-editor = nvim
+    editor = nvim
+    pager = delta
+
+[interactive]
+    diffFilter = delta --color-only
+
+[delta]
+    hyperlinks = true
+    line-numbers = true
+    navigate = true
+    side-by-side = true
+
+[merge]
+    conflictstyle = diff3
+
+[diff]
+    colorMoved = default

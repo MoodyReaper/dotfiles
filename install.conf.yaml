@@ -49,6 +49,8 @@
       path: gtk/gtkrc-2.0
       force: true
     ~/.themes/FlatColor: gtk/FlatColor/
+    # Lazygit
+    ~/.config/lazygit/config.yml: lazygit/config.yml
     # Neovim
     ~/.config/nvim: neovim/
     # Pipewire

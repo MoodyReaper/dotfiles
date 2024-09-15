@@ -69,6 +69,7 @@ _Note: this repository contains user files only (system files are not presented)
 | `Fish`        | [fzf](https://github.com/junegunn/fzf)                        | Fuzzy search                           |
 | `Fish`        | [Gnome Keyring](https://wiki.gnome.org/Projects/GnomeKeyring) | Secrets storage                        |
 | `Fish`        | [zoxide](https://github.com/ajeetdsouza/zoxide)               | `cd` command replacement               |
+| `git`         | [delta](https://github.com/dandavison/delta)                  | Syntax-highlighting pager              |
 | `Sway`        | [grim](https://github.com/emersion/grim)                      | Screenshots - image grabber            |
 | `Sway`        | [slurp](https://github.com/emersion/slurp)                    | Screen capture - region selector       |
 | `Sway`        | [Swappy](https://github.com/jtheoof/swappy)                   | Screenshots - snapshot and editor tool |
