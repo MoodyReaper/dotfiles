@@ -49,8 +49,8 @@ _Note: this repository contains user files only (system files are not presented)
 | Shell Prompt             | [Starship](https://starship.rs)                                                                            | -                                                   |
 | Terminal                 | [Alacritty](https://alacritty.org)                                                                         | -                                                   |
 | GUI File Manager         | [Thunar](https://docs.xfce.org/xfce/thunar)                                                                | -                                                   |
-| TUI File Manager         | [nnn](https://github.com/jarun/nnn)                                                                        | -                                                   |
-| GUI Text Editor          | [VS Code OSS](https://github.com/microsoft/vscode)                                                         | -                                                   |
+| TUI File Manager         | [yazi](https://github.com/sxyazi/yazi)                                                                     | -                                                   |
+| GUI Text Editor          | [VS Code](https://code.visualstudio.com) + [Zed](https://zed.dev)                                          | -                                                   |
 | TUI Text Editor          | [neovim](https://neovim.io) + [neovide](https://neovide.dev)                                               | -                                                   |
 | Config Manager           | [Dotbot](https://github.com/anishathalye/dotbot)                                                           | -                                                   |
 | Theme Manager            | [Flavours](https://github.com/Misterio77/flavours)                                                         | -                                                   |

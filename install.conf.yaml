@@ -66,6 +66,8 @@
     ~/.bg-uwqhd: wallpaper/UW-QHD.png
     # Waybar
     ~/.config/waybar: waybar/
+    # Yazi
+    ~/.config/yazi: yazi/
 
 - shell:
     - [git submodule update --init --recursive, Installing submodules]

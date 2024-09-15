@@ -288,5 +288,6 @@ xcursor
 Xinerama
 xwayland
 yamlls
+yazi
 zenity
 zoxide
