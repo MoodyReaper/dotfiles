@@ -10,3 +10,5 @@ alias ls='eza --color=automatic --group-directories-first --icons'
 alias la='ls --all'
 alias ll='ls --long'
 alias lt='ls --tree'
+
+alias grep='rg'

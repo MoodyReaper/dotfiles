@@ -68,6 +68,7 @@ _Note: this repository contains user files only (system files are not presented)
 | `Fish`        | [eza](https://github.com/eza-community/eza)                   | `ls` command replacement               |
 | `Fish`        | [fzf](https://github.com/junegunn/fzf)                        | Fuzzy search                           |
 | `Fish`        | [Gnome Keyring](https://wiki.gnome.org/Projects/GnomeKeyring) | Secrets storage                        |
+| `Fish`        | [ripgrep](https://github.com/BurntSushi/ripgrep)              | `grep` command replacement             |
 | `Fish`        | [zoxide](https://github.com/ajeetdsouza/zoxide)               | `cd` command replacement               |
 | `git`         | [delta](https://github.com/dandavison/delta)                  | Syntax-highlighting pager              |
 | `Sway`        | [grim](https://github.com/emersion/grim)                      | Screenshots - image grabber            |
