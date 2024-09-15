@@ -30,9 +30,11 @@ for_window [class="discord"] floating enable
 for_window [class="Keybase"] floating enable
 for_window [class="Lxappearance"] floating enable
 for_window [class="Mainwindow.py"] floating enable # PlayOnLinux
+for_window [class="Skype"] floating enable
 for_window [class="Steam"] floating enable
 for_window [class="ToneLib-GFX"] floating enable
 for_window [class="ToneLib-Jam"] floating enable
+for_window [class="zoom"] floating enable
 
 for_window [title="^Discord$"] floating enable # https://github.com/swaywm/sway/issues/6177
 
