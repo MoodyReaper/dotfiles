@@ -144,6 +144,7 @@ lcov
 lefthand
 levelname
 libsecret
+libva
 lightspeed
 liveshare
 localip
