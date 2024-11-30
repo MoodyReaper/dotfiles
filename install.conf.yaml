@@ -20,6 +20,7 @@
     # Chromium
     ~/.config/brave-flags.conf: chromium/chromium-flags.conf
     ~/.config/chrome-flags.conf: chromium/chromium-flags.conf
+    ~/.config/chromium-flags.conf: chromium/chromium-flags.conf
     # Dunst
     ~/.config/dunst: dunst/
     # Electron
@@ -27,6 +28,8 @@
     ~/.config/electron-flags.conf: electron/electron-flags.conf
     ~/.config/electron28-flags.conf: electron/electron-flags.conf
     ~/.config/electron30-flags.conf: electron/electron-flags.conf
+    ~/.config/electron31-flags.conf: electron/electron-flags.conf
+    ~/.config/electron32-flags.conf: electron/electron-flags.conf
     ~/.config/obsidian/user-flags.conf: electron/electron-flags.conf
     # Fish
     ~/.config/fish: fish/
