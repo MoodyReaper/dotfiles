@@ -87,7 +87,7 @@ _Note: this repository contains user files only (system files are not presented)
 | GPU        | `AMD Radeon RX 6900 XT (AsRock)` | Check GPU related stuff in `waybar`. Check settings in `hardware_acceleration.fish` |
 | Monitor    | `Mi Curved Gaming Monitor 34`    | Configs (for example, `waybar`) are optimized for 3440x1440 resolution (UW-QHD)     |
 | Sound card | `Solid State Logic SSL 2+`       | Worked out of the box, other devices might require special configuration            |
-| Keyboard   | `Keychron K8`                    | Windows mode is used. Some keybindings might not work due to a different keyboard   |
+| Keyboard   | `Wooting 80HE`                   | Some keybindings might not work due to a different keyboard                         |
 
 ![neofetch](https://github.com/MoodyReaper/dotfiles/assets/16370497/b248c8b3-c69a-442d-9b26-76d8a1bff081)
 
