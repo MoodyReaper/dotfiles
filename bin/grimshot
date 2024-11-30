@@ -42,7 +42,7 @@ while [[ $# -gt 0 ]]; do
     shift # past argument
     ;;
   -d | --delay)
-    DELAY=1
+    DELAY=2
     shift # past argument
     ;;
   *)      # unknown option
