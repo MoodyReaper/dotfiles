@@ -121,7 +121,7 @@ mode "resize" {
 $mybind $mod+r mode "resize"
 #
 # When using multiple monitors, the floating scratchpad window can get too large, covering more than one monitor.
-# This command centers and resizes the floating window to 80% of the current monitor's size: 
+# This command centers and resizes the floating window to 80% of the current monitor's size:
 #
     $mybind $mod+Shift+r exec swaymsg move position center & swaymsg resize set 40ppt 80ppt
 #
@@ -152,6 +152,7 @@ $mybind $mod+r mode "resize"
     $mybind $mod+Shift+f exec firefox
     $mybind $mod+Shift+g exec google-chrome-stable
     $mybind $mod+Shift+m exec gnome-system-monitor
+    $mybind $mod+p exec qpwgraph
     $mybind $mod+m exec pavucontrol
     $mybind $mod+Shift+s exec spotify
     $mybind $mod+Shift+t exec telegram-desktop
