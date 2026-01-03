@@ -4,4 +4,6 @@ if status --is-login
     set -gx LIBVA_DRIVER_NAME radeonsi
     # https://wiki.archlinux.org/title/Hardware_video_acceleration#Configuring_VDPAU
     set -gx VDPAU_DRIVER radeonsi
+    # https://wiki.archlinux.org/title/GPGPU#Rusticl
+    set -gx RUSTICL_ENABLE radeonsi
 end

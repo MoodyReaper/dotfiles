@@ -8,7 +8,7 @@
     helper = /usr/lib/git-core/git-credential-libsecret
 
 [core]
-    editor = nvim
+    editor = zeditor
     pager = delta
 
 [interactive]

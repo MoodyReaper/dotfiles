@@ -10,14 +10,6 @@ appname
 argparse
 armv
 asdfrc
-Astro
-astrocommunity
-astrocore
-astrodark
-astrolsp
-AstroNvim
-astrotheme
-astroui
 augroup
 augroups
 autocmd
@@ -160,7 +152,6 @@ markdownlint
 matchit
 mdbook
 mediaplayer
-Menlo
 mktemp
 MoodyReaper
 mpris
@@ -170,14 +161,10 @@ mypy
 neoconf
 neodev
 neofetch
-neovide
-neovim
 netrw
 NONREPARENTING
 npairs
 numpad
-nvim
-nvimtools
 oderwat
 pactl
 pango
@@ -215,6 +202,7 @@ resession
 rgba
 rlang
 runtimes
+rusticl
 Ryzen
 SAMPLETEXT
 scancode
@@ -273,8 +261,6 @@ uwqhd
 vcsh
 VDPAU
 VIDEODRIVER
-vimdocs
-vimwiki
 virt
 virtualenvs
 vlang
@@ -294,5 +280,6 @@ Xinerama
 xwayland
 yamlls
 yazi
+zeditor
 zenity
 zoxide

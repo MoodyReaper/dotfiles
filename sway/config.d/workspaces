@@ -49,7 +49,6 @@ assign [app_id="Alacritty"]                $workspace2
 assign [app_id="code-oss"] 		             $workspace3
 assign [app_id="code-url-handler"] 		     $workspace3
 assign [app_id="code"] 		                 $workspace3
-assign [app_id="neovide"] 		             $workspace3
 assign [app_id="filezilla"] 			         $workspace4
 assign [app_id="thunar"] 			             $workspace4
 assign [app_id="deluge"] 			             $workspace5

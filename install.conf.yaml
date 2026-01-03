@@ -54,8 +54,6 @@
     ~/.themes/FlatColor: gtk/FlatColor/
     # Lazygit
     ~/.config/lazygit/config.yml: lazygit/config.yml
-    # Neovim
-    ~/.config/nvim: neovim/
     # Pipewire
     ~/.config/pipewire: pipewire/
     # Poetry

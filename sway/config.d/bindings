@@ -157,6 +157,7 @@ $mybind $mod+r mode "resize"
     $mybind $mod+Shift+s exec spotify
     $mybind $mod+Shift+t exec Telegram
     $mybind $mod+t exec thunar
+    $mybind $mod+z exec env -u WAYLAND_DISPLAY zeditor
 #
 # Flavours theme selection
 # https://github.com/Misterio77/dotfiles/blob/sway/home/.config/sway/config

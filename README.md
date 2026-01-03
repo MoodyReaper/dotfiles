@@ -51,7 +51,7 @@ _Note: this repository contains user files only (system files are not presented)
 | GUI File Manager         | [Thunar](https://docs.xfce.org/xfce/thunar)                                                                | -                                                   |
 | TUI File Manager         | [yazi](https://github.com/sxyazi/yazi)                                                                     | -                                                   |
 | GUI Text Editor          | [VS Code](https://code.visualstudio.com) + [Zed](https://zed.dev)                                          | -                                                   |
-| TUI Text Editor          | [neovim](https://neovim.io) + [neovide](https://neovide.dev)                                               | -                                                   |
+| TUI Text Editor          | [nano](https://nano-editor.org)                                                                            | -                                                   |
 | Config Manager           | [Dotbot](https://github.com/anishathalye/dotbot)                                                           | -                                                   |
 | Theme Manager            | [Flavours](https://github.com/Misterio77/flavours)                                                         | -                                                   |
 | Color Schemes            | [Base16](https://github.com/chriskempson/base16)                                                           | -                                                   |
