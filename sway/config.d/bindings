@@ -155,7 +155,7 @@ $mybind $mod+r mode "resize"
     $mybind $mod+p exec qpwgraph
     $mybind $mod+m exec pavucontrol
     $mybind $mod+Shift+s exec spotify
-    $mybind $mod+Shift+t exec telegram-desktop
+    $mybind $mod+Shift+t exec Telegram
     $mybind $mod+t exec thunar
 #
 # Flavours theme selection
