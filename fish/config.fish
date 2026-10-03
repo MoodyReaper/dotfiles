@@ -6,7 +6,7 @@ fzf --fish | source
 
 alias cat='bat --paging=never'
 
-alias ls='eza --color=automatic --group-directories-first --icons'
+alias ls='eza --color=auto --group-directories-first --icons=auto'
 alias la='ls --all'
 alias ll='ls --long'
 alias lt='ls --tree'
