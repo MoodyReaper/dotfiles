@@ -39,29 +39,19 @@ $mybind $mod+Shift+0 move container to workspace number $workspace10
 # Note: workspaces can have any name you want, not just numbers.
 # We just use 1-10 as the default.
 
-# Assigning apps with workspaces
-# Get class or app_id by the following command:
-# swaymsg -t get_tree | grep "class\|app_id\|window_role"
-assign [app_id="brave-browser"]            $workspace1
-assign [app_id="firefox"]                  $workspace1
-assign [app_id="google-chrome"]            $workspace1
-assign [app_id="Alacritty"]                $workspace2
-assign [app_id="code-oss"] 		             $workspace3
-assign [app_id="code-url-handler"] 		     $workspace3
-assign [app_id="code"] 		                 $workspace3
-assign [app_id="filezilla"] 			         $workspace4
-assign [app_id="thunar"] 			             $workspace4
-assign [app_id="deluge"] 			             $workspace5
-assign [app_id="libreoffice-startcenter"]  $workspace5
-assign [app_id="libreoffice-writer"]       $workspace5
-assign [class="Steam"]                     $workspace6
-assign [app_id="blueman-manager"] 		     $workspace7
-assign [app_id="spotify"] 		             $workspace7
-assign [class="discord"] 				           $workspace8
-assign [app_id="Slack"] 				           $workspace8
-assign [app_id="org.telegram.desktop"]     $workspace8
-assign [app_id="zoom"]                     $workspace8
-
-# "move" method is used instead when workspace assigning doesn't work
-for_window [class="Slack"] move to workspace  $workspace8
-for_window [app_id="zoom"] move to workspace  $workspace8
+# Assign applications to workspaces.
+# Inspect identifiers with swaymsg -t get_tree.
+# app_id matches Wayland windows; class matches XWayland windows.
+assign [app_id="^brave-browser$"]                        $workspace1
+assign [app_id="^firefox$"]                              $workspace1
+assign [app_id="^google-chrome$"]                        $workspace1
+assign [app_id="^Alacritty$"]                            $workspace2
+assign [app_id="^com\.microsoft\.VSCode$"]               $workspace3
+assign [app_id="^thunar$"]                               $workspace4
+assign [app_id="^deluge$"]                               $workspace5
+assign [app_id="^(libreoffice(-.*)?|soffice)$"]          $workspace5
+assign [class="(?i)^steam$"]                             $workspace6
+assign [app_id="^spotify$"]                              $workspace7
+assign [app_id="^discord$"]                              $workspace8
+assign [app_id="^slack$"]                                $workspace8
+assign [app_id="^org\.telegram\.desktop$"]               $workspace8

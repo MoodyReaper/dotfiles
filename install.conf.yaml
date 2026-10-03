@@ -24,11 +24,8 @@
     # Electron
     ~/.config/code-flags.conf: electron/electron-flags.conf
     ~/.config/electron-flags.conf: electron/electron-flags.conf
-    ~/.config/electron28-flags.conf: electron/electron-flags.conf
-    ~/.config/electron30-flags.conf: electron/electron-flags.conf
-    ~/.config/electron31-flags.conf: electron/electron-flags.conf
-    ~/.config/electron32-flags.conf: electron/electron-flags.conf
     ~/.config/obsidian/user-flags.conf: electron/electron-flags.conf
+    ~/.config/spotify-flags.conf: electron/electron-flags.conf
     # Fish
     ~/.config/fish: fish/
     # Flavours

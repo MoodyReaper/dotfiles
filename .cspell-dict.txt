@@ -231,6 +231,7 @@ SIGPIPE
 SIGRTMIN
 SIGTERM
 snipmate
+soffice
 sourcify
 spack
 speedcrunch
