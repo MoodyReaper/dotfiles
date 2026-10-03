@@ -67,3 +67,9 @@ opacity = 0.8
 [window.padding]
 x = 5
 y = 5
+
+# Make Shift+Enter insert a newline in apps that recognize Escape+Return.
+[[keyboard.bindings]]
+key = "Return"
+mods = "Shift"
+chars = "\u001B\r"
