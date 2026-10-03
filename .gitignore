@@ -13,3 +13,11 @@ Thumbs.db
 
 # Cache
 *cache*
+
+# fish runtime state and files installed by fisher
+fish/fish_variables
+fish/functions/fisher.fish
+fish/functions/fish-color-check.fish
+fish/completions/fisher.fish
+fish/completions/fish-color-check.fish
+fish/conf.d/fish_frozen_*.fish*

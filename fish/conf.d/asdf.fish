@@ -1,5 +1,7 @@
 # https://asdf-vm.com/guide/getting-started.html#_2-configure-asdf
 
+set -gx ASDF_GOLANG_MOD_VERSION_ENABLED true
+
 # ASDF configuration code
 if test -z $ASDF_DATA_DIR
   set _asdf_shims "$HOME/.asdf/shims"

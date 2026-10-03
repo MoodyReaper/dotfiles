@@ -21,15 +21,23 @@ _Note: this repository contains user files only (system files are not presented)
    - _Edit `sway/config.d/output` if needed_
 5. Manage shell settings:
    - _I use `Fish` shell so everything is configured for it (`fish` is the default shell for my user)_
-     - _Check `fish_variables`, remove hardcoded user_
+     - _`fish_variables` is local runtime state and is not tracked; preferences live in the startup configuration_
 6. Check `fish` and `sway` autostart configs
 7. Install dependencies (read sections below)
 8. Run `dotbot` script: `./install`
    - _Read console output, some configs may not be applied_
-   - _By default, `GTK` theme `FlatColor` does not have color scheme defined so it's important to apply a theme (next step)_
-9. Apply any desired theme using `Flavours` base16 theme manager:
-   - _For example, `flavours apply tender`_
-10. Relogin
+   - _By default, `GTK` theme `FlatColor` does not have color scheme defined so it's important to apply a theme (step 10)_
+9. Install the plugins listed in `fish/fish_plugins` by running these commands in `fish`:
+
+   ```fish
+   curl -fsSL https://raw.githubusercontent.com/jorgebucaran/fisher/main/functions/fisher.fish | source
+   fisher update
+   ```
+
+   - _Plugin-installed files and their runtime state are local and are not tracked_
+
+10. Apply a theme using `flavours`, for example: `flavours apply tender`.
+11. Relogin
 
 ## Software
 
