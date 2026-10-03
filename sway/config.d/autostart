@@ -3,6 +3,9 @@
 
 # System / internal / general:
 
+    # Remove stale application launcher history
+    exec sway-launcher-desktop purge
+
     # Gnome-Polkit
     # https://wiki.archlinux.org/title/Polkit
     # https://www.fosskers.ca/en/blog/wayland#orgb4cc3c
