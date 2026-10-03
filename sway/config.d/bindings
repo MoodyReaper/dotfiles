@@ -170,7 +170,7 @@ $mybind $mod+r mode "resize"
 #
 
 # Screenshots:
-# https://github.com/swaywm/sway/blob/master/contrib/grimshot (modified, check bin folder)
+# https://github.com/swaywm/sway/blob/master/contrib/grimshot (modified, check scripts folder)
 # https://github.com/jtheoof/swappy
 set $mode_screenshot Screenshot: a - area, w - window, s - screen, c - color picker
 mode "$mode_screenshot" {

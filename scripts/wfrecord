@@ -7,7 +7,7 @@ set -eo pipefail
 # https://github.com/ammen99/wf-recorder
 
 # Credits:
-# https://github.com/MoodyReaper/dotfiles/blob/master/bin/wfrecord
+# https://github.com/MoodyReaper/dotfiles/blob/master/scripts/wfrecord
 
 ## Wfrecord: a helper for screenrecords within sway
 ## Requirements:

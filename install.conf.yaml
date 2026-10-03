@@ -15,8 +15,6 @@
       force: true
     # bat
     ~/.config/bat/config: bat/config
-    # Bin
-    ~/.local/bin: bin/
     # Chromium
     ~/.config/brave-flags.conf: chromium/chromium-flags.conf
     ~/.config/chrome-flags.conf: chromium/chromium-flags.conf
@@ -58,6 +56,8 @@
     ~/.config/pipewire: pipewire/
     # Poetry
     ~/.config/pypoetry/config.toml: poetry/config.toml
+    # Scripts
+    ~/.local/scripts: scripts/
     # Starship
     ~/.config/starship.toml: starship/starship.toml
     # Sway
