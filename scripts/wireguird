@@ -1,0 +1,51 @@
+#!/bin/bash
+
+# Pass Wayland session settings explicitly because pkexec clears them.
+set -euo pipefail
+
+if [[ ! -x /usr/bin/pkexec || ! -x /usr/bin/xdg-dbus-proxy || ! -x /opt/wireguird/wireguird ]]; then
+  printf 'This launcher requires Wireguird, polkit and xdg-dbus-proxy to be installed.\n' >&2
+  exit 127
+fi
+
+if [[ -z ${WAYLAND_DISPLAY-} || -z ${XDG_RUNTIME_DIR-} || -z ${DBUS_SESSION_BUS_ADDRESS-} ]]; then
+  printf 'Run this launcher from a Wayland desktop session.\n' >&2
+  exit 1
+fi
+
+proxy_dir=$(mktemp -d "$XDG_RUNTIME_DIR/wireguird.XXXXXX")
+proxy_pid=
+cleanup() {
+  local result=$?
+  if [[ -n $proxy_pid ]]; then
+    kill "$proxy_pid" 2>/dev/null || true
+    wait "$proxy_pid" 2>/dev/null || true
+  fi
+  rm -f -- "$proxy_dir/bus"
+  rmdir -- "$proxy_dir"
+  exit "$result"
+}
+
+trap cleanup EXIT
+trap 'exit 129' HUP
+trap 'exit 130' INT
+trap 'exit 143' TERM
+
+# Connect as the desktop user so the root app can register its tray icon.
+coproc BUS_PROXY {
+  exec /usr/bin/xdg-dbus-proxy "$DBUS_SESSION_BUS_ADDRESS" "$proxy_dir/bus" --fd=1
+}
+proxy_pid=$!
+
+# Wait for proxy readiness and keep its pipe open until the app exits.
+if [[ -z ${BUS_PROXY[0]-} ]] || ! IFS= read -r -n 1 -u "${BUS_PROXY[0]}"; then
+  printf 'Failed to start the desktop session bus proxy.\n' >&2
+  exit 1
+fi
+
+/usr/bin/pkexec /usr/bin/env \
+  GDK_BACKEND=wayland \
+  "WAYLAND_DISPLAY=$WAYLAND_DISPLAY" \
+  "XDG_RUNTIME_DIR=$XDG_RUNTIME_DIR" \
+  "DBUS_SESSION_BUS_ADDRESS=unix:path=$proxy_dir/bus" \
+  /opt/wireguird/wireguird "$@"
