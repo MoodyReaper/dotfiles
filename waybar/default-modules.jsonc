@@ -1,0 +1,137 @@
+// Default modules configuration
+{
+  // "backlight": {
+  //   "device": "intel_backlight",
+  //   "format": "{percent}% {icon}",
+  //   "format-icons": ["", ""],
+  // },
+  // "battery": {
+  //   "format": "{capacity}% {icon}",
+  //   "format-alt": "{time} {icon}",
+  //   "format-charging": "{capacity}% 󰂄",
+  //   // "format-good": "", // An empty format will hide the module
+  //   "format-full": "",
+  //   "format-icons": ["", "", "", "", ""],
+  //   "format-plugged": "{capacity}% ",
+  //   "states": {
+  //     "critical": 15,
+  //     "good": 95,
+  //     "warning": 30,
+  //   },
+  // },
+  "clock": {
+    "actions": {
+      "on-click-right": "mode",
+      "on-scroll-down": "shift_down",
+      "on-scroll-up": "shift_up",
+    },
+    "calendar": {
+      "format": {
+        // TODO: set colors based on theme
+        "days": "<span color='#ecc6d9'><b>{}</b></span>",
+        "months": "<span color='#ffead3'><b>{}</b></span>",
+        "today": "<span color='#ff6699'><b><u>{}</u></b></span>",
+        "weekdays": "<span color='#ffcc66'><b>{}</b></span>",
+        "weeks": "<span color='#99ffdd'><b>W{}</b></span>",
+      },
+      "mode": "year",
+      "mode-mon-col": 3,
+      "on-scroll": 1,
+      "weeks-pos": "right",
+    },
+    "format": "{:%Y-%m-%d %H:%M:%S}",
+    "interval": 1,
+    "tooltip-format": "<tt><small>{calendar}</small></tt>",
+  },
+  "cpu": {
+    "format": "CPU: {usage}% ",
+    "interval": 5,
+  },
+  "disk#home": {
+    "format": "{percentage_used}% ",
+    "interval": 60,
+    "path": "/home",
+  },
+  "disk#root": {
+    "format": "{percentage_used}% ",
+    "interval": 60,
+    "path": "/",
+  },
+  "idle_inhibitor": {
+    "format": "{icon}",
+    "format-icons": {
+      "activated": "󰶐",
+      "deactivated": "󰷛",
+    },
+  },
+  "memory": {
+    "format": "{}% ",
+    "tooltip-format": "{used:0.1f}G used out of {total:0.1f}G",
+  },
+  "network": {
+    "format-alt": "{ifname}: {ipaddr}/{cidr}     {bandwidthDownBits}  {bandwidthUpBits}",
+    "format-disconnected": "Disconnected 󰀦",
+    "format-ethernet": "{ifname}: {ipaddr}/{cidr} 󰈁     {bandwidthDownBits}  {bandwidthUpBits}",
+    "format-linked": "{ifname} (No IP) 󰈀     {bandwidthDownBits}  {bandwidthUpBits}",
+    "format-wifi": "{essid} ({signalStrength}%)      {bandwidthDownBits}  {bandwidthUpBits}",
+    "interface": "wlan*",
+    "interval": 5,
+    "tooltip-format": "Interface: {ifname}\nIP: {ipaddr}",
+  },
+  "pulseaudio": {
+    "format": "{volume}% {icon} {format_source}",
+    "format-bluetooth": "{volume}% {icon} {format_source}",
+    "format-bluetooth-muted": "󰖁 {icon} {format_source}",
+    "format-icons": {
+      "car": "",
+      "default": ["", "", ""],
+      "hands-free": "󰏳",
+      "headphone": "",
+      "headset": "󰋎",
+      "phone": "",
+      "portable": "",
+    },
+    "format-muted": "󰖁 {format_source}",
+    "format-source": "{volume}% ",
+    "format-source-muted": "",
+    "on-click": "pactl set-sink-volume @DEFAULT_SINK@ +5%",
+    "on-click-middle": "pavucontrol",
+    "on-click-right": "pactl set-sink-volume @DEFAULT_SINK@ -5%",
+  },
+  "sway/language": {
+    "format": "{short} {variant}",
+    "on-click": "swaymsg input type:keyboard xkb_switch_layout next",
+    "tooltip": true,
+    "tooltip-format": "{long}",
+  },
+  "sway/mode": {
+    "format": "󰥾 <span style=\"italic\">{}</span>",
+    "max-length": 100,
+  },
+  "sway/window": {
+    "max-length": 60,
+  },
+  "sway/workspaces": {
+    "enable-bar-scroll": true,
+  },
+  "temperature#CPU": {
+    // https://joonas.fi/2021/07/stable-device-path-for-linux-hwmon-interfaces/
+    "critical-threshold": 80,
+    "format": "{temperatureC}°C {icon}",
+    "format-icons": ["", "", "", "", ""],
+    "hwmon-path": "/dev/cpu_temp",
+    "interval": 5,
+    "tooltip-format": "CPU",
+  },
+  "temperature#GPU": {
+    "critical-threshold": 80,
+    "format": "{temperatureC}°C {icon}",
+    "format-icons": ["", "", "", "", ""],
+    "hwmon-path": "/dev/gpu_temp",
+    "interval": 5,
+    "tooltip-format": "GPU",
+  },
+  "tray": {
+    "spacing": 10,
+  },
+}

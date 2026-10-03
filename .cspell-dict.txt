@@ -170,6 +170,7 @@ NONREPARENTING
 npairs
 numpad
 oderwat
+pacman
 pactl
 pango
 Papirus
