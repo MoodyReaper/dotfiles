@@ -1,0 +1,106 @@
+#!/bin/bash
+# Restart Steam in a headless Gamescope session for TV streaming.
+# References:
+# https://github.com/ValveSoftware/gamescope
+# https://github.com/NixOS/nixpkgs/blob/master/nixos/modules/programs/steam.nix
+# https://specifications.freedesktop.org/basedir/0.8/
+
+set -euo pipefail
+
+# Enable persistent logging with ENABLE_LOGGING=true.
+ENABLE_LOGGING="${ENABLE_LOGGING:-false}"
+
+# Ignore relative XDG paths, as required by the base directory specification.
+case ${XDG_STATE_HOME-} in
+/*) LOG_DIR="$XDG_STATE_HOME/gamescope" ;;
+*) LOG_DIR="$HOME/.local/state/gamescope" ;;
+esac
+LOG_FILE="$LOG_DIR/steam-session.log"
+
+# Use system binaries for session commands.
+CMD_MKDIR="/usr/bin/mkdir"
+CMD_DATE="/usr/bin/date"
+CMD_GAMESCOPE="/usr/bin/gamescope"
+CMD_STEAM="/usr/bin/steam"
+CMD_TEE="/usr/bin/tee"
+CMD_PKILL="/usr/bin/pkill"
+CMD_PGREP="/usr/bin/pgrep"
+CMD_SLEEP="/usr/bin/sleep"
+
+for command_path in "$CMD_GAMESCOPE" "$CMD_STEAM" "$CMD_PKILL" "$CMD_PGREP" \
+  "$CMD_SLEEP" "$CMD_MKDIR" "$CMD_DATE" "$CMD_TEE"; do
+  if [[ ! -x $command_path ]]; then
+    printf 'Required executable is missing: %s\n' "$command_path" >&2
+    exit 1
+  fi
+done
+
+if [[ $ENABLE_LOGGING == "true" ]]; then
+  "$CMD_MKDIR" -p "$LOG_DIR"
+  # Verify that the log is writable before starting the asynchronous logger.
+  : >>"$LOG_FILE"
+
+  # Mirror output to the terminal. The asynchronous logger reports its own errors;
+  # its exit status is independent of Gamescope's exit status.
+  exec > >("$CMD_TEE" -a "$LOG_FILE" || true) 2>&1
+
+  session_start=$("$CMD_DATE" '+%Y-%m-%d %H:%M:%S')
+  printf '%s\n' \
+    "Session start: $session_start" \
+    "User: ${USER:-$UID}" \
+    "Home: $HOME" \
+    "X11 display: ${DISPLAY:-unset}" \
+    "Wayland display: ${WAYLAND_DISPLAY:-unset}"
+fi
+
+# Stop this user's existing sessions so Steam starts inside the new compositor.
+echo "Performing cleanup..."
+for process_name in steam gamescope; do
+  # A status indicating no matching processes is expected on a fresh session.
+  "$CMD_PKILL" -u "$UID" -x "$process_name" || [[ $? -eq 1 ]]
+done
+
+# Wait for shutdown instead of assuming the processes exit after a fixed delay.
+cleanup_deadline=$((SECONDS + 10))
+while true; do
+  if "$CMD_PGREP" -u "$UID" -x 'steam|gamescope' >/dev/null; then
+    if ((SECONDS >= cleanup_deadline)); then
+      printf 'Steam or Gamescope is still running; session startup aborted.\n' >&2
+      exit 1
+    fi
+    "$CMD_SLEEP" 0.2
+  else
+    cleanup_status=$?
+    [[ $cleanup_status -eq 1 ]] || exit "$cleanup_status"
+    break
+  fi
+done
+
+echo "Initializing Gamescope Micro-Compositor..."
+
+# Replace the shell with Gamescope so signals and exit status reach the caller.
+# --expose-wayland: Allow Wayland clients to connect to Gamescope.
+# --hdr-enabled: Enable HDR output; HDR clients need the Gamescope WSI layer.
+# --backend headless: Render without a local window or physical display output.
+# -w / -h: Set the resolution exposed to games.
+# -W / -H: Set the compositor's output resolution.
+# -F fsr: Select AMD FidelityFX Super Resolution as the upscaling filter.
+# -S fit: Preserve the game's aspect ratio while fitting the output.
+# -r: Set the game refresh rate in frames per second.
+# -e: Enable Steam integration.
+# --: Separate Gamescope options from the Steam command.
+# -gamepadui: Start Steam's controller-oriented Big Picture interface.
+# -pipewire-dmabuf: Use DMA-BUF buffers for PipeWire video capture.
+
+exec "$CMD_GAMESCOPE" \
+  --expose-wayland \
+  --hdr-enabled \
+  --backend headless \
+  -w 3840 -h 2160 \
+  -W 3840 -H 2160 \
+  -F fsr \
+  -S fit \
+  -r 60 \
+  -e \
+  -- \
+  "$CMD_STEAM" -gamepadui -pipewire-dmabuf

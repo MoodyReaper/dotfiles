@@ -59,6 +59,7 @@ deef
 deno
 devicons
 distro
+dmabuf
 dmenu
 Dotbot
 dotfiles
@@ -89,6 +90,8 @@ Foofile
 fooscript
 froms
 fullscreen
+gamepadui
+gamescope
 gcloud
 getchar
 getvcp
@@ -179,6 +182,7 @@ pkill
 PLATFORMTHEME
 Playerctl
 polkit
+POSIX
 postexec
 prevrandao
 psensor
@@ -257,6 +261,7 @@ tolower
 trackid
 treesitter
 undrawn
+upscaling
 uwqhd
 vcsh
 VDPAU
