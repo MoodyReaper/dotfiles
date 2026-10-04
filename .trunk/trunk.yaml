@@ -1,36 +1,42 @@
 version: 0.1
 cli:
-  version: 1.21.0
+  version: 1.25.0
   sha256:
-    darwin_arm64: 299709536d15fd407746e6d483eea369f4a485fa931df26e660a4b53248ba3ea
-    darwin_x86_64: 99dae1c4a9a5c3eae7cc1085b68a4991399f81a5ffa8ae2b69f499ba4555ab28
-    linux_arm64: 46b388930d2b00a5ef12e9140712db529bf13a5dd592a12e0978fb834360ff9d
-    linux_x86_64: 21e60b397f10c5ef6ee498c60c4df95cd0d0342d41a8bfa77f37b000003196fe
-    mingw_x86_64: 11c7bb43fb088a581d1a9212cf9eaa431cb007e8e448703fa3aae6cf27e27b50
-    windows_x86_64: 412ce4e6d52d32238be57ddab8761ff234a58cb6bdf9cd7f0ca208c888c3b2e4
+    darwin_arm64: 2cff4f1cc63916db290359a058b88167beeac07a496682d9307a1804b498f225
+    darwin_x86_64: d0153b87a7eba4cd7d09a048b97bd60ac3ac15352def2bc3599d548875823ed3
+    linux_arm64: cc210d2185cf95bedbec06384be6ef342bdb7dcf3ff72dd08fe0e69859516887
+    linux_x86_64: 3845ff76a70cebb10e61a267ff719ffdccfa3ef6d877d51870a2c62b79603ab9
+    mingw_x86_64: 739f6aabc91d9ba4bce894314e01ab56d2c11b573c921b6f8caed6393c66c5f1
+    windows_x86_64: d883930b487d12a47e2c42fb83391417db4c4254c7346720c11e6a947c305a2c
 plugins:
   sources:
     - id: trunk
-      ref: v1.4.5
+      ref: v1.11.0
       uri: https://github.com/trunk-io/plugins
 runtimes:
   enabled:
     - go@1.22.1
-    - node@20.11.1
-    - python@3.12.2
+    - node@22.16.0
+    - python@3.14.4
 lint:
+  definitions:
+    # The plugin runs `shfmt -w -s`. Since shfmt 3.12, `-s` is a formatting flag, and shfmt ignores
+    # .editorconfig when it gets one, so it would indent with tabs. .editorconfig sets `simplify`.
+    - name: shfmt
+      commands:
+        - name: format
+          run: shfmt -w ${target}
   enabled:
     # Code - multi-language
-    - semgrep@1.66.0
+    - semgrep@1.179.0
     # Code - Python
-    - bandit@1.7.8
-    - black@24.3.0
-    - isort@5.13.2
-    - mypy@1.9.0
-    - ruff@0.3.4
+    - bandit@1.9.4
+    - mypy@2.4.0
+    - ruff@0.16.10:
+        commands: [lint, format]
     # Code - shell
-    - shellcheck@0.10.0
-    - shfmt@3.6.0
+    - shellcheck@0.11.0
+    - shfmt@3.14.1
     # File - CSS
     # TODO: enable later
     # - stylelint@16.1.0:
@@ -38,25 +44,27 @@ lint:
     #       - stylelint-config-standard-scss@12.0.0
     #       - stylelint-config-clean-order@5.2.0
     # File - Markdown
-    - markdownlint@0.39.0
+    - markdownlint@0.49.1
     # File - TOML
-    - taplo@0.8.1
+    - taplo@0.10.0
     # File - YAML
-    - yamllint@1.35.1
+    - yamllint@1.38.0
     # Formatting
-    - prettier@3.2.5
+    - prettier@3.9.9
     # Git
     - git-diff-check
     # GitHub Actions
-    - actionlint@1.6.27
+    - actionlint@1.7.12
+    - pinact@4.0.0
+    - zizmor@1.30.1
     # Security - general
-    - checkov@3.2.43
-    - trivy@0.50.0
+    - checkov@3.3.22
+    - trivy@0.75.0
     # Security - secrets
-    - gitleaks@8.18.2
-    - trufflehog@3.70.3
+    - gitleaks@8.30.1
+    - trufflehog@3.97.9
     # Spell check
-    - cspell@8.6.0
+    - cspell@10.3.6
 actions:
   enabled:
     - trunk-announce

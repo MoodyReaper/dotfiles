@@ -1,5 +1,32 @@
-# Generic, formatter-friendly config.
-select = ["B", "D3", "E", "F"]
+target-version = "py314"
+line-length = 100
 
-# Never enforce `E501` (line length violations). This should be handled by formatters.
-ignore = ["E501"]
+[lint]
+select = ["ALL"]
+ignore = [
+  "ANN401",  # flake8-annotations - any-type
+  "C901",    # mccabe - complex-structure
+  "COM812",  # flake8-commas - missing-trailing-comma
+  "CPY001",  # flake8-copyright - per-file notices are not a repository convention
+  "D",       # pydocstyle
+  "E501",    # pycodestyle - line-too-long
+  "EM",      # flake8-errmsg
+  "ERA001",  # eradicate - commented-out-code
+  "FBT001",  # flake8-boolean-trap - boolean-type-hint-positional-argument
+  "FBT002",  # flake8-boolean-trap - boolean-default-value-positional-argument
+  "FIX",     # flake8-fixme
+  "PGH003",  # pygrep-hooks - blanket-type-ignore
+  "PGH004",  # pygrep-hooks - blanket-noqa
+  "PLR0911", # pylint - too-many-return-statements
+  "PLR0912", # pylint - too-many-branches
+  "PLR0913", # pylint - too-many-arguments
+  "PLR0915", # pylint - too-many-statements
+  "RET504",  # flake8-return - unnecessary-assign
+  "RUF010",  # ruff - explicit-f-string-type-conversion
+  "SIM110",  # flake8-simplify - reimplemented-builtin
+  "T201",    # flake8-print - print
+  "TD002",   # flake8-todos - missing-todo-author
+  "TD003",   # flake8-todos - missing-todo-link
+  "TRY003",  # tryceratops - raise-vanilla-args
+  "TRY301",  # tryceratops - raise-within-try
+]

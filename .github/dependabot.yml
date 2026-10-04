@@ -6,7 +6,11 @@ updates:
     directory: /
     schedule:
       interval: monthly
-      day: monday
+    cooldown:
+      default-days: 7
+    commit-message:
+      prefix: ci
+      include: scope
     open-pull-requests-limit: 10
 
   # Maintain dependencies for Git Submodules
@@ -14,5 +18,9 @@ updates:
     directory: /
     schedule:
       interval: monthly
-      day: monday
+    cooldown:
+      default-days: 7
+    commit-message:
+      prefix: chore
+      include: scope
     open-pull-requests-limit: 10

@@ -3,12 +3,17 @@
 # TODO: finish
 
 import json
-import subprocess
+import subprocess  # nosec B404: This utility intentionally invokes ddcutil.
 
-data = {}
-# cmd = ["ddcutil", "getvcp", "10", "--bus", "0"]
-cmd = ["ddcutil", "getvcp", "10"]
-value = subprocess.run(cmd, stdout=subprocess.PIPE).stdout.decode("utf8")
-percentage = value.split(":")[1].split(",")[0].split("=")[1].strip(" ")
-data["percentage"] = int(percentage)
-print(json.dumps(data))
+
+def main() -> None:
+    # The command is fixed, takes no user input, and runs without a shell.
+    value = subprocess.run(  # nosec B603: Fixed executable and arguments; no shell or user input.
+        ["/usr/bin/ddcutil", "getvcp", "10"], check=True, stdout=subprocess.PIPE, text=True
+    ).stdout
+    percentage = value.split(":")[1].split(",")[0].split("=")[1].strip()
+    print(json.dumps({"percentage": int(percentage)}))
+
+
+if __name__ == "__main__":
+    main()

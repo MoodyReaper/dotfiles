@@ -7,6 +7,9 @@
   "files.insertFinalNewline": true, // insert_final_newline
   "files.trimFinalNewlines": true, // insert_final_newline
   "files.trimTrailingWhitespace": true, // trim_trailing_whitespace
+  "[python]": {
+    "editor.tabSize": 4
+  },
 
   // General
   "editor.defaultFormatter": "trunk.io",
