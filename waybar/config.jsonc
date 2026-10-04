@@ -4,10 +4,7 @@
   "position": "bottom",
   "height": 28,
   "mode": "dock",
-  "include": [
-    "~/.config/waybar/default-modules.jsonc",
-    "~/.config/waybar/custom-modules.jsonc",
-  ],
+  "include": ["~/.config/waybar/default-modules.jsonc", "~/.config/waybar/custom-modules.jsonc"],
   "modules-left": ["sway/workspaces", "custom/media", "sway/mode"],
   "modules-center": ["sway/window"],
   "modules-right": [

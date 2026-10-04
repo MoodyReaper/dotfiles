@@ -13,20 +13,26 @@ _Note: this repository contains user files only (system files are not presented)
    - _I use `.dotfiles` inside of `~/`_
 2. Manage wallpapers:
    - Create `wallpapers/` directory and copy wallpapers into it
-     - _Filenames are hardcoded: `FHD.png` and `UW-QHD.png` are set in `Dotbot` (`install.conf.yaml`) and `Sway` (`output`), change configs if needed_
+     - _Filenames are hardcoded: `FHD.png` and `UW-QHD.png` are set in `Dotbot`
+       (`install.conf.yaml`) and `Sway` (`output`), change configs if needed_
 3. Manage `git` settings:
-   - Create `git/gitconfig-personal` and `git/gitconfig-work` files, set personal and work global git settings (for example, username and email)
-   - Review `git/gitconfig`, override some settings if needed (for example, you may want to change `gitdir` for `git/gitconfig-work`)
+   - Create `git/gitconfig-personal` and `git/gitconfig-work` files, set personal and work global
+     git settings (for example, username and email)
+   - Review `git/gitconfig`, override some settings if needed (for example, you may want to change
+     `gitdir` for `git/gitconfig-work`)
 4. Manage `Sway` output settings (monitor, resolution, etc.):
    - _Edit `sway/config.d/output` if needed_
 5. Manage shell settings:
-   - _I use `Fish` shell so everything is configured for it (`fish` is the default shell for my user)_
-     - _`fish_variables` is local runtime state and is not tracked; preferences live in the startup configuration_
+   - _I use `Fish` shell so everything is configured for it (`fish` is the default shell for my
+     user)_
+     - _`fish_variables` is local runtime state and is not tracked; preferences live in the startup
+       configuration_
 6. Check `fish` and `sway` autostart configs
 7. Install dependencies (read sections below)
 8. Run `dotbot` script: `./install`
    - _Read console output, some configs may not be applied_
-   - _By default, `GTK` theme `FlatColor` does not have color scheme defined so it's important to apply a theme (step 10)_
+   - _By default, `GTK` theme `FlatColor` does not have color scheme defined so it's important to
+     apply a theme (step 10)_
 9. Install the plugins listed in `fish/fish_plugins` by running these commands in `fish`:
 
    ```fish
